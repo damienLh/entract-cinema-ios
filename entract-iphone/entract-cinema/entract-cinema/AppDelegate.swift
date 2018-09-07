@@ -1,0 +1,89 @@
+//
+//  AppDelegate.swift
+//  entract-cinema
+//
+//  Created by Damien Lheuillier on 06/06/2018.
+//  Copyright © 2018 Damien Lheuillier. All rights reserved.
+//
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        Thread.sleep(forTimeInterval: 1.0)
+        //creation du dictionnaire cache
+        Cache.shared.defineDictionnary()
+        
+        if UserDefaults.standard.object(forKey: Constants.tempsAlerte) == nil {
+            UserDefaults.standard.set(120, forKey: Constants.tempsAlerte)
+        }
+        
+        if UserDefaults.standard.object(forKey: Constants.visualiserTuto) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.visualiserTuto)
+        }
+        
+        if UserDefaults.standard.object(forKey: Constants.bandeAnnonceUniquementWIFI) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.bandeAnnonceUniquementWIFI)
+        }
+        
+        if UserDefaults.standard.object(forKey: Constants.autoriserAnnonce) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.autoriserAnnonce)
+        }
+        
+        if UserDefaults.standard.object(forKey: Constants.annonceAfficheeSession) == nil {
+            UserDefaults.standard.set(false, forKey: Constants.annonceAfficheeSession)
+        } else {
+            UserDefaults.standard.set(false, forKey: Constants.annonceAfficheeSession)
+        }
+        
+        do {
+            Network.reachability = try Reachability(hostname: Constants.remoteSite)
+            do {
+                try Network.reachability?.start()
+            } catch let error as Network.Error {
+                print(error)
+            } catch {
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
+        
+        JSONUnparser.getParameters()
+
+        
+        return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+
+}
+

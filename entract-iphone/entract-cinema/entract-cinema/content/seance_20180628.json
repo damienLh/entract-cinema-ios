@@ -1,0 +1,17 @@
+{
+    "films": [{
+              "titre": "Trois visages",
+              "date": "21-06-2018",
+              "horaire": "20h30",
+              "3d": false,
+              "vo": true,
+              "affiche": "http://image.tmdb.org/t/p/w185/pC3xEYXXO9EJgUZD31skMKWN16c.jpg",
+              "duree": "1h40",
+              "annee": "2018",
+              "pays": "Iran",
+              "style": "Drame",
+              "de": "Jafar Panahi, Nader Saeivar",
+              "avec": "Behnaz Jafari",
+              "synopsis": "Une célèbre actrice iranienne reçoit la troublante vidéo d’une jeune fille implorant son aide pour échapper à sa famille conservatrice... Elle demande alors à son ami, le réalisateur Jafar Panahi, de l’aider à comprendre s’il s’agit d’une manipulation. Ensemble, ils prennent la route en direction du village de la jeune fille, dans les montagnes reculées du Nord-Ouest où les traditions ancestrales continuent de dicter la vie locale."
+              }]
+}

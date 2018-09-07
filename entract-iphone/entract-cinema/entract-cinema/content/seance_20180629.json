@@ -1,0 +1,17 @@
+{
+    "films": [{
+              "titre": "Jurassic World: Fallen Kingdom",
+              "date": "22-06-2018",
+              "horaire": "21h00",
+              "3d": true,
+              "vo": false,
+              "affiche": "http://image.tmdb.org/t/p/w185/9EwjVrXqYmm3Q5xWJyG1TmtTF8j.jpg",
+              "duree": "2h8",
+              "annee": "2018",
+              "pays": "United States of America",
+              "style": "Action, Aventure, Science-Fiction",
+              "de": "Derek Connolly, Colin Trevorrow, Michael Crichton",
+              "avec": "Chris Pratt, Bryce Dallas Howard, Rafe Spall...",
+              "synopsis": "Cela fait maintenant quatre ans que les dinosaures se sont échappés de leurs enclos et ont détruit le parc à thème et complexe de luxe Jurassic World. Isla Nublar a été abandonnée par les humains alors que les dinosaures survivants sont livrés à eux-mêmes dans la jungle. Lorsque le volcan inactif de l'île commence à rugir, Owen et Claire s’organisent pour sauver les dinosaures restants de l’extinction.  Owen se fait un devoir de retrouver Blue, son principal raptor qui a disparu dans la nature, alors que Claire, qui a maintenant un véritable respect pour ces créatures, s’en fait une mission. Arrivant sur l'île instable alors que la lave commence à pleuvoir, leur expédition découvre une conspiration qui pourrait ramener toute notre planète à un ordre périlleux jamais vu depuis la préhistoire."
+              }]
+}

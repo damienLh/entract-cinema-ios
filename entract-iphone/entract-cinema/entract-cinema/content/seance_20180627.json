@@ -1,0 +1,31 @@
+{
+    "films": [{
+              "titre": "Le voyage de Lila",
+              "date": "20-06-2018",
+              "horaire": "14h30",
+              "3d": false,
+              "vo": false,
+              "affiche": "http://image.tmdb.org/t/p/w185/hwHCLQW258GCQEw2emhEnzzvVQJ.jpg",
+              "duree": "1h16",
+              "annee": "2018",
+              "pays": "",
+              "style": "aventure, Animation, Fantastique - Science Fiction",
+              "de": "Marcela Rincón González",
+              "avec": "",
+              "synopsis": "Lila vit dans un livre pour enfants quand soudainement, elle disparaît de son univers de papier. La voilà plongée dans une incroyable aventure. Elle découvre que seul RAMON, un petit garçon qui, il y a quelques années, aimait lire le conte de LILA, peut la sauver. Mais Ramon n’est plus un petit garcon. Il ne lit plus de contes pour enfants et pire, il ne croit plus au monde du merveilleux. Comment le convaincre de venir à sa rescousse ?"
+              }, {
+              "titre": "Champions",
+              "date": "20-06-2018",
+              "horaire": "20h30",
+              "3d": false,
+              "vo": true,
+              "affiche": "http://image.tmdb.org/t/p/w185/14n6lOE6rSHRbvidllOQdN1AL5V.jpg",
+              "duree": "1h58",
+              "annee": "2018",
+              "pays": "Espagne",
+              "style": "Drame, Comédie",
+              "de": "David Marqués",
+              "avec": "Javier Gutiérrez, Itziar Castro, Luisa Gavasa...",
+              "synopsis": "Marco est entraîneur d'une équipe de basket professionnelle de haut niveau. Pour conduite en état d'ébriété, il est condamné à une peine d'intérêt général. Sur ordre de la juge, il doit alors former une équipe de basket composée de personnes ayant une déficience intellectuelle. Ce qui commence comme une punition devient une leçon de vie sur les préjugés et la normalité. Tous les joueurs de l’équipe de basket sont interprétés par des acteurs handicapés."
+              }]
+}

@@ -1,0 +1,31 @@
+{
+    "films": [{
+              "titre": "Jurassic World: Fallen Kingdom",
+              "date": "23-06-2018",
+              "horaire": "17h30",
+              "3d": false,
+              "vo": false,
+              "affiche": "http://image.tmdb.org/t/p/w185/9EwjVrXqYmm3Q5xWJyG1TmtTF8j.jpg",
+              "duree": "2h8",
+              "annee": "2018",
+              "pays": "United States of America",
+              "style": "Action, Aventure, Science-Fiction",
+              "de": "Derek Connolly, Colin Trevorrow, Michael Crichton",
+              "avec": "Chris Pratt, Bryce Dallas Howard, Rafe Spall...",
+              "synopsis": "Cela fait maintenant quatre ans que les dinosaures se sont échappés de leurs enclos et ont détruit le parc à thème et complexe de luxe Jurassic World. Isla Nublar a été abandonnée par les humains alors que les dinosaures survivants sont livrés à eux-mêmes dans la jungle. Lorsque le volcan inactif de l'île commence à rugir, Owen et Claire s’organisent pour sauver les dinosaures restants de l’extinction.  Owen se fait un devoir de retrouver Blue, son principal raptor qui a disparu dans la nature, alors que Claire, qui a maintenant un véritable respect pour ces créatures, s’en fait une mission. Arrivant sur l'île instable alors que la lave commence à pleuvoir, leur expédition découvre une conspiration qui pourrait ramener toute notre planète à un ordre périlleux jamais vu depuis la préhistoire."
+              }, {
+              "titre": "Book Club",
+              "date": "23-06-2018",
+              "horaire": "21h00",
+              "3d": false,
+              "vo": false,
+              "affiche": "http://image.tmdb.org/t/p/w185/zHGf3PWSqwt3X1UEIO2ythLwvKO.jpg",
+              "duree": "1h44",
+              "annee": "2018",
+              "pays": "United States of America",
+              "style": "Comédie, Romance",
+              "de": "Bill Holderman, Erin Simms",
+              "avec": "Diane Keaton, Jane Fonda, Candice Bergen...",
+              "synopsis": "Quatre amies de toujours se retrouvent, comme chaque semaine, au sein de leur club de lecture, lorsque l’une d’entre elles propose de découvrir 50 nuances de Grey! Elles ont réussi leur vie et elles comptent bien continuer à en profiter, et vivre de nouvelles expériences! Célibataire depuis peu, Diane va connaître le coup de foudre. La toujours séduisante Vivian retrouve un amour passé. Sharon découvre les sites de rencontres sur internet. Et Carol essaie de redonner du piment à son couple. En ravivant la flamme ou en vivant une nouvelle aventure amoureuse, chacune d’elles va écrire le nouveau chapitre de sa vie. Peut-être le meilleur…"
+              }]
+}

@@ -1,0 +1,17 @@
+{
+    "films": [{
+              "titre": "Volontaire",
+              "date": "24-06-2018",
+              "horaire": "17h30",
+              "3d": false,
+              "vo": false,
+              "affiche": "http://image.tmdb.org/t/p/w185/ch9MARSVGiPiBsBcR4bMbMHcraf.jpg",
+              "duree": "1h41",
+              "annee": "2018",
+              "pays": "France",
+              "style": "Drame",
+              "de": "Hélène Fillières, Mathias Gavarry",
+              "avec": "Diane Rouxel, Lambert Wilson, Corentin Fila...",
+              "synopsis": "Laure a 23 ans. Elle se cherche. C’est dans la Marine Nationale qu’elle va trouver un cadre, une structure, des repères. Solide et persévérante, elle va faire son apprentissage et découvrir sa voie."
+              }]
+}
