@@ -10,6 +10,7 @@ import Foundation
 
 class Film: NSObject, NSCoding {
 
+    var id_film: String
     var titre: String
     var date: Date
     var horaire: String
@@ -27,6 +28,7 @@ class Film: NSObject, NSCoding {
     
     override init() {
         
+        self.id_film = ""
         self.titre = ""
         self.date = Date()
         self.horaire = ""
@@ -44,6 +46,7 @@ class Film: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(id_film, forKey: "id_film")
         aCoder.encode(titre, forKey: "titre")
         aCoder.encode(date, forKey: "date")
         aCoder.encode(horaire, forKey: "horaire")
@@ -62,6 +65,7 @@ class Film: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         date = Date()
+        id_film = aDecoder.decodeObject(forKey: "id_film") as! String
         titre = aDecoder.decodeObject(forKey: "titre") as! String
         horaire = aDecoder.decodeObject(forKey: "horaire") as! String
         troisD = aDecoder.decodeBool(forKey: "troisD")

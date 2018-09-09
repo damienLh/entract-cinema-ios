@@ -75,6 +75,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 let annonce = JSONUnparser.getAfficheEvenements()
                 if !annonce.isEmpty {
                     if let annonceVC:AfficheEvenementViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "afficheEvenementViewController") as? AfficheEvenementViewController {
+                        Statistiques.statEvenement()
                         annonceVC.annonce = annonce
                         annonceVC.providesPresentationContextTransitionStyle = true
                         annonceVC.definesPresentationContext = true
@@ -331,6 +332,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 let detailFilmVC = navigation.topViewController as? TableViewDetailFilmController
                 if let detailFilmVC = detailFilmVC {
                     detailFilmVC.film = self.detailSeance.detail
+                    detailFilmVC.jour = self.jour
                 }
             }
         }

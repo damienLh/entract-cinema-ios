@@ -13,11 +13,13 @@ class TableViewDetailFilmController : UITableViewController {
     @IBOutlet var tableViewDetail: UITableView!
     
     var film: Film = Film()
+    var jour: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewDetail.dataSource = self
         self.tableViewDetail.delegate = self
+        Statistiques.statDetailFilm(jour: jour, titreFilm: film.id_film)
     }
     
     override func didReceiveMemoryWarning() {

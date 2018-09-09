@@ -20,6 +20,7 @@ class LesHorairesTableViewController: UITableViewController {
         self.tableViewHoraires.delegate = self
         self.tableViewHoraires.rowHeight = UITableViewAutomaticDimension
         items = JSONUnparser.getProgramme()
+        Statistiques.statProgramme()
     }
     
     override func viewWillAppear(_ animated: Bool) {

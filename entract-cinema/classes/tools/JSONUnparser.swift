@@ -33,6 +33,7 @@ class JSONUnparser {
                         
                         for dicoFilm in films {
                             let film: Film = Film()
+                            film.id_film = (dicoFilm as AnyObject).object(forKey: "id_film") as! String
                             film.titre = (dicoFilm as AnyObject).object(forKey: "titre") as! String
                             let date = dateFormatter.date(from: dateJour)
                             film.date = date!
