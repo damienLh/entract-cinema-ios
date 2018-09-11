@@ -110,8 +110,8 @@ class LesHorairesTableViewController: UITableViewController {
     
         let semaine = items[indexPath.section]
         let joursLu = semaine.jours[indexPath.row]
+        cell.dateSeance.text = joursLu.jour.convertDateToLocaleDate()
         
-        cell.dateSeance.text = joursLu.jour
         let troisD = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.red]
         let vo = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.blue]
         let titreFilm = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]

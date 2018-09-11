@@ -23,4 +23,15 @@ extension String {
         let text = String(data: messageData!, encoding: .utf8)
         return text!
     }
+    
+    func convertDateToLocaleDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "dd/MM/yyyy"
+        let date = dateFormatter.date(from: self)
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat =  "EEEE d MMMM"
+        dateFormatter2.locale = Locale(identifier: "fr")
+        return dateFormatter2.string(from: date!)
+    }
 }
