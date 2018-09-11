@@ -58,11 +58,11 @@ class TableViewDetailFilmController : UITableViewController {
         
             let posterCell = tableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterCell
         
-            posterCell.lblPays.attributedText = getAttributedText(title: "Pays", value: film.pays)
+            posterCell.lblPays.attributedText = getAttributedText(title: "pays".localized(), value: film.pays)
             posterCell.lblAnneeDuree.attributedText = getAttributedFirstLine(annee: film.annee, duree: film.duree)
-            posterCell.lblGenre.attributedText = getAttributedText(title: "Genre", value: film.style)
-            posterCell.lblAvec.attributedText = getAttributedText(title: "Avec", value: Tools.shared.utf8(value: film.avec))
-            posterCell.lblDe.attributedText = getAttributedText(title: "De", value: Tools.shared.utf8(value: film.de))
+            posterCell.lblGenre.attributedText = getAttributedText(title: "genre".localized(), value: film.style)
+            posterCell.lblAvec.attributedText = getAttributedText(title: "avec".localized(), value: Tools.shared.utf8(value: film.avec))
+            posterCell.lblDe.attributedText = getAttributedText(title: "de".localized(), value: Tools.shared.utf8(value: film.de))
             posterCell.lblSynopsis.attributedText = getAttributedSynopsis(value: film.synopsis)
             posterCell.lblSynopsis.sizeToFit()
             posterCell.btnBandeAnnonce.isHidden = true
@@ -102,9 +102,9 @@ class TableViewDetailFilmController : UITableViewController {
         let normal = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()
-        content.append(NSMutableAttributedString(string:"Année ", attributes:gras))
+        content.append(NSMutableAttributedString(string:"annee".localized(), attributes:gras))
         content.append(NSMutableAttributedString(string:"\(annee) ", attributes:normal))
-        content.append(NSMutableAttributedString(string:" Durée ", attributes:gras))
+        content.append(NSMutableAttributedString(string:"duree".localized(), attributes:gras))
         content.append(NSMutableAttributedString(string:"\(duree) ", attributes:normal))
         return content
     }
@@ -125,7 +125,7 @@ class TableViewDetailFilmController : UITableViewController {
         let normal = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()
-        content.append(NSMutableAttributedString(string:"SYNOPSIS\n", attributes:red))
+        content.append(NSMutableAttributedString(string:"\("synosis".localized())\n", attributes:red))
         content.append(NSMutableAttributedString(string:"\(value) ", attributes:normal))
         return content
     }

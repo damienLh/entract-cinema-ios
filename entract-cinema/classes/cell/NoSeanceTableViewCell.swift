@@ -9,6 +9,9 @@
 import UIKit
 
 class NoSeanceTableViewCell: UITableViewCell {
+   
+    
+    @IBOutlet weak var lblNoSeance: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

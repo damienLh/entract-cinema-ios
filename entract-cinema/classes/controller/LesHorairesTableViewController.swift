@@ -118,17 +118,17 @@ class LesHorairesTableViewController: UITableViewController {
         
         let content = NSMutableAttributedString()
         if joursLu.films.count == 0 {
-            content.append(NSMutableAttributedString(string: "Pas de séance ce jour", attributes:titreFilm))
+            content.append(NSMutableAttributedString(string: "pas_de_film".localized(), attributes:titreFilm))
         } else {
             for film in joursLu.films {
                 content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
                 content.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
                 
                 if film.troisD {
-                    content.append(NSMutableAttributedString(string:" 3D", attributes:troisD))
+                    content.append(NSMutableAttributedString(string:" 3D".localized(), attributes:troisD))
                 }
                 if film.vo {
-                    content.append(NSMutableAttributedString(string:" VO", attributes:vo))
+                    content.append(NSMutableAttributedString(string:" VO".localized(), attributes:vo))
                 }
                 content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
             }

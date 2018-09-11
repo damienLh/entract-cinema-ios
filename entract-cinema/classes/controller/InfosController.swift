@@ -23,9 +23,9 @@ class InfosController : UIViewController, MKMapViewDelegate {
         
         centerMapOnLocation(location: initialLocation)
         
-        let artwork = Artwork(title: "Cinéma L'entract",
-                              locationName: "Cinéma L'entract",
-                              discipline: "cinéma",
+        let artwork = Artwork(title: "cinema".localized(),
+                              locationName: "cinema".localized(),
+                              discipline: "movie".localized(),
                               coordinate: CLLocationCoordinate2D(latitude: 43.7700499, longitude: 1.2948405))
         mapView.addAnnotation(artwork)
     }

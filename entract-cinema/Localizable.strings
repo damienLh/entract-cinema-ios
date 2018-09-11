@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  entract-cinema
+
+  Created by LHEUILLIER Damien (i-BP - INFOTEL) on 11/09/2018.
+  Copyright © 2018 Damien Lheuillier. All rights reserved.
+*/
+
+//seance
+"3D" = "3D";
+"VO" = "VOST";
+"pas_de_film" = "Pas de séance ce jour";
+
+//detail
+"pays" = "Pays";
+"de" = "De";
+"avec" = "Avec";
+"genre" = "Genre";
+"annee" = "Année ";
+"duree" = " Durée";
+"synopsis" = "SYNOPSIS";
+
+//calendrier
+"alerte_film_ko" = "Ajouter au calendrier";
+"alerte_film_ok" = "Alerte active pour ce film";
+
+//infos
+"cinema" = "Cinéma L'entract";
+"movie" = "Cinéma";
+
+//paramètres
+"data_titre" = "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?";
+"data_content" = "Selon votre forfait mobile, des frais supplémentaires peuvent s'appliquer";
+"continuer" = "Continuer";
+"annuler" = "Annuler";
+
+"30min" =  "30 minutes avant";
+"60min" =  "1 heure avant";
+"120min" = "2 heures avant";
+"180min" = "3 heures avant";
+"240min" = "4 heures avant";
+

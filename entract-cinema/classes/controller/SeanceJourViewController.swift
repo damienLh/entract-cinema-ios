@@ -130,10 +130,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:titreFilm))
                     
             if film.troisD {
-                content.append(NSMutableAttributedString(string:" 3D", attributes:troisD))
+                content.append(NSMutableAttributedString(string:" 3D".localized(), attributes:troisD))
             }
             if film.vo {
-                content.append(NSMutableAttributedString(string:" VO", attributes:vo))
+                content.append(NSMutableAttributedString(string:" VO".localized(), attributes:vo))
             }
 
             seanceCell.infosFilm.attributedText = content
@@ -150,18 +150,19 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             
             if !isAlertFilmInCalendar(detail: film) {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
-                seanceCell.btnCalendrier.setTitle("Ajouter au calendrier", for: UIControlState.normal)
+                seanceCell.btnCalendrier.setTitle("alerte_film_ko".localized(), for: UIControlState.normal)
                 seanceCell.btnCalendrier.setTitleColor(UIColor.red, for: UIControlState.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
             } else {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = false
-                seanceCell.btnCalendrier.setTitle("Alerte active pour ce film", for: UIControlState.normal)
+                seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControlState.normal)
                 seanceCell.btnCalendrier.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControlState.normal)
             }
             
             cell = seanceCell
         } else {
             let noSeanceCell = tableView.dequeueReusableCell(withIdentifier: "noSeanceCell", for: indexPath) as! NoSeanceTableViewCell
+            noSeanceCell.lblNoSeance.text = "pas_de_film".localized()
             cell = noSeanceCell
         }
 
@@ -234,7 +235,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                         UIAlertAction in
-                        sender.setTitle("Alerte active pour ce film", for: UIControlState.normal)
+                        sender.setTitle("alerte_film_ok".localized(), for: UIControlState.normal)
                         sender.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControlState.normal)
                     }
                     

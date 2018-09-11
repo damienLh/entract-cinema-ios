@@ -31,7 +31,7 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
         
         // Initialize Data
         pickerData = ["30", "60", "120", "180", "240"];
-        pickerTitle = ["30 minutes avant", "1 heure avant ", "2 heures avant", "3 heures avant", "4 heures avant"];
+        pickerTitle = ["30min".localized(), "60min".localized(), "120min".localized(), "180min".localized(), "240min".localized()];
         
         let time = UserDefaults.standard.integer(forKey: Constants.tempsAlerte)
         var row = 0
@@ -86,14 +86,14 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBAction func switchBAAutorisedChanged(_ sender: UISwitch) {
         if !sender.isOn {
-            let alertController = UIAlertController(title: "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?", message: "Selon votre forfait mobile, des frais supplémentaires peuvent s'appliquer", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "data_titre".localized(), message: "data_content".localized(), preferredStyle: .alert)
             
-            let actionOK = UIAlertAction(title: "Continuer", style: .default) { (action:UIAlertAction) in
+            let actionOK = UIAlertAction(title: "continuer".localized(), style: .default) { (action:UIAlertAction) in
                 UserDefaults.standard.set(false, forKey: Constants.bandeAnnonceUniquementWIFI)
                 self.switchBandeAnnonce.isOn = false
             }
             
-            let actionCancel = UIAlertAction(title: "Annuler", style: .cancel) { (action:UIAlertAction) in
+            let actionCancel = UIAlertAction(title: "annuler".localized(), style: .cancel) { (action:UIAlertAction) in
                 UserDefaults.standard.set(true, forKey: Constants.bandeAnnonceUniquementWIFI)
                 self.switchBandeAnnonce.isOn = true
             }

@@ -34,4 +34,8 @@ extension String {
         dateFormatter2.locale = Locale(identifier: "fr")
         return dateFormatter2.string(from: date!)
     }
+    
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }
