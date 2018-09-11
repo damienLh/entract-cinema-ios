@@ -130,10 +130,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:titreFilm))
                     
             if film.troisD {
-                content.append(NSMutableAttributedString(string:" 3D".localized(), attributes:troisD))
+                content.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))
             }
             if film.vo {
-                content.append(NSMutableAttributedString(string:" VO".localized(), attributes:vo))
+                content.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
             }
 
             seanceCell.infosFilm.attributedText = content

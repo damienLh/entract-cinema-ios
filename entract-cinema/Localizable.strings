@@ -8,7 +8,7 @@
 
 //seance
 "3D" = "3D";
-"VO" = "VOST";
+"vo" = "VOST";
 "pas_de_film" = "Pas de séance ce jour";
 
 //detail
@@ -17,7 +17,7 @@
 "avec" = "Avec";
 "genre" = "Genre";
 "annee" = "Année ";
-"duree" = " Durée";
+"duree" = " Durée ";
 "synopsis" = "SYNOPSIS";
 
 //calendrier
