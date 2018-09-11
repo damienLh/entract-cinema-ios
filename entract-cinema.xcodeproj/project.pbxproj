@@ -32,6 +32,7 @@
 		9D4FD717210DFA5A00F98743 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FD716210DFA5A00F98743 /* InfosController.swift */; };
 		9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FD71B210E107500F98743 /* NetworkUtils.swift */; };
 		9D4FD71E210E1A1C00F98743 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */; };
+		9D68AB5C21484F9B00DF3CE7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */; };
 		9D7B406D20EAA86100E75CAB /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */; };
 		9D7B406F20EABE4900E75CAB /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */; };
 		9D9686E420CF040F006E1E8C /* seance_20180702.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E220CF040F006E1E8C /* seance_20180702.json */; };
@@ -105,6 +106,8 @@
 		9D4FD716210DFA5A00F98743 /* InfosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosController.swift; sourceTree = "<group>"; };
 		9D4FD71B210E107500F98743 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		9D68AB5A2148419100DF3CE7 /* entract-cinema.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entract-cinema.entitlements"; sourceTree = "<group>"; };
+		9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		9D9686E220CF040F006E1E8C /* seance_20180702.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180702.json; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		9D42B0A520C86FC5009BCA11 /* entract-cinema */ = {
 			isa = PBXGroup;
 			children = (
+				9D68AB5A2148419100DF3CE7 /* entract-cinema.entitlements */,
 				9D42B0E220C8706C009BCA11 /* classes */,
 				9D42B0D620C8706C009BCA11 /* content */,
 				9D42B0A620C86FC5009BCA11 /* AppDelegate.swift */,
@@ -258,6 +262,7 @@
 				C7145AF920E398A600A6FCE4 /* String+Extensions.swift */,
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
+				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -379,6 +384,9 @@
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					9D42B0B820C86FC6009BCA11 = {
@@ -477,6 +485,7 @@
 				9D42B0FD20C8706C009BCA11 /* Tools.swift in Sources */,
 				9D4FD717210DFA5A00F98743 /* InfosController.swift in Sources */,
 				C74BBEB621415B420064B471 /* CacheSemaines.swift in Sources */,
+				9D68AB5C21484F9B00DF3CE7 /* Notifications.swift in Sources */,
 				C7145AFA20E398A600A6FCE4 /* String+Extensions.swift in Sources */,
 				9D44659E20CB2B4100BD6445 /* Semaine.swift in Sources */,
 				9D44659C20CB285A00BD6445 /* Film.swift in Sources */,
@@ -656,15 +665,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.asso.entract.entract-cinema";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afced0c3-7bdd-448b-96ca-a94f0ddceab6";
+				PROVISIONING_PROFILE_SPECIFIER = "Grenade cinema dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -675,15 +687,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.asso.entract.entract-cinema";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afced0c3-7bdd-448b-96ca-a94f0ddceab6";
+				PROVISIONING_PROFILE_SPECIFIER = "Grenade cinema dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
