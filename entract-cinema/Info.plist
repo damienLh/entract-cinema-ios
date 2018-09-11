@@ -83,5 +83,9 @@
 	</array>
 	<key>targetServer</key>
 	<string>http://mobile-grenadecinema.fr</string>
+    <key>UISupportsDocumentBrowser</key>
+    <true/>
+    <key>LSSupportsOpeningDocumentsInPlace</key>
+    <true/>
 </dict>
 </plist>
