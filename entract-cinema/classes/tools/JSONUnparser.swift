@@ -120,17 +120,17 @@ class JSONUnparser {
                 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                     do {
                         let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                        let app = json?.object(forKey: "parametres") as! NSArray?
-                        for parametres in app! {
-                            let dateMin = (parametres as AnyObject).object(forKey: "date_minimum") as! String
-                            let dateMax = (parametres as AnyObject).object(forKey: "date_maximum") as! String
+                        let app = json?.object(forKey: "parametres") as! NSDictionary?
+                        let periode = app?.object(forKey: "periode") as! NSDictionary
+                            let dateMin = (periode as AnyObject).object(forKey: "date_minimum") as! String
+                            let dateMax = (periode as AnyObject).object(forKey: "date_maximum") as! String
                             
                             UserDefaults.standard.set(dateMin, forKey: Constants.dateMin)
                             UserDefaults.standard.set(dateMax, forKey: Constants.dateMax)
                             
                             let params = [dateMin, dateMax]
                             Cache.shared.saveParams(params: params)
-                        }
+                        
                         semaphore.signal()
                     }
                 })
@@ -160,7 +160,7 @@ class JSONUnparser {
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
                     let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                    let app = json?.object(forKey: "semaine") as! NSArray?
+                    let app = json?.object(forKey: "semaines") as! NSArray?
                     let _ : NSDictionary
                     for dict in app! {
                         let semaine: Semaine = Semaine()
