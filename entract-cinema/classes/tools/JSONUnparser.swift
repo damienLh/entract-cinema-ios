@@ -24,14 +24,12 @@ class JSONUnparser {
             
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
-                    if let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary {
-                        let films = json.object(forKey: "films") as! NSArray
+                    if let json = try? JSONSerialization.jsonObject(with: data!) as! NSArray {
                         var listeFilms: [Film] = []
-                        let _: NSDictionary
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "dd-MM-yyyy"
                         
-                        for dicoFilm in films {
+                        for dicoFilm in json {
                             let film: Film = Film()
                             film.id_film = (dicoFilm as AnyObject).object(forKey: "id_film") as! String
                             film.titre = (dicoFilm as AnyObject).object(forKey: "titre") as! String
