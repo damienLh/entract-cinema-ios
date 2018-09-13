@@ -675,8 +675,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "afced0c3-7bdd-448b-96ca-a94f0ddceab6";
-				PROVISIONING_PROFILE_SPECIFIER = "Grenade cinema dev";
+				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
+				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -697,8 +697,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "afced0c3-7bdd-448b-96ca-a94f0ddceab6";
-				PROVISIONING_PROFILE_SPECIFIER = "Grenade cinema dev";
+				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
+				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

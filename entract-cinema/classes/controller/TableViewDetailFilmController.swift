@@ -43,11 +43,6 @@ class TableViewDetailFilmController : UITableViewController {
         return 45.0
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-       return 790.0
-    }
-    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UITableViewCell? {
         let headerTitre = tableView.dequeueReusableCell(withIdentifier: "headerTitreCell") as! HeaderTitreCell
         headerTitre.lblTitre.text = film.titre
@@ -79,6 +74,13 @@ class TableViewDetailFilmController : UITableViewController {
             }
         
             posterCell.btnBandeAnnonce.addTarget(self, action: #selector(launchBandeAnnonce(_:)), for: .touchUpInside)
+        
+            let height = CGFloat(posterCell.lblSynopsis.frame.size.height) + 25
+            print("hauteur : \(height)")
+            let viewHeight = CGFloat(500) + CGFloat(height)
+    
+            self.tableViewDetail.rowHeight = viewHeight
+            self.tableViewDetail.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
 
         return posterCell
     }

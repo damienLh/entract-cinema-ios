@@ -120,17 +120,15 @@ class JSONUnparser {
                 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                     do {
                         let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                        let app = json?.object(forKey: "parametres") as! NSDictionary?
-                        let periode = app?.object(forKey: "periode") as! NSDictionary
-                            let dateMin = (periode as AnyObject).object(forKey: "date_minimum") as! String
-                            let dateMax = (periode as AnyObject).object(forKey: "date_maximum") as! String
-                            
-                            UserDefaults.standard.set(dateMin, forKey: Constants.dateMin)
-                            UserDefaults.standard.set(dateMax, forKey: Constants.dateMax)
-                            
-                            let params = [dateMin, dateMax]
-                            Cache.shared.saveParams(params: params)
+                        let periode = json?.object(forKey: "periode") as! NSDictionary?
+                        let dateMin = (periode as AnyObject).object(forKey: "date_minimum") as! String
+                        let dateMax = (periode as AnyObject).object(forKey: "date_maximum") as! String
                         
+                        UserDefaults.standard.set(dateMin, forKey: Constants.dateMin)
+                        UserDefaults.standard.set(dateMax, forKey: Constants.dateMax)
+                        
+                        let params = [dateMin, dateMax]
+                        Cache.shared.saveParams(params: params)
                         semaphore.signal()
                     }
                 })
@@ -159,10 +157,8 @@ class JSONUnparser {
             
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
-                    let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                    let app = json?.object(forKey: "semaines") as! NSArray?
-                    let _ : NSDictionary
-                    for dict in app! {
+                    let json = try? JSONSerialization.jsonObject(with: data!) as! NSArray
+                    for dict in json! {
                         let semaine: Semaine = Semaine()
                         semaine.debutsemaine = (dict as AnyObject).object(forKey: "debutsemaine") as! String
                         semaine.finsemaine = (dict as AnyObject).object(forKey: "finsemaine") as! String
