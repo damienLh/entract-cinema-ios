@@ -27,7 +27,7 @@ class JSONUnparser {
                     if let json = try? JSONSerialization.jsonObject(with: data!) as! NSArray {
                         var listeFilms: [Film] = []
                         let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd-MM-yyyy"
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
                         
                         for dicoFilm in json {
                             let film: Film = Film()
@@ -169,16 +169,13 @@ class JSONUnparser {
                             let films = (dicoJours as AnyObject).object(forKey: "films") as! NSArray
                             var listeFilms: [Film] = []
                             let _: NSDictionary
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "dd-MM-yyyy"
                             
                             for dicoFilm in films {
                                 let film: Film = Film()
                                 
                                 film.titre = (dicoFilm as AnyObject).object(forKey: "titre") as! String
                                 let dateJour = (dicoFilm as AnyObject).object(forKey: "date") as! String
-                                let date = dateFormatter.date(from: dateJour)
-                                film.date = date!
+                                film.date = dateJour.convertFromDbData()
                                 film.horaire = (dicoFilm as AnyObject).object(forKey: "horaire") as! String
                                 film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                                 film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool

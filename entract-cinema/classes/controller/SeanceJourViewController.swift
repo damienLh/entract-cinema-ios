@@ -29,7 +29,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         datePicker.minimumDate = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMin)!)
         datePicker.maximumDate = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMax)!)
         datePicker.addTarget(self, action: #selector(dateHasChange(_:)), for: UIControlEvents.valueChanged)
-        self.jour = datePicker.date.toString
+        self.jour = datePicker.date.toString.convertToDbData()
         self.seancesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         loadFilms()
@@ -40,7 +40,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "dd/MM/yyyy"
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
         let date = dateFormatter.date(from: self.jour)
         self.datePicker.date = date!
         
@@ -189,7 +189,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @objc func dateHasChange(_ sender: UIDatePicker) {
-        self.jour = sender.date.toString
+        self.jour = sender.date.toString.convertToDbData()
         loadFilms()
         self.seancesTableView.reloadData()
     }

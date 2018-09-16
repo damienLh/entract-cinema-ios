@@ -107,6 +107,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("APNs registration failed: \(error)")
     }
-
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        if let custom = userInfo["custom"] as? [String: Any] {
+            if let jour = custom["jour"] as? String {
+                print("custom jour : \(String(describing: jour))")
+                if let tabBarController = self.window?.rootViewController?.tabBarController {
+                    let seancesVC = tabBarController.viewControllers![0] as! SeanceJourViewController
+                    seancesVC.jour = jour
+                    tabBarController.selectedIndex = 0
+                }
+            }
+        }
+    }
 }
 

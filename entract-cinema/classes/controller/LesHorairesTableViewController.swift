@@ -101,7 +101,8 @@ class LesHorairesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> HorairesTableViewCell? {
         let  headerCell = tableView.dequeueReusableCell(withIdentifier: "horairesCell") as! HorairesTableViewCell
         let semaine = items[section]
-        headerCell.semaine.text = "Du \(semaine.debutsemaine) au \(semaine.finsemaine)"
+        
+        headerCell.semaine.text = "Du \(semaine.debutsemaine.convertFromDbDataString()) au \(semaine.finsemaine.convertFromDbDataString())"
         return headerCell
     }
     
@@ -134,6 +135,17 @@ class LesHorairesTableViewController: UITableViewController {
             }
         }
         cell.lesFilms.attributedText = content
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let yesterday = Date().yesterday
+        let jourCell = dateFormatter.date(from: joursLu.jour)
+        if jourCell! <= yesterday {
+            cell.backgroundColor = UIColor.init(red: 179, green: 179, blue: 179)
+        } else {
+            cell.backgroundColor = UIColor.clear
+        }
+        
         return cell
     }
     
@@ -142,11 +154,10 @@ class LesHorairesTableViewController: UITableViewController {
         let joursLu: Jours = semaine.jours[indexPath.row]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "dd/MM/yyyy"
-        let date = dateFormatter.date(from: joursLu.jour)
-        let today = Date()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let today = dateFormatter.string(from: Date())
         
-        if date! >= today {
+        if joursLu.jour >= today {
             let seancesVC = tabBarController?.viewControllers![0] as! SeanceJourViewController
             seancesVC.jour = joursLu.jour
             tabBarController?.selectedIndex = 0

@@ -26,13 +26,40 @@ extension String {
     
     func convertDateToLocaleDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "dd/MM/yyyy"
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
         let date = dateFormatter.date(from: self)
         
         let dateFormatter2 = DateFormatter()
         dateFormatter2.dateFormat =  "EEEE d MMMM"
         dateFormatter2.locale = Locale(identifier: "fr")
         return dateFormatter2.string(from: date!)
+    }
+    
+    func convertToDbData() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "dd/MM/yyyy"
+        let date = dateFormatter.date(from: self)
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat =  "yyyy-MM-dd"
+        return dateFormatter2.string(from: date!)
+    }
+    
+    func convertFromDbDataString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let date = dateFormatter.date(from: self)
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat =  "dd/MM"
+        dateFormatter2.locale = Locale(identifier: "fr")
+        return dateFormatter2.string(from: date!)
+    }
+    
+    func convertFromDbData() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        return dateFormatter.date(from: self)!
     }
     
     func localized() -> String {
