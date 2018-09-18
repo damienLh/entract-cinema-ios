@@ -40,7 +40,6 @@ class JSONUnparser {
                             film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                             film.affiche = (dicoFilm as AnyObject).object(forKey: "affiche") as! String
                             film.duree = (dicoFilm as AnyObject).object(forKey: "duree") as! String
-                            film.duree = Tools.shared.manageDuree(duree: film.duree)
                             film.annee = (dicoFilm as AnyObject).object(forKey: "annee") as! String
                             film.pays = (dicoFilm as AnyObject).object(forKey: "pays") as! String
                             film.style = (dicoFilm as AnyObject).object(forKey: "style") as! String
