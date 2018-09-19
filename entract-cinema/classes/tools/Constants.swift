@@ -29,4 +29,8 @@ struct Constants {
     static let cacheFilms = "cacheFilms"
     static let cacheParams = "cacheParams"
     static let cacheSemaines = "cacheSemaines"
+    
+    //notification
+    static let notification = "notification"
+
 }

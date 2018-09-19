@@ -80,6 +80,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if let root = self.window?.rootViewController, root.childViewControllers.count > 0 {
+            if root.childViewControllers[0] is SeanceJourViewController {
+                let seanceTab = root.childViewControllers[0] as! SeanceJourViewController
+                if let notification = UserDefaults.standard.string(forKey: Constants.notification), !notification.isEmpty {
+                    seanceTab.reloadFromNotification(jour: notification)
+                    if let tabBar = seanceTab.tabBarController {
+                        tabBar.selectedIndex = 0
+                    }
+                    //remise à zero
+                    UserDefaults.standard.set("", forKey: Constants.notification)
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -112,10 +125,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let custom = userInfo["custom"] as? [String: Any] {
             if let jour = custom["jour"] as? String {
                 print("custom jour : \(String(describing: jour))")
-                if let tabBarController = self.window?.rootViewController?.tabBarController {
-                    let seancesVC = tabBarController.viewControllers![0] as! SeanceJourViewController
-                    seancesVC.jour = jour
-                    tabBarController.selectedIndex = 0
+                if UserDefaults.standard.object(forKey: Constants.notification) == nil {
+                    UserDefaults.standard.set(jour, forKey: Constants.notification)
+                } else {
+                    UserDefaults.standard.set(jour, forKey: Constants.notification)
                 }
             }
         }

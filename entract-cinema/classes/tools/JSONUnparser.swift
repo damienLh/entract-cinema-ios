@@ -70,7 +70,6 @@ class JSONUnparser {
     
     static func getAfficheEvenements() -> String {
         var result = ""
-        var liens: [String] = []
         let server = Tools.shared.getTargetServer()
         var request = URLRequest(url: URL(string: "\(server)/php/rest/getLiensEvenement.php")!)
         request.httpMethod = "GET"
@@ -82,11 +81,8 @@ class JSONUnparser {
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
                     let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                    let app = json?.object(forKey: "liens") as! NSArray?
-                    for object in app! {
-                        if let lien = object as? String {
-                            liens.append(lien)
-                        }
+                    if let lien = json?.object(forKey: "lien") as! String? {
+                        result = lien
                     }
                     semaphore.signal()
                 }
@@ -95,11 +91,6 @@ class JSONUnparser {
         }
     
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-        if liens.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(liens.count)))
-            result = liens[randomIndex]
-        }
-        
         return result
     }
     

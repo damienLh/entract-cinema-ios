@@ -38,7 +38,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
         let date = dateFormatter.date(from: self.jour)
@@ -320,6 +319,18 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         return alreadyExists
+    }
+    
+    func reloadFromNotification(jour: String) {
+        self.jour = jour
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let date = dateFormatter.date(from: self.jour)
+        self.datePicker.date = date!
+        
+        loadFilms()
+        self.seancesTableView.reloadData()
     }
     
     @objc func tappedMovie(tapGestureRecognizer: SeanceTapGesture) {
