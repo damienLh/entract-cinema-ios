@@ -18,7 +18,7 @@ class LesHorairesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableViewHoraires.dataSource = self
         self.tableViewHoraires.delegate = self
-        self.tableViewHoraires.rowHeight = UITableViewAutomaticDimension
+        self.tableViewHoraires.rowHeight = UITableView.automaticDimension
         items = JSONUnparser.getProgramme()
         Statistiques.statProgramme()
     }
@@ -60,7 +60,7 @@ class LesHorairesTableViewController: UITableViewController {
     {
         let semaine = items[indexPath.section]
         let joursLu = semaine.jours[indexPath.row]
-        let titreFilm = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]
+        let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
         let content = NSMutableAttributedString()
         
         var size = CGFloat(0)
@@ -113,9 +113,9 @@ class LesHorairesTableViewController: UITableViewController {
         let joursLu = semaine.jours[indexPath.row]
         cell.dateSeance.text = joursLu.jour.convertDateToLocaleDate()
         
-        let troisD = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.red]
-        let vo = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.blue]
-        let titreFilm = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]
+        let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
+        let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
+        let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
         
         let content = NSMutableAttributedString()
         if joursLu.films.count == 0 {

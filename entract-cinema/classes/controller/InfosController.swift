@@ -12,6 +12,10 @@ class InfosController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var labelTelephone: UILabel!
+    
+    @IBOutlet weak var labelFacebook: UILabel!
+    
     let regionRadius: CLLocationDistance = 1000
     
     // set initial location in Honolulu
@@ -28,11 +32,37 @@ class InfosController : UIViewController, MKMapViewDelegate {
                               discipline: "movie".localized(),
                               coordinate: CLLocationCoordinate2D(latitude: 43.7700499, longitude: 1.2948405))
         mapView.addAnnotation(artwork)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicTelephone(sender:)))
+        labelTelephone.isUserInteractionEnabled = true
+        labelTelephone.addGestureRecognizer(tap)
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.onClicFacebook(sender:)))
+        labelFacebook.isUserInteractionEnabled = true
+        labelFacebook.addGestureRecognizer(tap2)
+    }
+    
+    @objc func onClicFacebook(sender:UITapGestureRecognizer) {
+        let url = URL(string: "https://www.facebook.com/GrenadeCinema")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @objc func onClicTelephone(sender:UITapGestureRecognizer) {
+        let url = URL(string: "tel://+33561746234")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius, regionRadius)
+        let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
+                                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -70,4 +100,9 @@ class InfosController : UIViewController, MKMapViewDelegate {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

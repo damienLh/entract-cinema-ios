@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -137,17 +137,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7xi-OZ-ULA">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVl-8m-weq" userLabel="datePicker">
                                 <rect key="frame" x="0.0" y="20" width="320" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="iJQ-Jd-J7p"/>
+                                    <constraint firstAttribute="height" constant="100" id="gOq-Fk-fMl"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="533731183.85916603">
-                                    <!--2017-11-30 10:39:43 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="fr_FR"/>
-                            </datePicker>
+                            </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZr-Gy-v0I">
                                 <rect key="frame" x="0.0" y="120" width="320" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,19 +247,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7xi-OZ-ULA" firstAttribute="top" secondItem="La0-yF-Ys0" secondAttribute="bottom" id="15w-dE-UCg"/>
+                            <constraint firstItem="lVl-8m-weq" firstAttribute="leading" secondItem="4Wv-yD-e4R" secondAttribute="leading" id="0xr-FC-BbF"/>
+                            <constraint firstItem="lVl-8m-weq" firstAttribute="top" secondItem="La0-yF-Ys0" secondAttribute="bottom" id="GZV-gB-Ufa"/>
                             <constraint firstItem="Z63-0i-4xA" firstAttribute="top" secondItem="EZr-Gy-v0I" secondAttribute="bottom" id="Pyn-Tr-jZk"/>
                             <constraint firstAttribute="trailing" secondItem="EZr-Gy-v0I" secondAttribute="trailing" id="U58-hB-oSv"/>
+                            <constraint firstAttribute="trailing" secondItem="lVl-8m-weq" secondAttribute="trailing" id="UIi-DB-ddL"/>
                             <constraint firstItem="EZr-Gy-v0I" firstAttribute="leading" secondItem="4Wv-yD-e4R" secondAttribute="leading" id="Ybi-bi-dz3"/>
-                            <constraint firstItem="EZr-Gy-v0I" firstAttribute="top" secondItem="7xi-OZ-ULA" secondAttribute="bottom" id="fTA-j4-JPa"/>
-                            <constraint firstAttribute="trailing" secondItem="7xi-OZ-ULA" secondAttribute="trailing" id="sGu-EY-9J1"/>
-                            <constraint firstItem="7xi-OZ-ULA" firstAttribute="leading" secondItem="4Wv-yD-e4R" secondAttribute="leading" id="u5h-3g-shl"/>
-                            <constraint firstItem="EZr-Gy-v0I" firstAttribute="top" secondItem="7xi-OZ-ULA" secondAttribute="bottom" id="w7v-tM-47z"/>
+                            <constraint firstItem="EZr-Gy-v0I" firstAttribute="top" secondItem="lVl-8m-weq" secondAttribute="bottom" id="w7v-tM-47z"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Séances du Jour" image="ticket" selectedImage="ticket" id="HIM-H0-VqL"/>
                     <connections>
-                        <outlet property="datePicker" destination="7xi-OZ-ULA" id="dbh-4a-DJ1"/>
+                        <outlet property="datePicker" destination="lVl-8m-weq" id="Ikm-cA-Dxc"/>
                         <outlet property="seancesTableView" destination="EZr-Gy-v0I" id="I8N-cB-D2c"/>
                         <segue destination="EVi-Uv-kfe" kind="modal" identifier="detailSegue" modalPresentationStyle="fullScreen" id="gYQ-sU-ZwR"/>
                     </connections>
@@ -548,6 +542,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Grenade Cinéma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-XL-lYV">
+                                <rect key="frame" x="16" y="446" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Téléphone: 05-61-74-62-34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr8-qv-p83">
+                                <rect key="frame" x="16" y="400" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -555,21 +561,29 @@
                             <constraint firstAttribute="trailingMargin" secondItem="iTw-El-JHa" secondAttribute="trailing" constant="84" id="3dH-OF-kzW"/>
                             <constraint firstItem="iTw-El-JHa" firstAttribute="top" secondItem="SIj-rm-3KB" secondAttribute="bottom" constant="8" id="6Ki-e9-Wvo"/>
                             <constraint firstItem="BIY-n3-eWs" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="BzC-ny-mF4"/>
+                            <constraint firstItem="Vr8-qv-p83" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="CG6-Fu-uMZ"/>
+                            <constraint firstItem="Vr8-qv-p83" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="HSV-d1-7DX"/>
                             <constraint firstItem="BIY-n3-eWs" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="QMP-GW-2BZ"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="gZf-Yf-tCv"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="kYs-xv-dsZ"/>
+                            <constraint firstItem="aBQ-XL-lYV" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="m3t-h3-YvT"/>
+                            <constraint firstItem="aBQ-XL-lYV" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="mu3-uP-aB2"/>
                             <constraint firstItem="iTw-El-JHa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="pPi-up-41U"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="top" secondItem="iTw-El-JHa" secondAttribute="bottom" constant="8" id="peP-XL-sj4"/>
+                            <constraint firstItem="Vr8-qv-p83" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="tuZ-lw-DLn"/>
+                            <constraint firstItem="aBQ-XL-lYV" firstAttribute="top" secondItem="Vr8-qv-p83" secondAttribute="bottom" constant="25" id="w77-hv-2Nc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Infos Pratiques" image="info" id="cFQ-Ca-xek"/>
                     <connections>
+                        <outlet property="labelFacebook" destination="aBQ-XL-lYV" id="Vmz-TL-DZX"/>
+                        <outlet property="labelTelephone" destination="Vr8-qv-p83" id="LqW-sK-MQu"/>
                         <outlet property="mapView" destination="zJR-7r-JD0" id="W61-tr-Vqc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5z-Dt-2Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-131.19999999999999" y="920.23988005997012"/>
+            <point key="canvasLocation" x="-132" y="920"/>
         </scene>
         <!--Parametres-->
         <scene sceneID="pba-bw-GOg">

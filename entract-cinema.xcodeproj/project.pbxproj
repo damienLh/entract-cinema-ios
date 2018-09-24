@@ -380,6 +380,7 @@
 				TargetAttributes = {
 					9D42B0A220C86FC5009BCA11 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -677,7 +678,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
 				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -699,7 +700,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
 				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -707,10 +708,10 @@
 		9D42B0D120C86FC6009BCA11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinemaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -728,10 +729,10 @@
 		9D42B0D220C86FC6009BCA11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinemaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -749,9 +750,9 @@
 		9D42B0D420C86FC6009BCA11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinemaUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -769,9 +770,9 @@
 		9D42B0D520C86FC6009BCA11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 445PLQ82MM;
+				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinemaUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

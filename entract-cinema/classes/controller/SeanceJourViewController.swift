@@ -9,9 +9,12 @@
 import UIKit
 import EventKit
 
-class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    @IBOutlet weak var datePicker: UIPickerView!
+    var pickerData: [String] = [String]()
+    var pickerTitle: [String] = [String]()
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var seancesTableView: UITableView!
     
@@ -21,16 +24,36 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(Tools.shared.offlineModeAlert(notification:)), name: .flagsChanged, object: self)
-
+        
+        
+        // Connect data:
+        self.datePicker.delegate = self
+        self.datePicker.dataSource = self
+        
+        
+        // Initialize Data
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
         
-        datePicker.minimumDate = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMin)!)
-        datePicker.maximumDate = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMax)!)
-        datePicker.addTarget(self, action: #selector(dateHasChange(_:)), for: UIControlEvents.valueChanged)
-        self.jour = datePicker.date.toString.convertToDbData()
-        self.seancesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        let completeDateFormatter = DateFormatter()
+        completeDateFormatter.dateFormat =  "EEEE dd LLLL"
+        completeDateFormatter.locale = Locale(identifier: "fr")
+
+        let dateMin = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMin)!)
+        let dateMax = dateFormatter.date(from: UserDefaults.standard.string(forKey: Constants.dateMax)!)
+        
+        if var minDate = dateMin, let maxDate = dateMax {
+            self.jour = dateFormatter.string(from: minDate)
+            while minDate.compare(maxDate) != .orderedDescending {
+                pickerData.append(dateFormatter.string(from: minDate))
+                pickerTitle.append(completeDateFormatter.string(from: minDate))
+                minDate = Calendar.current.date(byAdding: .day, value: 1, to: minDate)!
+            }
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Tools.shared.offlineModeAlert(notification:)), name: .flagsChanged, object: self)
+
+        self.seancesTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         loadFilms()
         self.seancesTableView.reloadData()
@@ -40,9 +63,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
-        let date = dateFormatter.date(from: self.jour)
-        self.datePicker.date = date!
-        
         loadFilms()
         self.seancesTableView.reloadData()
     }
@@ -53,6 +73,25 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let indexPath = IndexPath(row: 0, section: 0)
         self.seancesTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerTitle[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let dateSelectionnee = pickerData[row]
+        self.jour = dateSelectionnee
+        loadFilms()
+        self.seancesTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,9 +159,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             
             seanceCell.titreLabel.text = film.titre
             
-            let troisD = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.red]
-            let vo = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.blue]
-            let titreFilm = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]
+            let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
+            let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
+            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
             
             let content = NSMutableAttributedString()
             content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
@@ -149,13 +188,13 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             
             if !isAlertFilmInCalendar(detail: film) {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
-                seanceCell.btnCalendrier.setTitle("alerte_film_ko".localized(), for: UIControlState.normal)
-                seanceCell.btnCalendrier.setTitleColor(UIColor.red, for: UIControlState.normal)
+                seanceCell.btnCalendrier.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
+                seanceCell.btnCalendrier.setTitleColor(UIColor.red, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
             } else {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = false
-                seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControlState.normal)
-                seanceCell.btnCalendrier.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControlState.normal)
+                seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
+                seanceCell.btnCalendrier.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControl.State.normal)
             }
             
             cell = seanceCell
@@ -185,12 +224,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 let films = self.mapFilms[date]?.sorted(by: { $0.horaire < $1.horaire })
                 self.mapFilms[date] = films
             }
-    }
-    
-    @objc func dateHasChange(_ sender: UIDatePicker) {
-        self.jour = sender.date.toString.convertToDbData()
-        loadFilms()
-        self.seancesTableView.reloadData()
     }
     
     func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date,sender: UIButton, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
@@ -230,12 +263,12 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     }
                     completion?(true, nil)
                     
-                    let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.filmCalendrier, preferredStyle: UIAlertControllerStyle.alert)
+                    let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.filmCalendrier, preferredStyle: UIAlertController.Style.alert)
                     
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                         UIAlertAction in
-                        sender.setTitle("alerte_film_ok".localized(), for: UIControlState.normal)
-                        sender.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControlState.normal)
+                        sender.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
+                        sender.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControl.State.normal)
                     }
                     
                     alert.addAction(okAction)
@@ -244,9 +277,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             } else {
                 completion?(false, error as NSError?)
                 
-                let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.calendarNotGranted, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.calendarNotGranted, preferredStyle: UIAlertController.Style.alert)
                 
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                     UIAlertAction in
                 }
                 
@@ -258,10 +291,14 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @objc func imageTapped(tapGestureRecognizer: SeanceTapGesture)
     {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let myDate = dateFormatter.date(from: self.jour!)!
+        
         let calendar = Calendar.current
-        let yearToday = calendar.component(.year, from: self.datePicker.date)
-        let monthToday = calendar.component(.month, from: self.datePicker.date)
-        let dayToday = calendar.component(.day, from: self.datePicker.date)
+        let yearToday = calendar.component(.year, from: myDate)
+        let monthToday = calendar.component(.month, from: myDate)
+        let dayToday = calendar.component(.day, from: myDate)
         
         let heure = tapGestureRecognizer.detail.horaire
         let film = tapGestureRecognizer.detail.titre
@@ -285,11 +322,15 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func isAlertFilmInCalendar(detail: Film) -> Bool {
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let myDate = dateFormatter.date(from: self.jour!)!
+        
         let eventStore = EKEventStore()
         let calendar = Calendar.current
-        let yearToday = calendar.component(.year, from: self.datePicker.date)
-        let monthToday = calendar.component(.month, from: self.datePicker.date)
-        let dayToday = calendar.component(.day, from: self.datePicker.date)
+        let yearToday = calendar.component(.year, from: myDate)
+        let monthToday = calendar.component(.month, from: myDate)
+        let dayToday = calendar.component(.day, from: myDate)
         
         let heure = detail.horaire
         let film = detail.titre
@@ -324,10 +365,14 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     func reloadFromNotification(jour: String) {
         self.jour = jour
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "yyyy-MM-dd"
-        let date = dateFormatter.date(from: self.jour)
-        self.datePicker.date = date!
+        var row = 0
+        while row < pickerData.count {
+            if pickerData[row] == self.jour {
+                self.datePicker.selectRow(row, inComponent: 0, animated: true)
+                break;
+            }
+            row = row + 1
+        }
         
         loadFilms()
         self.seancesTableView.reloadData()

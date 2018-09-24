@@ -80,7 +80,7 @@ class TableViewDetailFilmController : UITableViewController {
             let viewHeight = CGFloat(500) + CGFloat(height)
     
             self.tableViewDetail.rowHeight = viewHeight
-            self.tableViewDetail.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+            self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
 
         return posterCell
     }
@@ -93,15 +93,15 @@ class TableViewDetailFilmController : UITableViewController {
         }
         
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
     }
     
     func getAttributedFirstLine(annee: String, duree: String)->NSMutableAttributedString {
-        let gras = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]
-        let normal = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor : UIColor.gray]
+        let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()
         content.append(NSMutableAttributedString(string:"annee".localized(), attributes:gras))
@@ -113,8 +113,8 @@ class TableViewDetailFilmController : UITableViewController {
 
     
     func getAttributedText(title: String, value: String)->NSMutableAttributedString {
-        let gras = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.black]
-        let normal = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor : UIColor.gray]
+        let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()
         content.append(NSMutableAttributedString(string:"\(title) ", attributes:gras))
@@ -123,12 +123,17 @@ class TableViewDetailFilmController : UITableViewController {
     }
     
     func getAttributedSynopsis(value: String) -> NSMutableAttributedString {
-        let red = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor : UIColor.red]
-        let normal = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor : UIColor.gray]
+        let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
+        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()
-        content.append(NSMutableAttributedString(string:"\("synosis".localized())\n", attributes:red))
+        content.append(NSMutableAttributedString(string:"\("synopsis".localized())\n", attributes:red))
         content.append(NSMutableAttributedString(string:"\(value) ", attributes:normal))
         return content
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
