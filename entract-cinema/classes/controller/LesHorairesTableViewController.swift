@@ -159,7 +159,7 @@ class LesHorairesTableViewController: UITableViewController {
         
         if joursLu.jour >= today {
             let seancesVC = tabBarController?.viewControllers![0] as! SeanceJourViewController
-            seancesVC.jour = joursLu.jour
+            seancesVC.reloadFromNotification(jour: joursLu.jour)
             tabBarController?.selectedIndex = 0
         }
     }

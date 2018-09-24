@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUD-0P-12q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228.80000000000001" y="-780.8095952023989"/>
+            <point key="canvasLocation" x="366.08000000000004" y="-702.37744695867968"/>
         </scene>
         <!--Séances du Jour-->
         <scene sceneID="t5a-tg-dpo">
@@ -265,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdE-bE-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="-367.91604197901052"/>
+            <point key="canvasLocation" x="1779.2" y="-330.95895830195849"/>
         </scene>
         <!--Les horaires-->
         <scene sceneID="bv2-3N-d42">
@@ -344,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfO-Xk-d80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963.2" y="233.88305847076464"/>
+            <point key="canvasLocation" x="3141.1199999999999" y="210.38955784476582"/>
         </scene>
         <!--Detail Film-->
         <scene sceneID="4pO-8A-VOq">
@@ -509,7 +507,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2w-VJ-T77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2763.1999999999998" y="139.43028485757122"/>
+            <point key="canvasLocation" x="4421.1199999999999" y="125.42454409976423"/>
         </scene>
         <!--Infos-->
         <scene sceneID="FUX-mc-WO8">
@@ -542,16 +540,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Grenade Cinéma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-XL-lYV">
-                                <rect key="frame" x="16" y="446" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-XL-lYV">
+                                <rect key="frame" x="16" y="444.5" width="288" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.02890600749" green="0.0" blue="0.9192116857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Téléphone: 05-61-74-62-34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr8-qv-p83">
-                                <rect key="frame" x="16" y="400" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tél: 05-61-74-62-34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr8-qv-p83">
+                                <rect key="frame" x="16" y="400" width="288" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.02890600749" green="0.0" blue="0.9192116857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -583,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5z-Dt-2Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="920"/>
+            <point key="canvasLocation" x="-211.19999999999999" y="827.58620689655174"/>
         </scene>
         <!--Parametres-->
         <scene sceneID="pba-bw-GOg">
@@ -695,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIQ-88-C9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489.60000000000002" y="920.23988005997012"/>
+            <point key="canvasLocation" x="783.36000000000001" y="827.80199105844395"/>
         </scene>
         <!--Affiche Evenement View Controller-->
         <scene sceneID="rdm-Y2-71w">
@@ -757,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wm-WK-hFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188.8" y="927.4362818590705"/>
+            <point key="canvasLocation" x="1902.0799999999999" y="834.27551591520592"/>
         </scene>
         <!--Programme-->
         <scene sceneID="WtF-o2-ayv">
@@ -776,7 +774,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6U-Ug-u7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="233.88305847076464"/>
+            <point key="canvasLocation" x="1779.2" y="210.38955784476582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3sY-zJ-K8b">
@@ -794,7 +792,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvS-KX-kAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="-358.02098950524743"/>
+            <point key="canvasLocation" x="3084.8000000000002" y="-322.05786162391075"/>
         </scene>
     </scenes>
     <resources>
