@@ -33,10 +33,13 @@
 		9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FD71B210E107500F98743 /* NetworkUtils.swift */; };
 		9D4FD71E210E1A1C00F98743 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */; };
 		9D68AB5C21484F9B00DF3CE7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */; };
+		9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */; };
+		9D698AB02160FF42007FF128 /* AutresDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D698AAF2160FF42007FF128 /* AutresDates.swift */; };
 		9D7B406D20EAA86100E75CAB /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */; };
 		9D7B406F20EABE4900E75CAB /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */; };
 		9D9686E420CF040F006E1E8C /* seance_20180702.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E220CF040F006E1E8C /* seance_20180702.json */; };
 		9D9686E520CF040F006E1E8C /* seance_20180626.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E320CF040F006E1E8C /* seance_20180626.json */; };
+		9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */; };
 		9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE39B92145AA1C00254E65 /* Statistiques.swift */; };
 		9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D120E4D7EA00E143C1 /* Reachibility.swift */; };
 		9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D320E4E3AF00E143C1 /* Cache.swift */; };
@@ -108,10 +111,13 @@
 		9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9D68AB5A2148419100DF3CE7 /* entract-cinema.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entract-cinema.entitlements"; sourceTree = "<group>"; };
 		9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutresDatesCell.swift; sourceTree = "<group>"; };
+		9D698AAF2160FF42007FF128 /* AutresDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutresDates.swift; sourceTree = "<group>"; };
 		9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		9D9686E220CF040F006E1E8C /* seance_20180702.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180702.json; sourceTree = "<group>"; };
 		9D9686E320CF040F006E1E8C /* seance_20180626.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180626.json; sourceTree = "<group>"; };
+		9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutreDateTapGesture.swift; sourceTree = "<group>"; };
 		9DBE39B92145AA1C00254E65 /* Statistiques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistiques.swift; sourceTree = "<group>"; };
 		9DC519D120E4D7EA00E143C1 /* Reachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
 		9DC519D320E4E3AF00E143C1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 				9D42B0E120C8706C009BCA11 /* HorairesDateViewCell.swift */,
 				9D16A56D21395E9500696EF1 /* HeaderTitreCell.swift */,
 				9D16A56F21395EAC00696EF1 /* PosterCell.swift */,
+				9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 				9D21A1BD20CC74CC00FCD2DF /* Jours.swift */,
 				9D42B0E920C8706C009BCA11 /* SeanceTapGesture.swift */,
 				9D44659D20CB2B4100BD6445 /* Semaine.swift */,
+				9D698AAF2160FF42007FF128 /* AutresDates.swift */,
+				9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -471,11 +480,13 @@
 				9D42B0FC20C8706C009BCA11 /* Artwork.swift in Sources */,
 				9D42B10020C8706C009BCA11 /* LesHorairesTableViewController.swift in Sources */,
 				9D42B10320C8706C009BCA11 /* SeanceJourViewController.swift in Sources */,
+				9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */,
 				C74BBEB421415B360064B471 /* CacheParametres.swift in Sources */,
 				9D42B0F920C8706C009BCA11 /* HorairesDateViewCell.swift in Sources */,
 				9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */,
 				9D42B0F720C8706C009BCA11 /* NoSeanceTableViewCell.swift in Sources */,
 				9D42B0FE20C8706C009BCA11 /* Date+extensions.swift in Sources */,
+				9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */,
 				9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */,
 				9D42B0FF20C8706C009BCA11 /* SeanceTapGesture.swift in Sources */,
 				9D7B406D20EAA86100E75CAB /* TutorialViewController.swift in Sources */,
@@ -490,6 +501,7 @@
 				C7145AFA20E398A600A6FCE4 /* String+Extensions.swift in Sources */,
 				9D44659E20CB2B4100BD6445 /* Semaine.swift in Sources */,
 				9D44659C20CB285A00BD6445 /* Film.swift in Sources */,
+				9D698AB02160FF42007FF128 /* AutresDates.swift in Sources */,
 				9D42B0A720C86FC5009BCA11 /* AppDelegate.swift in Sources */,
 				9D42B0FA20C8706C009BCA11 /* Constants.swift in Sources */,
 				9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */,

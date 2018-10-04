@@ -19,6 +19,7 @@
 "annee" = "Année ";
 "duree" = " Durée ";
 "synopsis" = "SYNOPSIS";
+"derniereSeance" = "Dernière séance pour ce film";
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";

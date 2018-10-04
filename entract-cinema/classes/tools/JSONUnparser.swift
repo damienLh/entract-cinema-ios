@@ -47,6 +47,20 @@ class JSONUnparser {
                             film.avec = (dicoFilm as AnyObject).object(forKey: "avec") as! String
                             film.synopsis = (dicoFilm as AnyObject).object(forKey: "synopsis") as! String
                             film.bandeAnnonce = (dicoFilm as AnyObject).object(forKey: "bande_annonce") as! String
+                            
+                            let autres_dates = (dicoFilm as AnyObject).object(forKey: "autres_dates") as! NSArray
+                            var autresJours: [AutresDates] = []
+                            let _: NSDictionary
+                            for autre_jour in autres_dates {
+                                let jour = AutresDates()
+                                jour.jour = (autre_jour as AnyObject).object(forKey: "jour") as! String
+                                jour.horaire = (autre_jour as AnyObject).object(forKey: "horaire") as! String
+                                jour.troisD = (autre_jour as AnyObject).object(forKey: "3d") as! Bool
+                                jour.vo = (autre_jour as AnyObject).object(forKey: "vo") as! Bool
+                                autresJours.append(jour)
+                            }
+                            
+                            film.autresDates = autresJours
                             listeFilms.append(film)
                         }
                         result = listeFilms

@@ -12,9 +12,11 @@ class InfosController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var labelTelephone: UILabel!
+    @IBOutlet weak var btnPhone: UIImageView!
     
-    @IBOutlet weak var labelFacebook: UILabel!
+    @IBOutlet weak var btnWebsite: UIImageView!
+    
+    @IBOutlet weak var btnFacebook: UIImageView!
     
     let regionRadius: CLLocationDistance = 1000
     
@@ -34,16 +36,34 @@ class InfosController : UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(artwork)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicTelephone(sender:)))
-        labelTelephone.isUserInteractionEnabled = true
-        labelTelephone.addGestureRecognizer(tap)
+        btnPhone.isUserInteractionEnabled = true
+        btnPhone.addGestureRecognizer(tap)
         
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.onClicFacebook(sender:)))
-        labelFacebook.isUserInteractionEnabled = true
-        labelFacebook.addGestureRecognizer(tap2)
+        btnFacebook.isUserInteractionEnabled = true
+        btnFacebook.addGestureRecognizer(tap2)
+        
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.onClicWebsite(sender:)))
+        btnWebsite.isUserInteractionEnabled = true
+        btnWebsite.addGestureRecognizer(tap3)
     }
     
     @objc func onClicFacebook(sender:UITapGestureRecognizer) {
-        let url = URL(string: "https://www.facebook.com/GrenadeCinema")!
+        
+        var url = URL(string:"fb://profile/410990495629466")!
+        if !UIApplication.shared.canOpenURL(url)  {
+            url = URL(string: "https://www.facebook.com/GrenadeCinema")!
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @objc func onClicWebsite(sender:UITapGestureRecognizer) {
+        let url = URL(string: "http://www.grenadecinema.fr")!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {

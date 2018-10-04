@@ -16,6 +16,7 @@ class Film: NSObject, NSCoding {
     var horaire: String
     var troisD: Bool
     var vo: Bool
+    var moinsDouze: Bool
     var affiche: String
     var duree: String
     var annee: String
@@ -25,6 +26,7 @@ class Film: NSObject, NSCoding {
     var avec: String
     var synopsis: String
     var bandeAnnonce: String
+    var autresDates : [AutresDates]
     
     override init() {
         
@@ -34,6 +36,7 @@ class Film: NSObject, NSCoding {
         self.horaire = ""
         self.troisD = false
         self.vo = false
+        self.moinsDouze = false
         self.affiche = ""
         self.duree = ""
         self.annee = ""
@@ -43,6 +46,7 @@ class Film: NSObject, NSCoding {
         self.avec = ""
         self.synopsis = ""
         self.bandeAnnonce = ""
+        self.autresDates = [AutresDates]()
     }
     
     func encode(with aCoder: NSCoder) {
@@ -52,6 +56,7 @@ class Film: NSObject, NSCoding {
         aCoder.encode(horaire, forKey: "horaire")
         aCoder.encode(troisD, forKey: "troisD")
         aCoder.encode(vo, forKey: "vo")
+        aCoder.encode(moinsDouze, forKey: "moinsDouze")
         aCoder.encode(affiche, forKey: "affiche")
         aCoder.encode(duree, forKey: "duree")
         aCoder.encode(annee, forKey: "annee")
@@ -61,6 +66,7 @@ class Film: NSObject, NSCoding {
         aCoder.encode(avec, forKey: "avec")
         aCoder.encode(synopsis, forKey: "synopsis")
         aCoder.encode(bandeAnnonce, forKey: "bandeAnnonce")
+        aCoder.encode(autresDates, forKey: "autresDates")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,6 +76,7 @@ class Film: NSObject, NSCoding {
         horaire = aDecoder.decodeObject(forKey: "horaire") as! String
         troisD = aDecoder.decodeBool(forKey: "troisD")
         vo = aDecoder.decodeBool(forKey: "vo")
+        moinsDouze = aDecoder.decodeBool(forKey: "moinsDouze")
         affiche = aDecoder.decodeObject(forKey: "affiche") as! String
         duree = aDecoder.decodeObject(forKey: "duree") as! String
         annee = aDecoder.decodeObject(forKey: "annee") as! String
@@ -79,5 +86,6 @@ class Film: NSObject, NSCoding {
         avec = aDecoder.decodeObject(forKey: "avec") as! String
         synopsis = aDecoder.decodeObject(forKey: "synopsis") as! String
         bandeAnnonce = aDecoder.decodeObject(forKey: "bandeAnnonce") as! String
+        autresDates = aDecoder.decodeObject(forKey: "autresDates") as! [AutresDates]
     }
 }

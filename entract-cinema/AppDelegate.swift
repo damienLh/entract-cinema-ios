@@ -27,8 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if UserDefaults.standard.object(forKey: Constants.visualiserTuto) == nil {
-            UserDefaults.standard.set(true, forKey: Constants.visualiserTuto)
+            UserDefaults.standard.set(false, forKey: Constants.visualiserTuto)
         }
+        UserDefaults.standard.set(false, forKey: Constants.visualiserTuto)
         
         if UserDefaults.standard.object(forKey: Constants.bandeAnnonceUniquementWIFI) == nil {
             UserDefaults.standard.set(true, forKey: Constants.bandeAnnonceUniquementWIFI)

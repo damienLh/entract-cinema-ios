@@ -54,7 +54,7 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.switchDemo.isOn = UserDefaults.standard.bool(forKey: Constants.visualiserTuto)
+        //self.switchDemo.isOn = UserDefaults.standard.bool(forKey: Constants.visualiserTuto)
         self.switchEvenement.isOn = UserDefaults.standard.bool(forKey: Constants.autoriserAnnonce)
         self.switchBandeAnnonce.isOn = UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI)
     }
