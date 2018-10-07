@@ -8,7 +8,11 @@
 
 import UIKit
 
+//#942102
+var entractColor = UIColor(red: 148, green: 33, blue: 2)
+
 extension UIColor {
+
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")

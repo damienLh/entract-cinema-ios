@@ -18,7 +18,6 @@ class LesHorairesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableViewHoraires.dataSource = self
         self.tableViewHoraires.delegate = self
-        self.tableViewHoraires.rowHeight = UITableView.automaticDimension
         items = JSONUnparser.getProgramme()
         Statistiques.statProgramme()
     }
@@ -65,23 +64,33 @@ class LesHorairesTableViewController: UITableViewController {
         
         var size = CGFloat(0)
         if joursLu.films.count != 0 {
+            
+           var firstFilm = true
            for film in joursLu.films {
-                content.append(NSMutableAttributedString(string:"\(film.horaire)\n", attributes:titreFilm))
+                if !firstFilm {
+                    content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
+                }
+                firstFilm = false
+                content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
                 content.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
-                content.append(NSMutableAttributedString(string:"\n", attributes:titreFilm))
+                if film.troisD {
+                    content.append(NSMutableAttributedString(string:"3D".localized(), attributes:titreFilm))
+                }
+                if film.vo {
+                    content.append(NSMutableAttributedString(string:"vo".localized(), attributes:titreFilm))
+                }
             }
             
-            if (joursLu.films.count > 1) {
-                size = CGFloat(35.0)
-                let test = content.mutableString.length
-                let nbLines = CGFloat(round(Double(test / 35))) + CGFloat(joursLu.films.count)
-                size = size + CGFloat(nbLines * 30.0)
-            } else {
-                size = CGFloat(40.0)
-                let test = content.mutableString.length
-                let nbLines = CGFloat(round(Double(test / 35))) + 1.0
-                size = size + CGFloat(nbLines * 25.0)
+            size = CGFloat(25.0)
+            let test = content.mutableString.length
+            let nbLines = CGFloat(round(Double(test / 30))) + CGFloat(joursLu.films.count)
+            
+            var remove = CGFloat(10.0)
+            if joursLu.films.count > 1 {
+                remove = CGFloat(joursLu.films.count) * CGFloat(10.0)
             }
+ 
+            size = size + CGFloat(nbLines * 35.0) - remove
         }
         
         return size;
@@ -102,7 +111,7 @@ class LesHorairesTableViewController: UITableViewController {
         let  headerCell = tableView.dequeueReusableCell(withIdentifier: "horairesCell") as! HorairesTableViewCell
         let semaine = items[section]
         
-        headerCell.semaine.text = "Du \(semaine.debutsemaine.convertFromDbDataString()) au \(semaine.finsemaine.convertFromDbDataString())"
+        headerCell.semaine.text = "Du \(semaine.debutsemaine.convertDateToDayMonth()) au \(semaine.finsemaine.convertDateToDayMonth())"
         return headerCell
     }
     
@@ -121,7 +130,13 @@ class LesHorairesTableViewController: UITableViewController {
         if joursLu.films.count == 0 {
             content.append(NSMutableAttributedString(string: "pas_de_film".localized(), attributes:titreFilm))
         } else {
+            
+            var firstFilm = true
             for film in joursLu.films {
+                if !firstFilm {
+                    content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
+                }
+                firstFilm = false
                 content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
                 content.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
                 
@@ -131,7 +146,10 @@ class LesHorairesTableViewController: UITableViewController {
                 if film.vo {
                     content.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
                 }
-                content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
+                
+                if film.moinsDouze {
+                    content.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:titreFilm))
+                }
             }
         }
         cell.lesFilms.attributedText = content

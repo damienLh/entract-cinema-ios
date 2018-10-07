@@ -157,15 +157,24 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 seanceCell.afficheImageView.image = UIImage(named: "seance_non_dispo")
             }
             
-            seanceCell.titreLabel.text = film.titre
+            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+            
+            let titreContent = NSMutableAttributedString()
+            titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
+            
+            if film.moinsDouze {
+                titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
+            }
+            
+            seanceCell.titreLabel.attributedText = titreContent
             
             let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
             let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
-            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
             
             let content = NSMutableAttributedString()
-            content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
-            content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:titreFilm))
+            content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:infoFilm))
+            content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:infoFilm))
                     
             if film.troisD {
                 content.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))

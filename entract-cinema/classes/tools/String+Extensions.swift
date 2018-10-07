@@ -24,6 +24,17 @@ extension String {
         return text!
     }
     
+    func convertDateToDayMonth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let date = dateFormatter.date(from: self)
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat =  "d MMMM"
+        dateFormatter2.locale = Locale(identifier: "fr")
+        return dateFormatter2.string(from: date!)
+    }
+    
     func convertDateToLocaleDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"

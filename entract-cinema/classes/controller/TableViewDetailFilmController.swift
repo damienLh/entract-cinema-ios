@@ -52,9 +52,22 @@ class TableViewDetailFilmController : UITableViewController {
         let headerTitre = tableView.dequeueReusableCell(withIdentifier: "headerTitreCell") as! HeaderTitreCell
         
         if section == 0 {
-           headerTitre.lblTitre.text = film.titre
+            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+            
+            let titreContent = NSMutableAttributedString()
+            titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
+            
+            if film.moinsDouze {
+                titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
+            }
+
+           headerTitre.lblTitre.attributedText = titreContent
         } else {
-            headerTitre.lblTitre.text = "Autres séances"
+            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+            let titreContent = NSMutableAttributedString()
+            titreContent.append(NSMutableAttributedString(string:"autresSeances".localized(), attributes:titreFilm))
+            headerTitre.lblTitre.attributedText = titreContent
         }
         return headerTitre
     }
@@ -170,7 +183,7 @@ class TableViewDetailFilmController : UITableViewController {
     }
     
     func getAttributedSynopsis(value: String) -> NSMutableAttributedString {
-        let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
+        let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
         let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
         
         let content = NSMutableAttributedString()

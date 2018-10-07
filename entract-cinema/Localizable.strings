@@ -10,6 +10,7 @@
 "3D" = "3D";
 "vo" = "VOST";
 "pas_de_film" = "Pas de séance ce jour";
+"moinsDouze" = " (-12 ans)";
 
 //detail
 "pays" = "Pays";
@@ -20,6 +21,7 @@
 "duree" = " Durée ";
 "synopsis" = "SYNOPSIS";
 "derniereSeance" = "Dernière séance pour ce film";
+"autresSeances" = "Autres séances";
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";
