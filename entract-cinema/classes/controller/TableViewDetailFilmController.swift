@@ -94,7 +94,7 @@ class TableViewDetailFilmController : UITableViewController {
             posterCell.lblSynopsis.sizeToFit()
             posterCell.btnBandeAnnonce.isHidden = true
             
-            if NetworkUtils.isWifiEnabled() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
+            if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
                 if let url = URL(string: film.affiche) {
                     posterCell.affiche.contentMode = .scaleAspectFit
                     Tools.shared.downloadImage(url: url, imageView: posterCell.affiche, activity: posterCell.activity)

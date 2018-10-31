@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="oew-mU-B9j">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,11 +8,27 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-B.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+        <array key="Ubuntu-M.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-R.ttf">
+            <string>Ubuntu</string>
+        </array>
+        <array key="Ubuntu-RI.ttf">
+            <string>Ubuntu-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="i2X-X1-WAM"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -27,7 +43,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="997.5" y="0.0"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="bK7-UD-Evn">
@@ -41,87 +57,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-hS-WjU">
-                                <rect key="frame" x="16" y="514" width="288" height="34"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <state key="normal" title="OK j'ai compris">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto1" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-A4-B2Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-hS-WjU">
+                                <rect key="frame" x="116.5" y="526" width="87" height="34"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="18"/>
+                                <state key="normal" title="C'est parti">
+                                    <color key="titleColor" red="0.02890600749" green="0.0" blue="0.9192116857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="fermer:" destination="xHW-Yf-csa" eventType="touchUpInside" id="G2E-5R-cv5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sélectionner le jour à visualiser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ9-mG-m1y">
-                                <rect key="frame" x="34" y="98" width="252" height="21.5"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleche" translatesAutoresizingMaskIntoConstraints="NO" id="ZEq-jG-Op8">
-                                <rect key="frame" x="136.5" y="58" width="47" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="5N0-Ar-hHF"/>
-                                    <constraint firstAttribute="height" constant="32" id="maB-H4-BeI"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleche-bas" translatesAutoresizingMaskIntoConstraints="NO" id="vsS-xP-gQ9">
-                                <rect key="frame" x="51" y="330" width="47" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="LmX-UC-Rm8"/>
-                                    <constraint firstAttribute="height" constant="32" id="tfJ-Vz-GQt"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heure du film - durée - 3D - VO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-ir-nWi">
-                                <rect key="frame" x="29" y="300.5" width="262" height="21.5"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créer une alerte dans votre calendrier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="07o-fD-F7X">
-                                <rect key="frame" x="34" y="451" width="252" height="21.5"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleche" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-Ki-gXS">
-                                <rect key="frame" x="137" y="411" width="47" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="pqS-jw-bbU"/>
-                                    <constraint firstAttribute="width" constant="47" id="yBN-Cy-w7c"/>
-                                </constraints>
-                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-dL-v3u">
+                                <rect key="frame" x="100.5" y="523" width="119" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="5ee-ir-nWi" secondAttribute="trailing" constant="13" id="7w6-mW-36u"/>
-                            <constraint firstItem="5ee-ir-nWi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r0P-dH-js8" secondAttribute="leadingMargin" id="8bu-jH-cPZ"/>
-                            <constraint firstItem="5ee-ir-nWi" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="D7t-2n-09u"/>
-                            <constraint firstItem="b7d-td-aNN" firstAttribute="top" secondItem="8gN-hS-WjU" secondAttribute="bottom" constant="20" id="GFv-i1-uYS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="07o-fD-F7X" secondAttribute="trailing" constant="18" id="HI3-uc-kmu"/>
-                            <constraint firstAttribute="bottom" secondItem="8gN-hS-WjU" secondAttribute="bottom" constant="20" symbolic="YES" id="JXs-5u-6Xe"/>
-                            <constraint firstItem="7Uc-Ki-gXS" firstAttribute="top" secondItem="5ee-ir-nWi" secondAttribute="bottom" constant="89" id="JyA-dV-DDA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Uc-Ki-gXS" secondAttribute="trailing" constant="120" id="L1K-hw-ZgI"/>
-                            <constraint firstItem="8gN-hS-WjU" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="L1f-3b-WZM"/>
-                            <constraint firstItem="ZEq-jG-Op8" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="MLc-gh-Piu"/>
-                            <constraint firstItem="07o-fD-F7X" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="SDn-T4-Z3b"/>
-                            <constraint firstItem="vsS-xP-gQ9" firstAttribute="top" secondItem="5ee-ir-nWi" secondAttribute="bottom" constant="8" id="dO3-4E-DzJ"/>
-                            <constraint firstItem="5ee-ir-nWi" firstAttribute="top" secondItem="xQ9-mG-m1y" secondAttribute="bottom" constant="181" id="dPi-Qo-mbU"/>
-                            <constraint firstItem="xQ9-mG-m1y" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="g0V-8R-vpO"/>
-                            <constraint firstItem="07o-fD-F7X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r0P-dH-js8" secondAttribute="leadingMargin" id="ghk-lg-T2M"/>
-                            <constraint firstItem="8gN-hS-WjU" firstAttribute="trailing" secondItem="r0P-dH-js8" secondAttribute="trailingMargin" id="jas-Dq-Swd"/>
-                            <constraint firstItem="xQ9-mG-m1y" firstAttribute="trailing" secondItem="r0P-dH-js8" secondAttribute="trailingMargin" constant="-18" id="jtT-47-iTQ"/>
-                            <constraint firstItem="xQ9-mG-m1y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r0P-dH-js8" secondAttribute="leadingMargin" id="lrc-j8-LEa"/>
-                            <constraint firstItem="xQ9-mG-m1y" firstAttribute="trailing" secondItem="r0P-dH-js8" secondAttribute="trailingMargin" constant="-18" id="oIF-2K-UAe"/>
-                            <constraint firstItem="vsS-xP-gQ9" firstAttribute="leading" secondItem="r0P-dH-js8" secondAttribute="leadingMargin" constant="35" id="raS-PP-Lvh"/>
-                            <constraint firstItem="07o-fD-F7X" firstAttribute="top" secondItem="7Uc-Ki-gXS" secondAttribute="bottom" constant="8" id="s5Z-YV-zK6"/>
-                            <constraint firstItem="xQ9-mG-m1y" firstAttribute="top" secondItem="ZEq-jG-Op8" secondAttribute="bottom" constant="8" id="wff-4I-gZm"/>
-                            <constraint firstItem="ZEq-jG-Op8" firstAttribute="top" secondItem="S8B-gr-uzm" secondAttribute="bottom" constant="38" id="zLA-nl-qjw"/>
+                            <constraint firstItem="8gN-hS-WjU" firstAttribute="top" secondItem="KEi-dL-v3u" secondAttribute="bottom" constant="-34" id="6gN-12-eBw"/>
+                            <constraint firstItem="8gN-hS-WjU" firstAttribute="top" secondItem="XPk-A4-B2Y" secondAttribute="bottom" constant="8" id="7Jh-5h-1mc"/>
+                            <constraint firstItem="XPk-A4-B2Y" firstAttribute="top" secondItem="r0P-dH-js8" secondAttribute="top" id="IYs-pJ-nj4"/>
+                            <constraint firstAttribute="trailing" secondItem="XPk-A4-B2Y" secondAttribute="trailing" id="JxJ-bI-Rxw"/>
+                            <constraint firstItem="b7d-td-aNN" firstAttribute="top" secondItem="8gN-hS-WjU" secondAttribute="bottom" constant="8" id="Rto-7E-Ywa"/>
+                            <constraint firstItem="8gN-hS-WjU" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="aWU-TY-6II"/>
+                            <constraint firstItem="XPk-A4-B2Y" firstAttribute="leading" secondItem="r0P-dH-js8" secondAttribute="leading" id="iDS-zQ-EtD"/>
+                            <constraint firstItem="b7d-td-aNN" firstAttribute="top" secondItem="XPk-A4-B2Y" secondAttribute="bottom" constant="50" id="lIG-5H-5iJ"/>
+                            <constraint firstItem="KEi-dL-v3u" firstAttribute="centerX" secondItem="r0P-dH-js8" secondAttribute="centerX" id="qva-6h-dAC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnOK" destination="8gN-hS-WjU" id="WO3-ws-qM6"/>
+                        <outlet property="pageControl" destination="KEi-dL-v3u" id="XmP-xc-9I8"/>
+                        <outlet property="picture" destination="XPk-A4-B2Y" id="deZ-qB-rcC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUD-0P-12q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906" y="1180"/>
+            <point key="canvasLocation" x="2904.375" y="1179.9295774647887"/>
         </scene>
         <!--Séances du Jour-->
         <scene sceneID="t5a-tg-dpo">
@@ -153,8 +129,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pas de film" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glm-9F-QBQ">
-                                                    <rect key="frame" x="118.5" y="0.0" width="83.5" height="49.5"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                    <rect key="frame" x="118" y="0.0" width="84.5" height="49.5"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -178,30 +154,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jalouse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-xi-7Ra">
-                                                    <rect key="frame" x="15" y="11" width="290" height="21.5"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                    <rect key="frame" x="15" y="11" width="290" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seance_non_dispo" translatesAutoresizingMaskIntoConstraints="NO" id="stl-fH-Y56">
-                                                    <rect key="frame" x="92" y="40.5" width="136" height="185"/>
+                                                    <rect key="frame" x="92" y="38.5" width="136" height="185"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="185" id="Eua-Yv-HNo"/>
                                                         <constraint firstAttribute="width" constant="136" id="Nuf-58-Jbz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hly-ab-gp3">
-                                                    <rect key="frame" x="150" y="122.5" width="20" height="20"/>
+                                                    <rect key="frame" x="150" y="120.5" width="20" height="20"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21h00 1h45 3D VO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-At-8sl">
-                                                    <rect key="frame" x="88" y="233.5" width="144" height="21.5"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                    <rect key="frame" x="88" y="231.5" width="144" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1Y-mu-8gQ">
-                                                    <rect key="frame" x="62" y="269" width="196" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                    <rect key="frame" x="62.5" y="265" width="195" height="32"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <state key="normal" title="Ajouter au calendrier" image="calendar">
                                                         <color key="titleColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -263,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdE-bE-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="-622"/>
+            <point key="canvasLocation" x="2775" y="-622.18309859154931"/>
         </scene>
         <!--Les horaires-->
         <scene sceneID="bv2-3N-d42">
@@ -282,13 +258,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semaine du 25/11 au 01/12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf0-sE-ZhB">
-                                            <rect key="frame" x="54" y="9.5" width="212.5" height="21"/>
-                                            <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                            <rect key="frame" x="51.5" y="10" width="217" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="rf0-sE-ZhB" firstAttribute="centerX" secondItem="9lB-QA-NOg" secondAttribute="centerX" id="3XK-Xc-scF"/>
                                         <constraint firstItem="rf0-sE-ZhB" firstAttribute="centerY" secondItem="9lB-QA-NOg" secondAttribute="centerY" id="XGj-We-K5H"/>
@@ -310,13 +286,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="lv7-J4-kfX"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu-Italic" family="Ubuntu" pointSize="17"/>
                                             <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="film du jour" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBe-G7-iFB">
                                             <rect key="frame" x="10" y="28" width="300" height="135"/>
-                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -345,9 +321,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfO-Xk-d80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981" y="210"/>
+            <point key="canvasLocation" x="3976.875" y="209.1549295774648"/>
         </scene>
-        <!--Détail Film-->
+        <!--Détail du film-->
         <scene sceneID="4pO-8A-VOq">
             <objects>
                 <tableViewController id="Ogg-U8-O4N" customClass="TableViewDetailFilmController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
@@ -365,8 +341,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre Du film" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-st-0X5">
-                                            <rect key="frame" x="5" y="5" width="310" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="5" y="5" width="310" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -395,8 +371,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Année - Durée" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAG-vQ-SEJ" userLabel="annee - durée">
-                                            <rect key="frame" x="10" y="278" width="300" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="10" y="278" width="300" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -404,50 +380,51 @@
                                             <rect key="frame" x="150" y="144" width="20" height="20"/>
                                         </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pays" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o00-LO-77b" userLabel="pays">
-                                            <rect key="frame" x="10" y="308.5" width="300" height="20.5"/>
+                                            <rect key="frame" x="10" y="307.5" width="300" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wdm-Xo-Jqq"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Genre Act" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM7-3r-tev" userLabel="genre">
-                                            <rect key="frame" x="10" y="339" width="300" height="20.5"/>
+                                            <rect key="frame" x="10" y="335.5" width="300" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="jsE-Os-ff4"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De ssdsdsdsdssdsdsdsdssssddsDe ssdsdsdsdssdsdsdsdssssdds" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOD-u5-EQK">
-                                            <rect key="frame" x="10" y="369.5" width="300" height="40"/>
+                                            <rect key="frame" x="10" y="363.5" width="300" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="Rhf-gS-gpR"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avec ssdsdsdsdssdsdsdsdssssddsAvec ssdsdsdsdssdsdsdsdssssdds" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G50-Jx-h2X" userLabel="avec">
-                                            <rect key="frame" x="10" y="419.5" width="300" height="40"/>
+                                            <rect key="frame" x="10" y="409.5" width="300" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="i8s-Lh-jJf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZj-qw-9Ie" userLabel="synopsis">
-                                            <rect key="frame" x="10" y="469.5" width="300" height="243.5"/>
+                                            <rect key="frame" x="10" y="455.5" width="300" height="215.5"/>
                                             <string key="text">plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte </string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-0r-E2k" userLabel="bandeAnnonce">
-                                            <rect key="frame" x="81" y="723" width="158" height="32"/>
+                                            <rect key="frame" x="84.5" y="681" width="151" height="32"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <state key="normal" title="Bande annonce" image="play">
                                                 <color key="titleColor" red="0.02890600749" green="0.0" blue="0.9192116857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </state>
@@ -497,12 +474,12 @@
                                 <rect key="frame" x="0.0" y="875.5" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dvn-bj-35P" id="D6y-Fn-RbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autres séances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-2C-QGY">
                                             <rect key="frame" x="8" y="8" width="304" height="33.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -524,7 +501,7 @@
                             <outlet property="delegate" destination="Ogg-U8-O4N" id="Zof-Ba-Rn4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Détail Film" id="gIk-o9-cc0">
+                    <navigationItem key="navigationItem" title="Détail du film" id="gIk-o9-cc0">
                         <barButtonItem key="rightBarButtonItem" title="Retour" id="d2B-LO-zF4">
                             <connections>
                                 <action selector="close:" destination="Ogg-U8-O4N" id="a9c-3H-Q4a"/>
@@ -537,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2w-VJ-T77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308.75" y="-622.18309859154931"/>
+            <point key="canvasLocation" x="5306.25" y="-622.18309859154931"/>
         </scene>
         <!--Infos-->
         <scene sceneID="FUX-mc-WO8">
@@ -552,40 +529,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infos pratiques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-El-JHa">
-                                <rect key="frame" x="100" y="28" width="120" height="22"/>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                <rect key="frame" x="97" y="28" width="123" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zJR-7r-JD0">
-                                <rect key="frame" x="16" y="58" width="288" height="268"/>
+                                <rect key="frame" x="16" y="55.5" width="288" height="268"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="268" id="BGz-79-SXH"/>
                                     <constraint firstAttribute="width" constant="288" id="g36-Ta-9l5"/>
                                 </constraints>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cinéma L'entract - Avenue Lazare Carnot - 31330 Grenade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-n3-eWs">
-                                <rect key="frame" x="16" y="334" width="288" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="331.5" width="288" height="38.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="web" translatesAutoresizingMaskIntoConstraints="NO" id="VUm-te-utN">
-                                <rect key="frame" x="137.5" y="400" width="45" height="45"/>
+                                <rect key="frame" x="137.5" y="395" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="0mf-qh-SpP"/>
                                     <constraint firstAttribute="height" constant="45" id="FKi-d8-KmE"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="8hB-FI-Xj9">
-                                <rect key="frame" x="42.5" y="400" width="45" height="45"/>
+                                <rect key="frame" x="42.5" y="395" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="WPC-xF-3y3"/>
                                     <constraint firstAttribute="width" constant="45" id="iYd-yR-qfB"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-ZP-oLV">
-                                <rect key="frame" x="232.5" y="400" width="45" height="45"/>
+                                <rect key="frame" x="232.5" y="395" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="frp-0b-FDp"/>
                                     <constraint firstAttribute="height" constant="45" id="z0G-mg-aaf"/>
@@ -636,46 +613,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paramètres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Hs-iOV">
-                                <rect key="frame" x="115.5" y="30" width="89" height="21"/>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                <rect key="frame" x="113" y="30" width="94" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Afficher les événements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-PS-Jhj">
-                                <rect key="frame" x="10" y="67" width="184" height="22"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <rect key="frame" x="10" y="67" width="187" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-ng-HDt">
-                                <rect key="frame" x="255" y="67" width="51" height="31.5"/>
+                                <rect key="frame" x="255" y="67" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="n5k-Da-qLt"/>
+                                    <constraint firstAttribute="height" constant="31" id="vLy-RH-iqt"/>
+                                </constraints>
                                 <connections>
                                     <action selector="switchAnnonceChanged:" destination="4uR-K6-2Bo" eventType="touchUpInside" id="jrG-p2-SV5"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Visualiser les bandes annonces et affiches uniquement en WIFI" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6T1-mC-4Qr">
-                                <rect key="frame" x="10" y="119" width="200" height="63.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Lg3-q5-W18"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Visualiser les bandes annonces et affiches uniquement en WIFI" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6T1-mC-4Qr">
+                                <rect key="frame" x="10" y="117" width="237" height="57.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J97-fr-8Dg">
-                                <rect key="frame" x="255" y="128.5" width="51" height="31"/>
+                                <rect key="frame" x="255" y="128" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Xm4-o7-r6U"/>
+                                    <constraint firstAttribute="width" constant="49" id="hQF-ds-wVI"/>
+                                </constraints>
                                 <connections>
                                     <action selector="switchBAAutorisedChanged:" destination="4uR-K6-2Bo" eventType="touchUpInside" id="ge3-KA-YQZ"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recevoir une alerte avant le début du film" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="goN-5c-hiR" userLabel="labelAlerte">
-                                <rect key="frame" x="10" y="207.5" width="300" height="22"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <rect key="frame" x="10" y="199.5" width="300" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-60-GGq" userLabel="tempsAlerte">
-                                <rect key="frame" x="10" y="244.5" width="300" height="80"/>
+                                <rect key="frame" x="10" y="234.5" width="300" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="j1q-m7-JAO"/>
                                 </constraints>
@@ -683,28 +665,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="0S6-5P-T9c"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fCm-ng-HDt" secondAttribute="trailing" id="1bz-0O-I9m"/>
-                            <constraint firstAttribute="trailing" secondItem="Xii-60-GGq" secondAttribute="trailing" constant="10" id="2mB-SD-9bN"/>
-                            <constraint firstItem="Xii-60-GGq" firstAttribute="top" secondItem="goN-5c-hiR" secondAttribute="bottom" constant="15" id="7cs-cx-9MU"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fgg-PS-Jhj" secondAttribute="trailing" constant="20" symbolic="YES" id="8Oc-UJ-9Or"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="J97-fr-8Dg" secondAttribute="trailing" id="IAF-Lu-cuW"/>
-                            <constraint firstItem="J97-fr-8Dg" firstAttribute="top" secondItem="fCm-ng-HDt" secondAttribute="bottom" constant="30" id="Ifp-3q-zlV"/>
-                            <constraint firstItem="goN-5c-hiR" firstAttribute="top" secondItem="6T1-mC-4Qr" secondAttribute="bottom" constant="25" id="JRx-Si-PTh"/>
-                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="Nde-Qm-MjX"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6T1-mC-4Qr" secondAttribute="trailing" constant="20" symbolic="YES" id="RkA-Xb-1aB"/>
-                            <constraint firstItem="Xii-60-GGq" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="WbZ-s1-T1c"/>
-                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="top" secondItem="Fgg-PS-Jhj" secondAttribute="bottom" constant="30" id="Zim-eR-mIh"/>
-                            <constraint firstAttribute="trailing" secondItem="Xii-60-GGq" secondAttribute="trailing" constant="10" id="ZpX-2c-7g0"/>
-                            <constraint firstAttribute="trailing" secondItem="goN-5c-hiR" secondAttribute="trailing" constant="10" id="ZrG-mZ-THk"/>
-                            <constraint firstItem="Fk3-Hs-iOV" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="10" id="c8r-Oh-ZRR"/>
-                            <constraint firstItem="Xii-60-GGq" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="fiK-wt-lgW"/>
-                            <constraint firstItem="Fgg-PS-Jhj" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="hEb-1q-6hO"/>
-                            <constraint firstItem="Fk3-Hs-iOV" firstAttribute="centerX" secondItem="6lI-4g-yUe" secondAttribute="centerX" id="jXs-WI-RDu"/>
-                            <constraint firstItem="goN-5c-hiR" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="kAJ-gX-AF2"/>
-                            <constraint firstItem="goN-5c-hiR" firstAttribute="top" secondItem="J97-fr-8Dg" secondAttribute="bottom" constant="48" id="lGZ-Zl-yO3"/>
-                            <constraint firstItem="fCm-ng-HDt" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="47" id="qXj-4A-Bww"/>
-                            <constraint firstItem="fCm-ng-HDt" firstAttribute="top" secondItem="Fgg-PS-Jhj" secondAttribute="top" id="xka-fg-cnO"/>
+                            <constraint firstAttribute="trailing" secondItem="Xii-60-GGq" secondAttribute="trailing" constant="10" id="B9O-gJ-CZm"/>
+                            <constraint firstAttribute="trailing" secondItem="goN-5c-hiR" secondAttribute="trailing" constant="10" id="EH6-KI-M2H"/>
+                            <constraint firstItem="J97-fr-8Dg" firstAttribute="trailing" secondItem="6lI-4g-yUe" secondAttribute="trailingMargin" id="GYt-VV-Mft"/>
+                            <constraint firstItem="J97-fr-8Dg" firstAttribute="leading" secondItem="6T1-mC-4Qr" secondAttribute="trailing" constant="8" id="GaD-X0-nrS"/>
+                            <constraint firstItem="Fk3-Hs-iOV" firstAttribute="centerX" secondItem="6lI-4g-yUe" secondAttribute="centerX" id="NeD-j9-BSf"/>
+                            <constraint firstItem="Xii-60-GGq" firstAttribute="top" secondItem="goN-5c-hiR" secondAttribute="bottom" constant="15" id="Orq-EE-oBG"/>
+                            <constraint firstItem="Fk3-Hs-iOV" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="10" id="Syx-4o-OWV"/>
+                            <constraint firstItem="Xii-60-GGq" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="UEK-7x-k1e"/>
+                            <constraint firstItem="fCm-ng-HDt" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="47" id="bgM-qv-4Rt"/>
+                            <constraint firstItem="goN-5c-hiR" firstAttribute="top" secondItem="6T1-mC-4Qr" secondAttribute="bottom" constant="25" id="cFr-gM-cvK"/>
+                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="dW2-ML-YUa"/>
+                            <constraint firstItem="fCm-ng-HDt" firstAttribute="trailing" secondItem="6lI-4g-yUe" secondAttribute="trailingMargin" id="eWr-Rc-RXB"/>
+                            <constraint firstItem="Fgg-PS-Jhj" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="i6b-SX-Bzy"/>
+                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="top" secondItem="Fgg-PS-Jhj" secondAttribute="bottom" constant="30" id="k8u-YL-zPa"/>
+                            <constraint firstItem="goN-5c-hiR" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="mam-Ip-jwX"/>
+                            <constraint firstItem="Fgg-PS-Jhj" firstAttribute="top" secondItem="Fk3-Hs-iOV" secondAttribute="bottom" constant="17" id="tFT-FC-6he"/>
+                            <constraint firstItem="J97-fr-8Dg" firstAttribute="top" secondItem="fCm-ng-HDt" secondAttribute="bottom" constant="30" id="u6H-j0-rP2"/>
+                            <constraint firstItem="fCm-ng-HDt" firstAttribute="leading" secondItem="Fgg-PS-Jhj" secondAttribute="trailing" constant="58" id="zaF-v8-bBE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parametres" image="tools" selectedImage="tools" id="81i-RY-mby"/>
@@ -716,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIQ-88-C9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="1180"/>
+            <point key="canvasLocation" x="365.625" y="1179.9295774647887"/>
         </scene>
         <!--Affiche Evenement View Controller-->
         <scene sceneID="rdm-Y2-71w">
@@ -738,7 +716,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="zhM-s0-Wr1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <state key="normal" title="Fermer">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -750,8 +728,8 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A vos agendas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-Ny-qmR">
-                                <rect key="frame" x="106" y="30" width="108" height="21"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <rect key="frame" x="105.5" y="31" width="109.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -797,7 +775,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6U-Ug-u7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.2" y="210.38955784476582"/>
+            <point key="canvasLocation" x="2775" y="210.21126760563379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3sY-zJ-K8b">
@@ -815,14 +793,44 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvS-KX-kAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="-622"/>
+            <point key="canvasLocation" x="3978.75" y="-622.18309859154931"/>
+        </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="AyM-Ip-0M4">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NXb-cT-SE8" customClass="TutorialPageViewController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aHx-lf-JqA"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="push" identifier="goToApp" id="EHF-Q7-Q6I"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ze-15-sIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.875" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jL3-Jm-g1E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oew-mU-B9j" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6rh-rX-hZH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NXb-cT-SE8" kind="relationship" relationship="rootViewController" id="o6S-0d-WzE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="At3-xH-rio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-890.625" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
         <image name="facebook" width="32" height="32"/>
-        <image name="fleche" width="112" height="141"/>
-        <image name="fleche-bas" width="112" height="141"/>
         <image name="info" width="32" height="32"/>
         <image name="movie" width="32" height="32"/>
         <image name="phone" width="32" height="32"/>
@@ -830,6 +838,7 @@
         <image name="seance_non_dispo" width="326" height="434"/>
         <image name="ticket" width="32" height="32"/>
         <image name="tools" width="32" height="32"/>
+        <image name="tuto1" width="375" height="667"/>
         <image name="web" width="32" height="32"/>
     </resources>
 </document>

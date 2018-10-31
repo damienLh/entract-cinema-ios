@@ -148,7 +148,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             let seanceCell = tableView.dequeueReusableCell(withIdentifier: "seanceCell", for: indexPath) as! SeanceTableViewCell
             let film = listeFilms[indexPath.row]
             
-            if NetworkUtils.isWifiEnabled() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
+            if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
                 if let url = URL(string: film.affiche) {
                     seanceCell.afficheImageView.contentMode = .scaleAspectFit
                     Tools.shared.downloadImage(url: url, imageView: seanceCell.afficheImageView, activity: seanceCell.activityLoad)
