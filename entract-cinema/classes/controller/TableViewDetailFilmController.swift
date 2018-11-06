@@ -138,12 +138,15 @@ class TableViewDetailFilmController : UITableViewController {
     @objc func onClickAutresSeances(sender:AutreDateTapGesture) {
         self.dismiss(animated: true, completion: nil)
         
-        if self.parent?.presentingViewController is UITabBarController {
-            let tabBar = self.parent?.presentingViewController as! UITabBarController
-            for vc in tabBar.viewControllers! {
-                if vc is SeanceJourViewController {
-                    let seancesVC = vc as! SeanceJourViewController
-                    seancesVC.reloadFromNotification(jour: sender.jour)
+        if self.parent?.presentingViewController is UINavigationController {
+            let navBar = self.parent?.presentingViewController as! UINavigationController
+            if navBar.children.count > 1, navBar.children[1] is UITabBarController {
+                let tabBar = navBar.children[1] as! UITabBarController
+                for vc in tabBar.viewControllers! {
+                    if vc is SeanceJourViewController {
+                        let seancesVC = vc as! SeanceJourViewController
+                        seancesVC.reloadFromNotification(jour: sender.jour)
+                    }
                 }
             }
         }
