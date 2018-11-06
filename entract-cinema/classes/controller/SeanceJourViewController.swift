@@ -163,6 +163,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
             
+            if film.avertissement {
+                titreContent.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:infoFilm))
+            }
+            
             if film.moinsDouze {
                 titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
             }

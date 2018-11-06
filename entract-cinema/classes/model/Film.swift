@@ -17,6 +17,7 @@ class Film: NSObject, NSCoding {
     var troisD: Bool
     var vo: Bool
     var moinsDouze: Bool
+    var avertissement: Bool
     var affiche: String
     var duree: String
     var annee: String
@@ -37,6 +38,7 @@ class Film: NSObject, NSCoding {
         self.troisD = false
         self.vo = false
         self.moinsDouze = false
+        self.avertissement = false
         self.affiche = ""
         self.duree = ""
         self.annee = ""
@@ -57,6 +59,7 @@ class Film: NSObject, NSCoding {
         aCoder.encode(troisD, forKey: "troisD")
         aCoder.encode(vo, forKey: "vo")
         aCoder.encode(moinsDouze, forKey: "moinsDouze")
+        aCoder.encode(avertissement, forKey: "avertissement")
         aCoder.encode(affiche, forKey: "affiche")
         aCoder.encode(duree, forKey: "duree")
         aCoder.encode(annee, forKey: "annee")
@@ -77,6 +80,7 @@ class Film: NSObject, NSCoding {
         troisD = aDecoder.decodeBool(forKey: "troisD")
         vo = aDecoder.decodeBool(forKey: "vo")
         moinsDouze = aDecoder.decodeBool(forKey: "moinsDouze")
+        avertissement = aDecoder.decodeBool(forKey: "avertissement")
         affiche = aDecoder.decodeObject(forKey: "affiche") as! String
         duree = aDecoder.decodeObject(forKey: "duree") as! String
         annee = aDecoder.decodeObject(forKey: "annee") as! String

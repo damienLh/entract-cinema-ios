@@ -11,6 +11,7 @@
 "vo" = "VOST";
 "pas_de_film" = "Pas de séance ce jour";
 "moinsDouze" = " (-12 ans)";
+"avertissement" = "Avertissement";
 
 //detail
 "pays" = "Pays";

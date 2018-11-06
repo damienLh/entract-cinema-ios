@@ -39,6 +39,7 @@ class JSONUnparser {
                             film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                             film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                             film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
+                            film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
                             film.affiche = (dicoFilm as AnyObject).object(forKey: "affiche") as! String
                             film.duree = (dicoFilm as AnyObject).object(forKey: "duree") as! String
                             film.annee = (dicoFilm as AnyObject).object(forKey: "annee") as! String
@@ -54,7 +55,7 @@ class JSONUnparser {
                             let _: NSDictionary
                             for autre_jour in autres_dates {
                                 let jour = AutresDates()
-                                jour.jour = (autre_jour as AnyObject).object(forKey: "jour") as! String
+                                jour.date = (autre_jour as AnyObject).object(forKey: "date") as! String
                                 jour.horaire = (autre_jour as AnyObject).object(forKey: "horaire") as! String
                                 jour.troisD = (autre_jour as AnyObject).object(forKey: "3d") as! Bool
                                 jour.vo = (autre_jour as AnyObject).object(forKey: "vo") as! Bool

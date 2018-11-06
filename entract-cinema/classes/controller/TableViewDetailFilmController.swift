@@ -58,6 +58,9 @@ class TableViewDetailFilmController : UITableViewController {
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
             
+            if film.avertissement {
+                titreContent.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:infoFilm))
+            }
             if film.moinsDouze {
                 titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
             }
@@ -123,7 +126,7 @@ class TableViewDetailFilmController : UITableViewController {
                 footer.lblAutresSeances.attributedText = getAttributedTextAutresSeances(autreDate: autreDate)
 
                 let tapAutreDate = AutreDateTapGesture(target: self, action: #selector(onClickAutresSeances(sender:)))
-                tapAutreDate.jour = autreDate.jour
+                tapAutreDate.jour = autreDate.date
                 footer.lblAutresSeances.isUserInteractionEnabled = true
                 footer.lblAutresSeances.addGestureRecognizer(tapAutreDate)
             }
@@ -203,7 +206,7 @@ class TableViewDetailFilmController : UITableViewController {
         completeDateFormatter.dateFormat =  "EEEE dd LLLL"
         completeDateFormatter.locale = Locale(identifier: "fr")
         
-        let dateJour = dateFormatter.date(from: autreDate.jour)
+        let dateJour = dateFormatter.date(from: autreDate.date)
         content.append(NSMutableAttributedString(string:"\(completeDateFormatter.string(from: dateJour!)) - \(autreDate.horaire)", attributes:normal))
         
         if autreDate.troisD {
