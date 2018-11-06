@@ -67,26 +67,26 @@ class LesHorairesTableViewController: UITableViewController {
             
            var firstFilm = true
            for film in joursLu.films {
+                let contentFilm = NSMutableAttributedString()
                 if !firstFilm {
-                    content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
+                    contentFilm.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
                 }
                 firstFilm = false
-                content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
-                content.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
+                contentFilm.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
+                contentFilm.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
                 if film.troisD {
-                    content.append(NSMutableAttributedString(string:"3D".localized(), attributes:titreFilm))
+                    contentFilm.append(NSMutableAttributedString(string:"3D".localized(), attributes:titreFilm))
                 }
                 if film.vo {
-                    content.append(NSMutableAttributedString(string:"vo".localized(), attributes:titreFilm))
+                    contentFilm.append(NSMutableAttributedString(string:"vo".localized(), attributes:titreFilm))
                 }
             
                 if film.avertissement {
-                    content.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:titreFilm))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.avertissement))
+                } else if film.moinsDouze {
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.moinsDouze))
                 }
-            
-                if film.moinsDouze {
-                    content.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:titreFilm))
-                }
+                content.append(contentFilm)
             }
             
             size = CGFloat(25.0)
@@ -97,8 +97,13 @@ class LesHorairesTableViewController: UITableViewController {
             if joursLu.films.count > 1 {
                 remove = CGFloat(joursLu.films.count) * CGFloat(10.0)
             }
+            
+            var mult = CGFloat(45.0)
+            if joursLu.films.count > 1 {
+                mult = CGFloat(35.0)
+            }
  
-            size = size + CGFloat(nbLines * 35.0) - remove
+            size = size + CGFloat(nbLines * mult) - remove
         }
         
         return size;
@@ -140,27 +145,27 @@ class LesHorairesTableViewController: UITableViewController {
         } else {
             var firstFilm = true
             for film in joursLu.films {
+                let contentFilm = NSMutableAttributedString()
                 if !firstFilm {
-                    content.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
+                    contentFilm.append(NSMutableAttributedString(string:"\n\n", attributes:titreFilm))
                 }
                 firstFilm = false
-                content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
-                content.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
+                contentFilm.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
+                contentFilm.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
                 
                 if film.troisD {
-                    content.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))
+                    contentFilm.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))
                 }
                 if film.vo {
-                    content.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
+                    contentFilm.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
                 }
                 
                 if film.avertissement {
-                    content.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:titreFilm))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.avertissement))
+                } else if film.moinsDouze {
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.moinsDouze))
                 }
-                
-                if film.moinsDouze {
-                    content.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:titreFilm))
-                }
+                content.append(contentFilm)
             }
         }
         cell.lesFilms.attributedText = content
