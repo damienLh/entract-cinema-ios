@@ -12,8 +12,7 @@ struct Constants {
     static let calendarNotGranted = "Vous devez autoriser l'application à accéder au calendrier"
     static let offlineModeTitle = "Pas de connexion internet ?"
     static let offlineModeMessage = "Vous-êtes actuellement en mode offline"
-    static let remoteSite = "http://www.mobile-greandecinema.fr"
-    
+    static let remoteSite = "http://www.mobile-grenadecinema.fr"
     
     //user
     static let dateMin = "dateMin"

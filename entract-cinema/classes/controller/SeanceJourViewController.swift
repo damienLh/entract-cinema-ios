@@ -182,11 +182,11 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             seanceCell.infosFilm.attributedText = content
             
             if film.avertissement {
-                seanceCell.infosFilm.addImage(imageName: Constants.avertissement, afterLabel: true)
+                seanceCell.infosFilm.addImage(imageName: Constants.avertissement)
             }
             
             if film.moinsDouze {
-                seanceCell.infosFilm.addImage(imageName: Constants.moinsDouze, afterLabel: true)
+                seanceCell.infosFilm.addImage(imageName: Constants.moinsDouze)
             }
             
             

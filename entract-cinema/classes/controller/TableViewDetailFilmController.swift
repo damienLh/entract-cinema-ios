@@ -20,7 +20,7 @@ class TableViewDetailFilmController : UITableViewController {
         super.viewDidLoad()
         self.tableViewDetail.dataSource = self
         self.tableViewDetail.delegate = self
-        Statistiques.statDetailFilm(jour: jour, titreFilm: film.id_film)
+        Statistiques.statDetailFilm(jour: jour, idFilm: film.id_film)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,11 +83,11 @@ class TableViewDetailFilmController : UITableViewController {
             
             
             if film.avertissement {
-                posterCell.lblAnneeDuree.addImage(imageName: Constants.avertissement, afterLabel: true)
+                posterCell.lblAnneeDuree.addImage(imageName: Constants.avertissement)
             }
             
             if film.moinsDouze {
-                posterCell.lblAnneeDuree.addImage(imageName: Constants.moinsDouze, afterLabel: true)
+                posterCell.lblAnneeDuree.addImage(imageName: Constants.moinsDouze)
             }
             
             posterCell.lblGenre.attributedText = getAttributedText(title: "genre".localized(), value: film.style)

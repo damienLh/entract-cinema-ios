@@ -10,7 +10,7 @@ import UIKit
 
 extension UILabel
 {
-    func addImage(imageName: String, afterLabel bolAfterLabel: Bool = false)
+    func addImage(imageName: String)
     {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: imageName)
@@ -19,21 +19,11 @@ extension UILabel
         attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
         
-        if (bolAfterLabel)
-        {
-            let strLabelText: NSMutableAttributedString = NSMutableAttributedString(string: self.text!)
-            strLabelText.append(attachmentString)
-            
-            self.attributedText = strLabelText
-        }
-        else
-        {
-            let strLabelText: NSAttributedString = NSAttributedString(string: self.text!)
-            let mutableAttachmentString: NSMutableAttributedString = NSMutableAttributedString(attributedString: attachmentString)
-            mutableAttachmentString.append(strLabelText)
-            
-            self.attributedText = mutableAttachmentString
-        }
+        let result = NSMutableAttributedString()
+        result.append(self.attributedText!)
+        result.append(attachmentString)
+        
+        self.attributedText = result
     }
     
     func removeImage()

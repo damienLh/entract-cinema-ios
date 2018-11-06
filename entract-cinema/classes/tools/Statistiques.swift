@@ -10,10 +10,10 @@ import Foundation
 
 class Statistiques {
     
-    static func statDetailFilm(jour: String!, titreFilm: String!) -> Void {
+    static func statDetailFilm(jour: String!, idFilm: String!) -> Void {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let server = Tools.shared.getTargetServer()
-            if let myJour = jour, let myFilm = titreFilm {
+            if let myJour = jour, let myFilm = idFilm {
                 let url = "\(server)/php/rest/updateStatistiques.php?page=page_detail&jour=\(myJour)&film=\(myFilm)"
                 let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 var request = URLRequest(url: myURL!)
