@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>L'entract</string>
+	<string>L&apos;entract</string>
 	<key>CFBundleDocumentTypes</key>
 	<array/>
 	<key>CFBundleExecutable</key>
@@ -54,7 +54,7 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Vous devez autoriser l'application à accéder au calendrier</string>
+	<string>Vous devez autoriser l&apos;application à accéder au calendrier pour pouvoir ajouter des alertes</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
