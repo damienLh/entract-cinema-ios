@@ -50,22 +50,12 @@ class TableViewDetailFilmController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UITableViewCell? {
         let headerTitre = tableView.dequeueReusableCell(withIdentifier: "headerTitreCell") as! HeaderTitreCell
-        
         if section == 0 {
             let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
             
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
-            
-            if film.avertissement {
-                titreContent.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:infoFilm))
-            }
-            if film.moinsDouze {
-                titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
-            }
-
-           headerTitre.lblTitre.attributedText = titreContent
+            headerTitre.lblTitre.attributedText = titreContent
         } else {
             let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
             let titreContent = NSMutableAttributedString()
@@ -90,6 +80,16 @@ class TableViewDetailFilmController : UITableViewController {
             
             posterCell.lblPays.attributedText = getAttributedText(title: "pays".localized(), value: film.pays)
             posterCell.lblAnneeDuree.attributedText = getAttributedFirstLine(annee: film.annee, duree: film.duree)
+            
+            
+            if film.avertissement {
+                posterCell.lblAnneeDuree.addImage(imageName: Constants.avertissement, afterLabel: true)
+            }
+            
+            if film.moinsDouze {
+                posterCell.lblAnneeDuree.addImage(imageName: Constants.moinsDouze, afterLabel: true)
+            }
+            
             posterCell.lblGenre.attributedText = getAttributedText(title: "genre".localized(), value: film.style)
             posterCell.lblAvec.attributedText = getAttributedText(title: "avec".localized(), value: Tools.shared.utf8(value: film.avec))
             posterCell.lblDe.attributedText = getAttributedText(title: "de".localized(), value: Tools.shared.utf8(value: film.de))

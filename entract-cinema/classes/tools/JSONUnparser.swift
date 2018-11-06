@@ -184,6 +184,7 @@ class JSONUnparser {
                                 film.date = dateJour.convertFromDbData()
                                 film.horaire = (dicoFilm as AnyObject).object(forKey: "horaire") as! String
                                 film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
+                                film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
                                 film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                                 film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                                 listeFilms.append(film)

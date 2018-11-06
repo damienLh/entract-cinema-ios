@@ -79,6 +79,14 @@ class LesHorairesTableViewController: UITableViewController {
                 if film.vo {
                     content.append(NSMutableAttributedString(string:"vo".localized(), attributes:titreFilm))
                 }
+            
+                if film.avertissement {
+                    content.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:titreFilm))
+                }
+            
+                if film.moinsDouze {
+                    content.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:titreFilm))
+                }
             }
             
             size = CGFloat(25.0)
@@ -130,7 +138,6 @@ class LesHorairesTableViewController: UITableViewController {
         if joursLu.films.count == 0 {
             content.append(NSMutableAttributedString(string: "pas_de_film".localized(), attributes:titreFilm))
         } else {
-            
             var firstFilm = true
             for film in joursLu.films {
                 if !firstFilm {
@@ -145,6 +152,10 @@ class LesHorairesTableViewController: UITableViewController {
                 }
                 if film.vo {
                     content.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
+                }
+                
+                if film.avertissement {
+                    content.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:titreFilm))
                 }
                 
                 if film.moinsDouze {

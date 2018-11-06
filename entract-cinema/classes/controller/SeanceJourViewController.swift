@@ -163,14 +163,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
             
-            if film.avertissement {
-                titreContent.append(NSMutableAttributedString(string:"avertissement".localized(), attributes:infoFilm))
-            }
-            
-            if film.moinsDouze {
-                titreContent.append(NSMutableAttributedString(string:"moinsDouze".localized(), attributes:infoFilm))
-            }
-            
             seanceCell.titreLabel.attributedText = titreContent
             
             let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
@@ -188,6 +180,14 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             }
 
             seanceCell.infosFilm.attributedText = content
+            
+            if film.avertissement {
+                seanceCell.infosFilm.addImage(imageName: Constants.avertissement, afterLabel: true)
+            }
+            
+            if film.moinsDouze {
+                seanceCell.infosFilm.addImage(imageName: Constants.moinsDouze, afterLabel: true)
+            }
             
             
             let seanceGesture = SeanceTapGesture(target: self, action: #selector(tappedMovie(tapGestureRecognizer:)))

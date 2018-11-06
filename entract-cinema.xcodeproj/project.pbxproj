@@ -59,6 +59,7 @@
 		9D9686E420CF040F006E1E8C /* seance_20180702.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E220CF040F006E1E8C /* seance_20180702.json */; };
 		9D9686E520CF040F006E1E8C /* seance_20180626.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E320CF040F006E1E8C /* seance_20180626.json */; };
 		9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */; };
+		9DB3467D2191A64F00DF1149 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */; };
 		9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE39B92145AA1C00254E65 /* Statistiques.swift */; };
 		9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D120E4D7EA00E143C1 /* Reachibility.swift */; };
 		9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D320E4E3AF00E143C1 /* Cache.swift */; };
@@ -147,6 +148,7 @@
 		9D9686E220CF040F006E1E8C /* seance_20180702.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180702.json; sourceTree = "<group>"; };
 		9D9686E320CF040F006E1E8C /* seance_20180626.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180626.json; sourceTree = "<group>"; };
 		9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutreDateTapGesture.swift; sourceTree = "<group>"; };
+		9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		9DBE39B92145AA1C00254E65 /* Statistiques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistiques.swift; sourceTree = "<group>"; };
 		9DC519D120E4D7EA00E143C1 /* Reachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
 		9DC519D320E4E3AF00E143C1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
 				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
+				9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				9D42B0F620C8706C009BCA11 /* HorairesTableViewCell.swift in Sources */,
 				9D16A57021395EAC00696EF1 /* PosterCell.swift in Sources */,
 				9D42B0FC20C8706C009BCA11 /* Artwork.swift in Sources */,
+				9DB3467D2191A64F00DF1149 /* UILabel+Extensions.swift in Sources */,
 				9D42B10020C8706C009BCA11 /* LesHorairesTableViewController.swift in Sources */,
 				9D42B10320C8706C009BCA11 /* SeanceJourViewController.swift in Sources */,
 				9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */,

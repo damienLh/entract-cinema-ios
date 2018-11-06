@@ -8,8 +8,8 @@
 
 import UIKit
 
-//#942102
-var entractColor = UIColor(red: 148, green: 33, blue: 2)
+//#B1000A
+var entractColor = UIColor(red: 177, green: 0, blue: 10)
 
 extension UIColor {
 

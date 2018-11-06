@@ -33,4 +33,8 @@ struct Constants {
     //notification
     static let notification = "notification"
 
+    
+    //moinsDouze
+    static let avertissement = "avertissement"
+    static let moinsDouze = "moinsDouze"
 }
