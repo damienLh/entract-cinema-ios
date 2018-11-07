@@ -21,6 +21,11 @@ class TableViewDetailFilmController : UITableViewController {
         self.tableViewDetail.dataSource = self
         self.tableViewDetail.delegate = self
         Statistiques.statDetailFilm(jour: jour, idFilm: film.id_film)
+        
+        if Tools.shared.SYSTEM_VERSION_LESS_THAN(version: "11.0") {
+            self.tableViewDetail.contentOffset = CGPoint(x: 0.0, y: 65.0)
+            self.tableViewDetail.contentInset = UIEdgeInsets(top: 65.0, left: 0.0, bottom: 0.0, right: 0.0)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,7 +119,7 @@ class TableViewDetailFilmController : UITableViewController {
             let viewHeight = CGFloat(500) + CGFloat(height)
             print("hauteur : \(viewHeight)")
             self.myCustomHeight = viewHeight
-            self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            //self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             myCell = posterCell
         } else {
             let footer = tableView.dequeueReusableCell(withIdentifier: "autresDatesCell") as! AutresDatesCell
@@ -217,7 +222,7 @@ class TableViewDetailFilmController : UITableViewController {
         }
         
         if autreDate.vo {
-            content.append(NSMutableAttributedString(string:" - VO ", attributes:normal))
+            content.append(NSMutableAttributedString(string:" - VOST ", attributes:normal))
         }
         return content
     }

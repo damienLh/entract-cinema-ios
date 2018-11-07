@@ -93,13 +93,30 @@ class Tools {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: imageName)
         
-        let imageOffsetY:CGFloat = -5.0;
-        attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
+        if !Tools.shared.isDeviceHasHighScreen() {
+            let imageOffsetY:CGFloat = -5.0;
+            attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
+        }
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
         
         let result = NSMutableAttributedString()
         result.append(attachmentString)
         
+        return result
+    }
+    
+    func SYSTEM_VERSION_LESS_THAN(version: String) -> Bool {
+        return UIDevice.current.systemVersion.compare(version,
+                                                      options: NSString.CompareOptions.numeric) == ComparisonResult.orderedAscending
+    }
+    
+    func isDeviceHasHighScreen() -> Bool {
+        var result = false
+        let modelName = UIDevice.modelName
+        //if device is Plus model or iPhone X and higher
+        if modelName.contains("Plus") || modelName.contains("X") {
+            result = true
+        }
         return result
     }
 }

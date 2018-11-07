@@ -15,8 +15,10 @@ extension UILabel
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: imageName)
         
-        let imageOffsetY:CGFloat = -5.0;
-        attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
+        if !Tools.shared.isDeviceHasHighScreen() {
+            let imageOffsetY:CGFloat = -5.0;
+            attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
+        }
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
         
         let result = NSMutableAttributedString()

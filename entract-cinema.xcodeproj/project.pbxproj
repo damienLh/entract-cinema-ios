@@ -59,7 +59,6 @@
 		9D9686E420CF040F006E1E8C /* seance_20180702.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E220CF040F006E1E8C /* seance_20180702.json */; };
 		9D9686E520CF040F006E1E8C /* seance_20180626.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E320CF040F006E1E8C /* seance_20180626.json */; };
 		9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */; };
-		9DB3467D2191A64F00DF1149 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */; };
 		9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE39B92145AA1C00254E65 /* Statistiques.swift */; };
 		9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D120E4D7EA00E143C1 /* Reachibility.swift */; };
 		9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D320E4E3AF00E143C1 /* Cache.swift */; };
@@ -71,6 +70,8 @@
 		9DFC958420C87A3C00E30100 /* seance_20180628.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC957F20C87A3C00E30100 /* seance_20180628.json */; };
 		9DFC958720C87B3300E30100 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC958520C87B3300E30100 /* LaunchScreen.xib */; };
 		9DFC958920C87B9000E30100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC958820C87B8F00E30100 /* icon.png */; };
+		9DFCA3CB21932D5900B05701 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */; };
+		9DFCA3CF2193336400B05701 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */; };
 		C7145AFA20E398A600A6FCE4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7145AF920E398A600A6FCE4 /* String+Extensions.swift */; };
 		C714FE8F214801A900FE1F81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C714FE8E214801A900FE1F81 /* Localizable.strings */; };
 		C74BBEB421415B360064B471 /* CacheParametres.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BBEB321415B360064B471 /* CacheParametres.swift */; };
@@ -148,7 +149,6 @@
 		9D9686E220CF040F006E1E8C /* seance_20180702.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180702.json; sourceTree = "<group>"; };
 		9D9686E320CF040F006E1E8C /* seance_20180626.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180626.json; sourceTree = "<group>"; };
 		9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutreDateTapGesture.swift; sourceTree = "<group>"; };
-		9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		9DBE39B92145AA1C00254E65 /* Statistiques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistiques.swift; sourceTree = "<group>"; };
 		9DC519D120E4D7EA00E143C1 /* Reachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
 		9DC519D320E4E3AF00E143C1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -160,6 +160,8 @@
 		9DFC957F20C87A3C00E30100 /* seance_20180628.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180628.json; sourceTree = "<group>"; };
 		9DFC958620C87B3300E30100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9DFC958820C87B8F00E30100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		C7145AF920E398A600A6FCE4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		C714FE8E214801A900FE1F81 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C74BBEB321415B360064B471 /* CacheParametres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheParametres.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		9D42B0E320C8706C009BCA11 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
 				9DC519D320E4E3AF00E143C1 /* Cache.swift */,
 				9D42B0E420C8706C009BCA11 /* Constants.swift */,
 				9D42B0E520C8706C009BCA11 /* JSONUnparser.swift */,
@@ -318,7 +321,7 @@
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
 				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
-				9DB3467C2191A64F00DF1149 /* UILabel+Extensions.swift */,
+				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -542,12 +545,12 @@
 				9D3E949A21889D0E00ED08AA /* TutorialPageViewController.swift in Sources */,
 				9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */,
 				9D16A5762139626200696EF1 /* TableViewDetailFilmController.swift in Sources */,
+				9DFCA3CF2193336400B05701 /* UILabel+Extensions.swift in Sources */,
 				9D42B0FB20C8706C009BCA11 /* JSONUnparser.swift in Sources */,
 				C7E3562620ECC2C1003A4FCC /* AfficheEvenementViewController.swift in Sources */,
 				9D42B0F620C8706C009BCA11 /* HorairesTableViewCell.swift in Sources */,
 				9D16A57021395EAC00696EF1 /* PosterCell.swift in Sources */,
 				9D42B0FC20C8706C009BCA11 /* Artwork.swift in Sources */,
-				9DB3467D2191A64F00DF1149 /* UILabel+Extensions.swift in Sources */,
 				9D42B10020C8706C009BCA11 /* LesHorairesTableViewController.swift in Sources */,
 				9D42B10320C8706C009BCA11 /* SeanceJourViewController.swift in Sources */,
 				9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */,
@@ -571,6 +574,7 @@
 				C7145AFA20E398A600A6FCE4 /* String+Extensions.swift in Sources */,
 				9D44659E20CB2B4100BD6445 /* Semaine.swift in Sources */,
 				9D44659C20CB285A00BD6445 /* Film.swift in Sources */,
+				9DFCA3CB21932D5900B05701 /* UIDevice+Extensions.swift in Sources */,
 				9D698AB02160FF42007FF128 /* AutresDates.swift in Sources */,
 				9D42B0A720C86FC5009BCA11 /* AppDelegate.swift in Sources */,
 				9D42B0FA20C8706C009BCA11 /* Constants.swift in Sources */,
