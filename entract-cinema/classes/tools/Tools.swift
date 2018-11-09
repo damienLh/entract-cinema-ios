@@ -93,10 +93,10 @@ class Tools {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: imageName)
         
-        if !Tools.shared.isDeviceHasHighScreen() {
+       // if !Tools.shared.isDeviceHasHighScreen() {
             let imageOffsetY:CGFloat = -5.0;
             attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
-        }
+       // }
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
         
         let result = NSMutableAttributedString()
