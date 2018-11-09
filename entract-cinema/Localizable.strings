@@ -10,8 +10,11 @@
 "3D" = "3D";
 "vo" = "VOST";
 "pas_de_film" = "Pas de séance ce jour";
-"moinsDouze" = " (-12 ans)";
-"avertissement" = "Avertissement";
+
+"filmCalendrier" = "Film ajouté à votre calendrier";
+"calendarNotGranted" = "Vous devez autoriser l'application à accéder au calendrier";
+"offlineModeTitle" = "Pas de connexion internet ?";
+"offlineModeMessage" = "Vous-êtes actuellement en mode offline";
 
 //detail
 "pays" = "Pays";
@@ -23,13 +26,15 @@
 "synopsis" = "SYNOPSIS";
 "derniereSeance" = "Dernière séance pour ce film";
 "autresSeances" = "Autres séances";
+"messageAvertissement" = "Avertissement : des scènes, des propos ou des images peuvent heurter la sensibilité des spectateurs";
+"messageMoinsDouze" = "Interdit aux moins de 12 ans";
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";
 "alerte_film_ok" = "Alerte active pour ce film";
 
 //infos
-"cinema" = "Cinéma L'entract";
+"cinema" = "Cinéma L'Entract'";
 "movie" = "Cinéma";
 
 //paramètres

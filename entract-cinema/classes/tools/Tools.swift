@@ -81,7 +81,7 @@ class Tools {
             UserDefaults.standard.set(false, forKey: "useCache")
         }
         
-        let alert = UIAlertController(title: Constants.offlineModeTitle, message: Constants.offlineModeMessage, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "offlineModeTitle".localized(), message: "offlineModeMessage".localized(), preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
         if let notif = notification.object, notif is UIViewController, let vc = notif as? UIViewController {

@@ -16,6 +16,11 @@ class TableViewDetailFilmController : UITableViewController {
     var jour: String = ""
     var myCustomHeight = CGFloat(0.0)
     
+    let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+    let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
+    let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+    let grasMessage = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewDetail.dataSource = self
@@ -56,15 +61,20 @@ class TableViewDetailFilmController : UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UITableViewCell? {
         let headerTitre = tableView.dequeueReusableCell(withIdentifier: "headerTitreCell") as! HeaderTitreCell
         if section == 0 {
-            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+           let titreContent = NSMutableAttributedString()
+            titreContent.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:red))
             
-            let titreContent = NSMutableAttributedString()
-            titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
+            if film.troisD {
+                titreContent.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
+            }
+            if film.vo {
+                titreContent.append(Tools.shared.attributedTextWithImage(imageName: Constants.vost))
+            }
+            
             headerTitre.lblTitre.attributedText = titreContent
         } else {
-            let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
             let titreContent = NSMutableAttributedString()
-            titreContent.append(NSMutableAttributedString(string:"autresSeances".localized(), attributes:titreFilm))
+            titreContent.append(NSMutableAttributedString(string:"autresSeances".localized(), attributes:red))
             headerTitre.lblTitre.attributedText = titreContent
         }
         return headerTitre
@@ -85,15 +95,6 @@ class TableViewDetailFilmController : UITableViewController {
             
             posterCell.lblPays.attributedText = getAttributedText(title: "pays".localized(), value: film.pays)
             posterCell.lblAnneeDuree.attributedText = getAttributedFirstLine(annee: film.annee, duree: film.duree)
-            
-            
-            if film.avertissement {
-                posterCell.lblAnneeDuree.addImage(imageName: Constants.avertissement)
-            }
-            
-            if film.moinsDouze {
-                posterCell.lblAnneeDuree.addImage(imageName: Constants.moinsDouze)
-            }
             
             posterCell.lblGenre.attributedText = getAttributedText(title: "genre".localized(), value: film.style)
             posterCell.lblAvec.attributedText = getAttributedText(title: "avec".localized(), value: Tools.shared.utf8(value: film.avec))
@@ -117,7 +118,6 @@ class TableViewDetailFilmController : UITableViewController {
             
             let height = CGFloat(posterCell.lblSynopsis.frame.size.height) + 25
             let viewHeight = CGFloat(500) + CGFloat(height)
-            print("hauteur : \(viewHeight)")
             self.myCustomHeight = viewHeight
             //self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             myCell = posterCell
@@ -172,9 +172,6 @@ class TableViewDetailFilmController : UITableViewController {
     }
     
     func getAttributedFirstLine(annee: String, duree: String)->NSMutableAttributedString {
-        let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
-        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
-        
         let content = NSMutableAttributedString()
         content.append(NSMutableAttributedString(string:"annee".localized(), attributes:gras))
         content.append(NSMutableAttributedString(string:"\(annee) ", attributes:normal))
@@ -184,9 +181,6 @@ class TableViewDetailFilmController : UITableViewController {
     }
 
     func getAttributedText(title: String, value: String)->NSMutableAttributedString {
-        let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
-        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
-        
         let content = NSMutableAttributedString()
         content.append(NSMutableAttributedString(string:"\(title) ", attributes:gras))
         content.append(NSMutableAttributedString(string:"\(value) ", attributes:normal))
@@ -194,18 +188,22 @@ class TableViewDetailFilmController : UITableViewController {
     }
     
     func getAttributedSynopsis(value: String) -> NSMutableAttributedString {
-        let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
-        
         let content = NSMutableAttributedString()
         content.append(NSMutableAttributedString(string:"\("synopsis".localized())\n", attributes:red))
         content.append(NSMutableAttributedString(string:"\(value) ", attributes:normal))
+        
+        if film.avertissement {
+            content.append(NSMutableAttributedString(string:"\n\n\("messageAvertissement".localized())", attributes:grasMessage))
+        }
+        
+        if film.moinsDouze {
+            content.append(NSMutableAttributedString(string:"\n\n\("messageMoinsDouze".localized())", attributes:grasMessage))
+        }
+
         return content
     }
     
     func getAttributedTextAutresSeances(autreDate: AutresDates)->NSMutableAttributedString {
-        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
-        
         let content = NSMutableAttributedString()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
@@ -215,15 +213,15 @@ class TableViewDetailFilmController : UITableViewController {
         completeDateFormatter.locale = Locale(identifier: "fr")
         
         let dateJour = dateFormatter.date(from: autreDate.date)
-        content.append(NSMutableAttributedString(string:"\(completeDateFormatter.string(from: dateJour!)) - \(autreDate.horaire)", attributes:normal))
+        content.append(NSMutableAttributedString(string:"\(completeDateFormatter.string(from: dateJour!)) - \(autreDate.horaire) ", attributes:normal))
         
         if autreDate.troisD {
-            content.append(NSMutableAttributedString(string:" - 3D ", attributes:normal))
+            content.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
+        }
+        if autreDate.vo {
+            content.append(Tools.shared.attributedTextWithImage(imageName: Constants.vost))
         }
         
-        if autreDate.vo {
-            content.append(NSMutableAttributedString(string:" - VOST ", attributes:normal))
-        }
         return content
     }
 }

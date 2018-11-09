@@ -25,13 +25,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Connect data:
         self.datePicker.delegate = self
         self.datePicker.dataSource = self
         
-        
-        // Initialize Data
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
         
@@ -165,31 +161,27 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             
             seanceCell.titreLabel.attributedText = titreContent
             
-            let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
-            let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
-            
             let content = NSMutableAttributedString()
             content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:infoFilm))
             content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:infoFilm))
-                    
+
             if film.troisD {
-                content.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))
+                content.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
             }
             if film.vo {
-                content.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
+                content.append(Tools.shared.attributedTextWithImage(imageName: Constants.vost))
             }
 
-            seanceCell.infosFilm.attributedText = content
-            
             if film.avertissement {
-                seanceCell.infosFilm.addImage(imageName: Constants.avertissement)
+                content.append(Tools.shared.attributedTextWithImage(imageName: Constants.avertissement))
             }
             
             if film.moinsDouze {
-                seanceCell.infosFilm.addImage(imageName: Constants.moinsDouze)
+                content.append(Tools.shared.attributedTextWithImage(imageName: Constants.moinsDouze))
             }
             
-            
+            seanceCell.infosFilm.attributedText = content
+
             let seanceGesture = SeanceTapGesture(target: self, action: #selector(tappedMovie(tapGestureRecognizer:)))
             seanceGesture.detail = film
             seanceCell.afficheImageView.isUserInteractionEnabled = true
@@ -276,7 +268,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     }
                     completion?(true, nil)
                     
-                    let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.filmCalendrier, preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "cinema".localized(), message: "filmCalendrier".localized(), preferredStyle: UIAlertController.Style.alert)
                     
                     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                         UIAlertAction in
@@ -290,7 +282,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             } else {
                 completion?(false, error as NSError?)
                 
-                let alert = UIAlertController(title: Constants.grenadeCinema, message: Constants.calendarNotGranted, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "cinema".localized(), message: "calendarNotGranted".localized(), preferredStyle: UIAlertController.Style.alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                     UIAlertAction in
@@ -330,7 +322,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let debut = formatter.date(from: startFormat)
         let fin = debut?.addingTimeInterval(TimeInterval(totalTime))
         
-        addEventToCalendar(title: film, description: Constants.grenadeCinema, startDate: debut!, endDate: fin!, sender: tapGestureRecognizer.sender)
+        addEventToCalendar(title: film, description: "cinema".localized(), startDate: debut!, endDate: fin!, sender: tapGestureRecognizer.sender)
     }
     
     func isAlertFilmInCalendar(detail: Film) -> Bool {

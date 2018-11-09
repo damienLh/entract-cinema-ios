@@ -7,11 +7,6 @@
 //
 
 struct Constants {
-    static let grenadeCinema = "Grenade cinéma"
-    static let filmCalendrier = "Film ajouté à votre calendrier"
-    static let calendarNotGranted = "Vous devez autoriser l'application à accéder au calendrier"
-    static let offlineModeTitle = "Pas de connexion internet ?"
-    static let offlineModeMessage = "Vous-êtes actuellement en mode offline"
     static let remoteSite = "http://www.mobile-grenadecinema.fr"
     
     //user
@@ -23,7 +18,6 @@ struct Constants {
     static let annonceAfficheeSession = "annonceAfficheeSession"
     static let bandeAnnonceUniquementWIFI = "bandeAnnonceUniquementWIFI"
     
-    
     //Cache
     static let cacheFilms = "cacheFilms"
     static let cacheParams = "cacheParams"
@@ -32,8 +26,9 @@ struct Constants {
     //notification
     static let notification = "notification"
 
-    
-    //moinsDouze
+    //images
     static let avertissement = "avertissement"
     static let moinsDouze = "moinsDouze"
+    static let threeD = "three-d"
+    static let vost = "vost"
 }

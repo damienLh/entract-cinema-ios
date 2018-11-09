@@ -12,6 +12,10 @@ class LesHorairesTableViewController: UITableViewController {
     @IBOutlet var menuButton:UIBarButtonItem!
     @IBOutlet var tableViewHoraires: UITableView!
     
+    let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+    let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
+    let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
+    
     var items: [Semaine] = []
     
     override func viewDidLoad() {
@@ -59,7 +63,6 @@ class LesHorairesTableViewController: UITableViewController {
     {
         let semaine = items[indexPath.section]
         let joursLu = semaine.jours[indexPath.row]
-        let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
         let content = NSMutableAttributedString()
         
         var size = CGFloat(0)
@@ -74,11 +77,12 @@ class LesHorairesTableViewController: UITableViewController {
                 firstFilm = false
                 contentFilm.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:titreFilm))
                 contentFilm.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
+            
                 if film.troisD {
-                    contentFilm.append(NSMutableAttributedString(string:"3D".localized(), attributes:titreFilm))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
                 }
                 if film.vo {
-                    contentFilm.append(NSMutableAttributedString(string:"vo".localized(), attributes:titreFilm))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.vost))
                 }
             
                 if film.avertissement {
@@ -135,10 +139,6 @@ class LesHorairesTableViewController: UITableViewController {
         let joursLu = semaine.jours[indexPath.row]
         cell.dateSeance.text = joursLu.jour.convertDateToLocaleDate()
         
-        let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
-        let vo = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.blue]
-        let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
-        
         let content = NSMutableAttributedString()
         if joursLu.films.count == 0 {
             content.append(NSMutableAttributedString(string: "pas_de_film".localized(), attributes:titreFilm))
@@ -154,10 +154,10 @@ class LesHorairesTableViewController: UITableViewController {
                 contentFilm.append(NSMutableAttributedString(string:"\(film.titre) ", attributes:titreFilm))
                 
                 if film.troisD {
-                    contentFilm.append(NSMutableAttributedString(string:"3D".localized(), attributes:troisD))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
                 }
                 if film.vo {
-                    contentFilm.append(NSMutableAttributedString(string:"vo".localized(), attributes:vo))
+                    contentFilm.append(Tools.shared.attributedTextWithImage(imageName: Constants.vost))
                 }
                 
                 if film.avertissement {

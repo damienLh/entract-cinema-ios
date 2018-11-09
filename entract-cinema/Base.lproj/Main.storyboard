@@ -323,7 +323,7 @@
             </objects>
             <point key="canvasLocation" x="3976.875" y="209.1549295774648"/>
         </scene>
-        <!--Détail du film-->
+        <!--Détail de la séance-->
         <scene sceneID="4pO-8A-VOq">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Ogg-U8-O4N" customClass="TableViewDetailFilmController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
@@ -501,7 +501,7 @@
                             <outlet property="delegate" destination="Ogg-U8-O4N" id="Zof-Ba-Rn4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Détail du film" id="gIk-o9-cc0">
+                    <navigationItem key="navigationItem" title="Détail de la séance" id="gIk-o9-cc0">
                         <barButtonItem key="rightBarButtonItem" title="Retour" id="d2B-LO-zF4">
                             <connections>
                                 <action selector="close:" destination="Ogg-U8-O4N" id="a9c-3H-Q4a"/>
@@ -529,7 +529,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infos pratiques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-El-JHa">
-                                <rect key="frame" x="97" y="28" width="123" height="19.5"/>
+                                <rect key="frame" x="98.5" y="28" width="123" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -541,7 +541,7 @@
                                     <constraint firstAttribute="width" constant="288" id="g36-Ta-9l5"/>
                                 </constraints>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cinéma L'entract - Avenue Lazare Carnot - 31330 Grenade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-n3-eWs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cinéma L'Entract' - Avenue Lazare Carnot - 31330 Grenade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-n3-eWs">
                                 <rect key="frame" x="16" y="331.5" width="288" height="38.5"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -573,16 +573,15 @@
                         <constraints>
                             <constraint firstItem="BIY-n3-eWs" firstAttribute="top" secondItem="zJR-7r-JD0" secondAttribute="bottom" constant="8" id="27m-8G-q45"/>
                             <constraint firstItem="iBw-ZP-oLV" firstAttribute="leading" secondItem="VUm-te-utN" secondAttribute="trailing" constant="50" id="2Ly-uh-3mA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iTw-El-JHa" secondAttribute="trailing" constant="84" id="3dH-OF-kzW"/>
                             <constraint firstItem="iTw-El-JHa" firstAttribute="top" secondItem="SIj-rm-3KB" secondAttribute="bottom" constant="8" id="6Ki-e9-Wvo"/>
                             <constraint firstItem="VUm-te-utN" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="7hr-ex-6Qo"/>
                             <constraint firstItem="BIY-n3-eWs" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="BzC-ny-mF4"/>
                             <constraint firstItem="BIY-n3-eWs" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="QMP-GW-2BZ"/>
                             <constraint firstItem="iBw-ZP-oLV" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="cJY-rI-Adc"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="gZf-Yf-tCv"/>
+                            <constraint firstItem="iTw-El-JHa" firstAttribute="centerX" secondItem="hFV-Ix-y62" secondAttribute="centerX" id="glw-Pp-s3V"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="kYs-xv-dsZ"/>
                             <constraint firstItem="8hB-FI-Xj9" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="mlY-UY-zo0"/>
-                            <constraint firstItem="iTw-El-JHa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="pPi-up-41U"/>
                             <constraint firstItem="VUm-te-utN" firstAttribute="leading" secondItem="8hB-FI-Xj9" secondAttribute="trailing" constant="50" id="pWV-OJ-eB7"/>
                             <constraint firstItem="zJR-7r-JD0" firstAttribute="top" secondItem="iTw-El-JHa" secondAttribute="bottom" constant="8" id="peP-XL-sj4"/>
                             <constraint firstItem="VUm-te-utN" firstAttribute="centerX" secondItem="hFV-Ix-y62" secondAttribute="centerX" id="swt-G5-2Cr"/>
