@@ -17,6 +17,7 @@ struct Constants {
     static let autoriserAnnonce = "autoriserAnnonce"
     static let annonceAfficheeSession = "annonceAfficheeSession"
     static let bandeAnnonceUniquementWIFI = "bandeAnnonceUniquementWIFI"
+    static let compteurOuverture = "compteurOuverture"
     
     //Cache
     static let cacheFilms = "cacheFilms"

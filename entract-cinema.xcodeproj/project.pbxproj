@@ -59,6 +59,7 @@
 		9D9686E420CF040F006E1E8C /* seance_20180702.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E220CF040F006E1E8C /* seance_20180702.json */; };
 		9D9686E520CF040F006E1E8C /* seance_20180626.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9686E320CF040F006E1E8C /* seance_20180626.json */; };
 		9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */; };
+		9DB4FAEE2199B0A5009028AF /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */; };
 		9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE39B92145AA1C00254E65 /* Statistiques.swift */; };
 		9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D120E4D7EA00E143C1 /* Reachibility.swift */; };
 		9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC519D320E4E3AF00E143C1 /* Cache.swift */; };
@@ -149,6 +150,7 @@
 		9D9686E220CF040F006E1E8C /* seance_20180702.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180702.json; sourceTree = "<group>"; };
 		9D9686E320CF040F006E1E8C /* seance_20180626.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seance_20180626.json; sourceTree = "<group>"; };
 		9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutreDateTapGesture.swift; sourceTree = "<group>"; };
+		9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		9DBE39B92145AA1C00254E65 /* Statistiques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistiques.swift; sourceTree = "<group>"; };
 		9DC519D120E4D7EA00E143C1 /* Reachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
 		9DC519D320E4E3AF00E143C1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
 				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
 				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
+				9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */,
 				9D42B0F720C8706C009BCA11 /* NoSeanceTableViewCell.swift in Sources */,
 				9D42B0FE20C8706C009BCA11 /* Date+extensions.swift in Sources */,
+				9DB4FAEE2199B0A5009028AF /* StoreReviewHelper.swift in Sources */,
 				9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */,
 				9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */,
 				9D42B0FF20C8706C009BCA11 /* SeanceTapGesture.swift in Sources */,

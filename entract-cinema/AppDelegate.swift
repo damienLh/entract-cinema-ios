@@ -44,6 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(false, forKey: Constants.annonceAfficheeSession)
         }
         
+        if UserDefaults.standard.object(forKey: Constants.compteurOuverture) == nil {
+            UserDefaults.standard.set(0, forKey: Constants.compteurOuverture)
+        }
+        
+        //mise en place du compteur pour la notation store
+        StoreReviewHelper.checkAndAskForReview()
+        
         do {
             Network.reachability = try Reachability(hostname: Constants.remoteSite)
             do {
