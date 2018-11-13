@@ -111,10 +111,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     if let annonceVC:AfficheEvenementViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "afficheEvenementViewController") as? AfficheEvenementViewController {
                         Statistiques.statEvenement()
                         annonceVC.annonce = annonce
-                        annonceVC.providesPresentationContextTransitionStyle = true
-                        annonceVC.definesPresentationContext = true
-                        annonceVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext;
-                        annonceVC.view.backgroundColor = UIColor.init(white: 0.4, alpha: 0.8)
                         self.present(annonceVC, animated: true, completion: nil)
                     }
                 }
@@ -242,6 +238,12 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 event.endDate = endDate
                 event.notes = description
                 event.calendar = eventStore.defaultCalendarForNewEvents
+                
+                let structuredLocation = EKStructuredLocation(title:"cinema".localized())
+                let location = CLLocation(latitude: 43.7700499, longitude: 1.2948405)
+                structuredLocation.geoLocation = location
+                structuredLocation.radius = 1000
+                event.structuredLocation = structuredLocation
                 
                 let valeurRappel = UserDefaults.standard.integer(forKey: Constants.tempsAlerte)
                 print("valeur alarme \(valeurRappel)")

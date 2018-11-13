@@ -698,7 +698,7 @@
         <!--Affiche Evenement View Controller-->
         <scene sceneID="rdm-Y2-71w">
             <objects>
-                <viewController storyboardIdentifier="afficheEvenementViewController" id="QGw-Q1-SHF" customClass="AfficheEvenementViewController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="afficheEvenementViewController" modalPresentationStyle="overFullScreen" id="QGw-Q1-SHF" customClass="AfficheEvenementViewController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DDm-fm-gg0"/>
                         <viewControllerLayoutGuide type="bottom" id="Zp1-o5-abL"/>
@@ -707,16 +707,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-xg-wlS">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkV-aW-LBp">
-                                <rect key="frame" x="248" y="22" width="56" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkV-aW-LBp">
+                                <rect key="frame" x="272" y="25" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="zhM-s0-Wr1"/>
+                                    <constraint firstAttribute="height" constant="32" id="ItR-Cg-Ale"/>
+                                    <constraint firstAttribute="width" constant="32" id="s5G-A0-XVR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <state key="normal" title="Fermer">
+                                <state key="normal" image="close">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -724,38 +721,43 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QBT-HW-qKC">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <rect key="frame" x="150" y="307" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A vos agendas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-Ny-qmR">
-                                <rect key="frame" x="105.5" y="31" width="109.5" height="19.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-nl-goS">
+                                <rect key="frame" x="5" y="72" width="310" height="491"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A vos agendas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-bm-DP1">
+                                <rect key="frame" x="105" y="30" width="110" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.69411764710000001" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gkV-aW-LBp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dQf-3Y-vke" secondAttribute="leadingMargin" id="Ban-mS-TrO"/>
-                            <constraint firstItem="gkV-aW-LBp" firstAttribute="trailing" secondItem="dQf-3Y-vke" secondAttribute="trailingMargin" id="Erc-GB-cDw"/>
-                            <constraint firstItem="Zp1-o5-abL" firstAttribute="top" secondItem="ayl-xg-wlS" secondAttribute="bottom" id="G6V-re-ce2"/>
-                            <constraint firstItem="ayl-xg-wlS" firstAttribute="leading" secondItem="dQf-3Y-vke" secondAttribute="leading" id="ImC-yK-TNQ"/>
-                            <constraint firstItem="gkV-aW-LBp" firstAttribute="top" secondItem="DDm-fm-gg0" secondAttribute="bottom" constant="2" id="Ndn-cR-eSo"/>
-                            <constraint firstAttribute="trailing" secondItem="ayl-xg-wlS" secondAttribute="trailing" id="Q3w-oL-XnK"/>
-                            <constraint firstItem="QeY-Ny-qmR" firstAttribute="centerX" secondItem="dQf-3Y-vke" secondAttribute="centerX" id="QDA-e2-VIi"/>
-                            <constraint firstItem="QBT-HW-qKC" firstAttribute="centerX" secondItem="dQf-3Y-vke" secondAttribute="centerX" id="cd3-cu-UQz"/>
-                            <constraint firstItem="QBT-HW-qKC" firstAttribute="centerY" secondItem="dQf-3Y-vke" secondAttribute="centerY" id="dHV-Cc-rkb"/>
-                            <constraint firstItem="QeY-Ny-qmR" firstAttribute="firstBaseline" secondItem="gkV-aW-LBp" secondAttribute="baseline" id="kRz-YT-GIb"/>
-                            <constraint firstItem="ayl-xg-wlS" firstAttribute="top" secondItem="DDm-fm-gg0" secondAttribute="bottom" id="uvT-uh-VTL"/>
+                            <constraint firstAttribute="trailing" secondItem="D6a-nl-goS" secondAttribute="trailing" constant="5" id="4gv-CG-iA0"/>
+                            <constraint firstItem="Zp1-o5-abL" firstAttribute="top" secondItem="D6a-nl-goS" secondAttribute="bottom" constant="5" id="FTI-d4-KN7"/>
+                            <constraint firstItem="jWq-bm-DP1" firstAttribute="centerX" secondItem="dQf-3Y-vke" secondAttribute="centerX" id="GHB-79-t6a"/>
+                            <constraint firstItem="Zp1-o5-abL" firstAttribute="top" secondItem="D6a-nl-goS" secondAttribute="bottom" constant="5" id="HjS-Sx-bqK"/>
+                            <constraint firstItem="gkV-aW-LBp" firstAttribute="top" secondItem="DDm-fm-gg0" secondAttribute="bottom" constant="5" id="JsN-xC-AXV"/>
+                            <constraint firstItem="Zp1-o5-abL" firstAttribute="top" secondItem="D6a-nl-goS" secondAttribute="bottom" constant="5" id="Myu-WA-Gbe"/>
+                            <constraint firstItem="D6a-nl-goS" firstAttribute="leading" secondItem="dQf-3Y-vke" secondAttribute="leading" constant="5" id="N6P-9m-iHp"/>
+                            <constraint firstItem="QBT-HW-qKC" firstAttribute="centerY" secondItem="dQf-3Y-vke" secondAttribute="centerY" constant="33" id="PCL-aV-IQL"/>
+                            <constraint firstItem="D6a-nl-goS" firstAttribute="top" secondItem="gkV-aW-LBp" secondAttribute="bottom" constant="15" id="b7A-1v-LjI"/>
+                            <constraint firstItem="D6a-nl-goS" firstAttribute="top" secondItem="gkV-aW-LBp" secondAttribute="bottom" constant="15" id="fIl-l5-8iR"/>
+                            <constraint firstItem="QBT-HW-qKC" firstAttribute="centerX" secondItem="dQf-3Y-vke" secondAttribute="centerX" id="oDu-Yh-C6T"/>
+                            <constraint firstItem="jWq-bm-DP1" firstAttribute="top" secondItem="DDm-fm-gg0" secondAttribute="bottom" constant="10" id="wII-kE-L2d"/>
+                            <constraint firstItem="gkV-aW-LBp" firstAttribute="trailing" secondItem="dQf-3Y-vke" secondAttribute="trailingMargin" id="xc6-90-xCt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activity" destination="QBT-HW-qKC" id="qCG-ts-Rmw"/>
-                        <outlet property="annonceImageView" destination="ayl-xg-wlS" id="Fiu-Ej-CeZ"/>
+                        <outlet property="annonceImageView" destination="D6a-nl-goS" id="zVy-oC-cnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wm-WK-hFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="1180"/>
+            <point key="canvasLocation" x="2077.5" y="1179.9295774647887"/>
         </scene>
         <!--Programme-->
         <scene sceneID="WtF-o2-ayv">
@@ -829,6 +831,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
+        <image name="close" width="32" height="32"/>
         <image name="facebook" width="32" height="32"/>
         <image name="info" width="32" height="32"/>
         <image name="movie" width="32" height="32"/>
