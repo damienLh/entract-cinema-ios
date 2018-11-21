@@ -117,7 +117,7 @@ class TableViewDetailFilmController : UITableViewController {
             posterCell.btnBandeAnnonce.addTarget(self, action: #selector(launchBandeAnnonce(_:)), for: .touchUpInside)
             
             let height = CGFloat(posterCell.lblSynopsis.frame.size.height) + 25
-            let viewHeight = CGFloat(500) + CGFloat(height)
+            let viewHeight = CGFloat(550) + CGFloat(height)
             self.myCustomHeight = viewHeight
             //self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             myCell = posterCell
@@ -177,6 +177,12 @@ class TableViewDetailFilmController : UITableViewController {
         content.append(NSMutableAttributedString(string:"\(annee) ", attributes:normal))
         content.append(NSMutableAttributedString(string:"duree".localized(), attributes:gras))
         content.append(NSMutableAttributedString(string:"\(duree) ", attributes:normal))
+        
+        let afficherArtEssai = UserDefaults.standard.bool(forKey: Constants.afficherInfoArtEssai)
+
+        if film.artEssai, afficherArtEssai{
+            content.append(NSMutableAttributedString(string:"   \("artEssai".localized())\n", attributes:red))
+        }
         return content
     }
 

@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(false, forKey: Constants.bandeAnnonceUniquementWIFI)
         }
         
+        if UserDefaults.standard.object(forKey: Constants.afficherInfoArtEssai) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.afficherInfoArtEssai)
+        }
+        
         if UserDefaults.standard.object(forKey: Constants.autoriserAnnonce) == nil {
             UserDefaults.standard.set(true, forKey: Constants.autoriserAnnonce)
         }

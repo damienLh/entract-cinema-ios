@@ -12,11 +12,11 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
 
     @IBOutlet weak var pickerAlerte: UIPickerView!
     
-    @IBOutlet weak var switchDemo: UISwitch!
-    
     @IBOutlet weak var switchEvenement: UISwitch!
     
     @IBOutlet weak var switchBandeAnnonce: UISwitch!
+    
+    @IBOutlet weak var switchArtEssai: UISwitch!
     
     
     var pickerData: [String] = [String]()
@@ -76,12 +76,12 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
         UserDefaults.standard.set(time, forKey: Constants.tempsAlerte)
     }
     
-    @IBAction func switchDemoChanged(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.visualiserTuto)
-    }
-    
     @IBAction func switchAnnonceChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.autoriserAnnonce)
+    }
+    
+    @IBAction func switchArtEssaiChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: Constants.afficherInfoArtEssai)
     }
     
     @IBAction func switchBAAutorisedChanged(_ sender: UISwitch) {

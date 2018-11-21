@@ -39,6 +39,7 @@ class JSONUnparser {
                             film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                             film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                             film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
+                            film.artEssai = (dicoFilm as AnyObject).object(forKey: "art_essai") as! Bool
                             film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
                             film.affiche = (dicoFilm as AnyObject).object(forKey: "affiche") as! String
                             film.duree = (dicoFilm as AnyObject).object(forKey: "duree") as! String
@@ -185,6 +186,7 @@ class JSONUnparser {
                                 film.horaire = (dicoFilm as AnyObject).object(forKey: "horaire") as! String
                                 film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
                                 film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
+                                film.artEssai = (dicoFilm as AnyObject).object(forKey: "art_essai") as! Bool
                                 film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                                 film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                                 listeFilms.append(film)
