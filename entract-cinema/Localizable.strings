@@ -37,6 +37,8 @@
 //infos
 "cinema" = "Cinéma L'Entract'";
 "movie" = "Cinéma";
+"salleArtEssai" = "Salle de cinéma classée Art & Essai ";
+"jeunePublic" = " - Label Jeune Public";
 
 //paramètres
 "data_titre" = "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?";
@@ -44,6 +46,7 @@
 "continuer" = "Continuer";
 "annuler" = "Annuler";
 
+"infoAlerteFixed" = "Les alertes seront reçues %@ le début de la séance";
 "30min" =  "30 minutes avant";
 "60min" =  "1 heure avant";
 "120min" = "2 heures avant";

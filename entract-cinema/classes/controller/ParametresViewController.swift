@@ -16,11 +16,11 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet weak var switchBandeAnnonce: UISwitch!
     
-    @IBOutlet weak var switchArtEssai: UISwitch!
+    @IBOutlet weak var lblInfosAlertes: UILabel!
     
     
     var pickerData: [String] = [String]()
-    var pickerTitle: [String] = [String]()
+    var pickerTitle: [String] = [String]()    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,8 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
         }
         
         self.pickerAlerte.selectRow(row, inComponent: 0, animated: true)
-        
+        let value = pickerTitle[row]
+        self.lblInfosAlertes.text = String(format: NSLocalizedString("infoAlerteFixed", comment: ""), value.localized())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,15 +74,14 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let time = pickerData[row]
+        let value = pickerTitle[row]
+        self.lblInfosAlertes.text = String(format: NSLocalizedString("infoAlerteFixed", comment: ""), value.localized())
+        
         UserDefaults.standard.set(time, forKey: Constants.tempsAlerte)
     }
     
     @IBAction func switchAnnonceChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.autoriserAnnonce)
-    }
-    
-    @IBAction func switchArtEssaiChanged(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.afficherInfoArtEssai)
     }
     
     @IBAction func switchBAAutorisedChanged(_ sender: UISwitch) {

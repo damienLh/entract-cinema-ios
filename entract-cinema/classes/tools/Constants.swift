@@ -18,7 +18,6 @@ struct Constants {
     static let annonceAfficheeSession = "annonceAfficheeSession"
     static let bandeAnnonceUniquementWIFI = "bandeAnnonceUniquementWIFI"
     static let compteurOuverture = "compteurOuverture"
-    static let afficherInfoArtEssai = "afficherInfoArtEssai"
     
     //Cache
     static let cacheFilms = "cacheFilms"
@@ -33,4 +32,5 @@ struct Constants {
     static let moinsDouze = "moinsDouze"
     static let threeD = "three-d"
     static let vost = "vost"
+    static let artEssai = "artEssai"
 }

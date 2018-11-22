@@ -178,10 +178,8 @@ class TableViewDetailFilmController : UITableViewController {
         content.append(NSMutableAttributedString(string:"duree".localized(), attributes:gras))
         content.append(NSMutableAttributedString(string:"\(duree) ", attributes:normal))
         
-        let afficherArtEssai = UserDefaults.standard.bool(forKey: Constants.afficherInfoArtEssai)
-
-        if film.artEssai, afficherArtEssai{
-            content.append(NSMutableAttributedString(string:"   \("artEssai".localized())\n", attributes:red))
+        if film.artEssai{
+            content.append(Tools.shared.attributedTextWithImage(imageName: Constants.artEssai))
         }
         return content
     }
