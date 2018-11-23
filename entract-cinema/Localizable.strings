@@ -28,7 +28,6 @@
 "autresSeances" = "Autres séances";
 "messageAvertissement" = "Avertissement : des scènes, des propos ou des images peuvent heurter la sensibilité des spectateurs";
 "messageMoinsDouze" = "Interdit aux moins de 12 ans";
-"artEssai" = "Art&Essai";
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";
@@ -36,9 +35,15 @@
 
 //infos
 "cinema" = "Cinéma L'Entract'";
-"movie" = "Cinéma";
-"salleArtEssai" = "Salle de cinéma classée Art & Essai ";
+"movie"  = "Cinéma";
+"salleClassee" = "Salle de cinéma classée\n";
+"artEssai" = "Art&Essai ";
 "jeunePublic" = " - Label Jeune Public";
+
+"fbProfile" = "fb://profile/410990495629466";
+"fbLong" = "https://www.facebook.com/GrenadeCinema";
+"urlSite" = "http://www.grenadecinema.fr";
+"tel" = "tel://+33561746234";
 
 //paramètres
 "data_titre" = "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?";

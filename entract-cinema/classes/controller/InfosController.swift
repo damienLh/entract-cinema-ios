@@ -53,7 +53,8 @@ class InfosController : UIViewController, MKMapViewDelegate {
         btnWebsite.addGestureRecognizer(tap3)
         
         let content = NSMutableAttributedString()
-        content.append(NSMutableAttributedString(string: "salleArtEssai".localized(), attributes:infoFilm))
+        content.append(NSMutableAttributedString(string: "salleClassee".localized(), attributes:infoFilm))
+        content.append(NSMutableAttributedString(string: "artEssai".localized(), attributes:infoFilm))
         content.append(Tools.shared.attributedTextWithImage(imageName: Constants.artEssai))
         content.append(NSMutableAttributedString(string: "jeunePublic".localized(), attributes:infoFilm))
         lblReference.attributedText = content
@@ -61,9 +62,9 @@ class InfosController : UIViewController, MKMapViewDelegate {
     
     @objc func onClicFacebook(sender:UITapGestureRecognizer) {
         
-        var url = URL(string:"fb://profile/410990495629466")!
+        var url = URL(string:"fbProfile".localized())!
         if !UIApplication.shared.canOpenURL(url)  {
-            url = URL(string: "https://www.facebook.com/GrenadeCinema")!
+            url = URL(string: "fbLong".localized())!
         }
         
         if #available(iOS 10.0, *) {
@@ -74,7 +75,7 @@ class InfosController : UIViewController, MKMapViewDelegate {
     }
     
     @objc func onClicWebsite(sender:UITapGestureRecognizer) {
-        let url = URL(string: "http://www.grenadecinema.fr")!
+        let url = URL(string: "urlSite".localized())!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
@@ -83,7 +84,7 @@ class InfosController : UIViewController, MKMapViewDelegate {
     }
     
     @objc func onClicTelephone(sender:UITapGestureRecognizer) {
-        let url = URL(string: "tel://+33561746234")!
+        let url = URL(string: "tel".localized())!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {

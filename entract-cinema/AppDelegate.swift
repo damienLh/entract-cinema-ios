@@ -18,9 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Thread.sleep(forTimeInterval: 1.0)
+        //Thread.sleep(forTimeInterval: 1.0)
         //creation du dictionnaire cache
         Cache.shared.defineDictionnary()
+        
+        let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        UserDefaults.standard.set(version, forKey: "app_version")
+        let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        UserDefaults.standard.set(build, forKey: "app_build")
         
         if UserDefaults.standard.object(forKey: Constants.tempsAlerte) == nil {
             UserDefaults.standard.set(120, forKey: Constants.tempsAlerte)

@@ -103,6 +103,11 @@ class TableViewDetailFilmController : UITableViewController {
             posterCell.lblSynopsis.sizeToFit()
             posterCell.btnBandeAnnonce.isHidden = true
             
+            posterCell.btnBandeAnnonce.backgroundColor = .clear
+            posterCell.btnBandeAnnonce.layer.cornerRadius = 5
+            posterCell.btnBandeAnnonce.layer.borderWidth = 1
+            posterCell.btnBandeAnnonce.layer.borderColor = UIColor.black.cgColor
+            
             if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
                 if let url = URL(string: film.affiche) {
                     posterCell.affiche.contentMode = .scaleAspectFit
@@ -117,7 +122,7 @@ class TableViewDetailFilmController : UITableViewController {
             posterCell.btnBandeAnnonce.addTarget(self, action: #selector(launchBandeAnnonce(_:)), for: .touchUpInside)
             
             let height = CGFloat(posterCell.lblSynopsis.frame.size.height) + 25
-            let viewHeight = CGFloat(550) + CGFloat(height)
+            let viewHeight = CGFloat(520) + CGFloat(height)
             self.myCustomHeight = viewHeight
             //self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             myCell = posterCell

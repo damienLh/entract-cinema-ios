@@ -25,6 +25,7 @@
 		9D0070BE2189B53C00130119 /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070AD2189B53C00130119 /* Ubuntu-RI.ttf */; };
 		9D0070BF2189B53C00130119 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070AE2189B53C00130119 /* Ubuntu-L.ttf */; };
 		9D0070C02189B53C00130119 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070AE2189B53C00130119 /* Ubuntu-L.ttf */; };
+		9D08F5A021A823B20008B9D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D08F59F21A823B20008B9D2 /* Settings.bundle */; };
 		9D16A56E21395E9500696EF1 /* HeaderTitreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A56D21395E9500696EF1 /* HeaderTitreCell.swift */; };
 		9D16A57021395EAC00696EF1 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A56F21395EAC00696EF1 /* PosterCell.swift */; };
 		9D16A5762139626200696EF1 /* TableViewDetailFilmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A5752139626200696EF1 /* TableViewDetailFilmController.swift */; };
@@ -107,6 +108,7 @@
 		9D0070AC2189B53C00130119 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		9D0070AD2189B53C00130119 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-RI.ttf"; sourceTree = "<group>"; };
 		9D0070AE2189B53C00130119 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		9D08F59F21A823B20008B9D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D16A56D21395E9500696EF1 /* HeaderTitreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitreCell.swift; sourceTree = "<group>"; };
 		9D16A56F21395EAC00696EF1 /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 		9D16A5752139626200696EF1 /* TableViewDetailFilmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDetailFilmController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		9D42B09A20C86FC5009BCA11 = {
 			isa = PBXGroup;
 			children = (
+				9D08F59F21A823B20008B9D2 /* Settings.bundle */,
 				9D42B0A520C86FC5009BCA11 /* entract-cinema */,
 				9D42B0BC20C86FC6009BCA11 /* entract-cinemaTests */,
 				9D42B0C720C86FC6009BCA11 /* entract-cinemaUITests */,
@@ -493,6 +496,7 @@
 				9DFC958020C87A3C00E30100 /* seance_20180630.json in Resources */,
 				9D0070BB2189B53C00130119 /* Ubuntu-M.ttf in Resources */,
 				9D42B10620C871E9009BCA11 /* Images.xcassets in Resources */,
+				9D08F5A021A823B20008B9D2 /* Settings.bundle in Resources */,
 				9D0070AF2189B53C00130119 /* Ubuntu-R.ttf in Resources */,
 				9D0070BF2189B53C00130119 /* Ubuntu-L.ttf in Resources */,
 				9D0070B52189B53C00130119 /* Ubuntu-MI.ttf in Resources */,

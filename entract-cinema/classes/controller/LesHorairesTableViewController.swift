@@ -65,8 +65,13 @@ class LesHorairesTableViewController: UITableViewController {
         let joursLu = semaine.jours[indexPath.row]
         let content = NSMutableAttributedString()
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let yesterday = Date().yesterday
+        let jourCell = dateFormatter.date(from: joursLu.jour)
+        
         var size = CGFloat(0)
-        if joursLu.films.count != 0 {
+        if joursLu.films.count != 0, jourCell! > yesterday {
             
            var firstFilm = true
            for film in joursLu.films {

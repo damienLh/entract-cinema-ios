@@ -423,7 +423,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-0r-E2k" userLabel="bandeAnnonce">
-                                            <rect key="frame" x="84.5" y="681" width="151" height="32"/>
+                                            <rect key="frame" x="80" y="681" width="160" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="3TG-lA-4hI"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <state key="normal" title="Bande annonce" image="play">
                                                 <color key="titleColor" red="0.69411764710000001" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -440,6 +443,7 @@
                                         <constraint firstAttribute="trailing" secondItem="CM7-3r-tev" secondAttribute="trailing" constant="10" id="DDv-aq-7QW"/>
                                         <constraint firstAttribute="trailing" secondItem="JZj-qw-9Ie" secondAttribute="trailing" constant="10" id="G5c-kV-dDT"/>
                                         <constraint firstItem="59y-CK-S9E" firstAttribute="top" secondItem="hqf-5s-LEp" secondAttribute="topMargin" constant="10" id="GNg-xk-ZO8"/>
+                                        <constraint firstItem="p9d-0r-E2k" firstAttribute="centerX" secondItem="hqf-5s-LEp" secondAttribute="centerX" id="HNa-ck-Eg8"/>
                                         <constraint firstItem="BVu-gN-xqG" firstAttribute="centerX" secondItem="hqf-5s-LEp" secondAttribute="centerX" id="KWQ-ud-nBr"/>
                                         <constraint firstAttribute="trailing" secondItem="o00-LO-77b" secondAttribute="trailing" constant="10" id="Lep-2f-83p"/>
                                         <constraint firstItem="KAG-vQ-SEJ" firstAttribute="top" secondItem="59y-CK-S9E" secondAttribute="bottom" constant="10" id="N1G-AH-OqD"/>
@@ -454,7 +458,6 @@
                                         <constraint firstItem="BVu-gN-xqG" firstAttribute="top" secondItem="hqf-5s-LEp" secondAttribute="topMargin" constant="133" id="hsb-n4-rbK"/>
                                         <constraint firstItem="CM7-3r-tev" firstAttribute="top" secondItem="o00-LO-77b" secondAttribute="bottom" constant="10" id="tH3-zs-CCo"/>
                                         <constraint firstAttribute="trailing" secondItem="G50-Jx-h2X" secondAttribute="trailing" constant="10" id="tJJ-ke-oOv"/>
-                                        <constraint firstItem="p9d-0r-E2k" firstAttribute="centerX" secondItem="hqf-5s-LEp" secondAttribute="centerX" id="wjU-ju-YDH"/>
                                         <constraint firstAttribute="trailing" secondItem="KAG-vQ-SEJ" secondAttribute="trailing" constant="10" id="zBP-Jd-a6z"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -474,7 +477,7 @@
                                 <rect key="frame" x="0.0" y="875.5" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dvn-bj-35P" id="D6y-Fn-RbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autres séances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-2C-QGY">
