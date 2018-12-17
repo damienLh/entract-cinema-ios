@@ -29,4 +29,9 @@ class AfficheEvenementViewController : UIViewController {
             Tools.shared.downloadImage(url: url, imageView: self.annonceImageView, activity: activity)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+    }
 }

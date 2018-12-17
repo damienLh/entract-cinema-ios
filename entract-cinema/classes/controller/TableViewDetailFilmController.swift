@@ -14,10 +14,11 @@ class TableViewDetailFilmController : UITableViewController {
     
     var film: Film = Film()
     var jour: String = ""
+    var heure: String = ""
     var myCustomHeight = CGFloat(0.0)
     
     let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-    let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.gray]
+    let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageReadTheme()]
     let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
     let grasMessage = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
     
@@ -31,6 +32,13 @@ class TableViewDetailFilmController : UITableViewController {
             self.tableViewDetail.contentOffset = CGPoint(x: 0.0, y: 65.0)
             self.tableViewDetail.contentInset = UIEdgeInsets(top: 65.0, left: 0.0, bottom: 0.0, right: 0.0)
         }
+        
+        /*self.navigationItem.title = String(format: NSLocalizedString("horaireSeance", comment: ""), "\(self.jour.convertDateToLocaleDate()) - \(self.film.horaire)")*/
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,6 +85,7 @@ class TableViewDetailFilmController : UITableViewController {
             titreContent.append(NSMutableAttributedString(string:"autresSeances".localized(), attributes:red))
             headerTitre.lblTitre.attributedText = titreContent
         }
+        headerTitre.backgroundColor = Tools.shared.manageGrayWindowTheme()
         return headerTitre
     }
     
@@ -124,7 +133,6 @@ class TableViewDetailFilmController : UITableViewController {
             let height = CGFloat(posterCell.lblSynopsis.frame.size.height) + 25
             let viewHeight = CGFloat(520) + CGFloat(height)
             self.myCustomHeight = viewHeight
-            //self.tableViewDetail.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             myCell = posterCell
         } else {
             let footer = tableView.dequeueReusableCell(withIdentifier: "autresDatesCell") as! AutresDatesCell
@@ -140,8 +148,10 @@ class TableViewDetailFilmController : UITableViewController {
                 footer.lblAutresSeances.isUserInteractionEnabled = true
                 footer.lblAutresSeances.addGestureRecognizer(tapAutreDate)
             }
+            footer.lblAutresSeances.textColor = Tools.shared.manageReadTheme()
             myCell = footer
         }
+        myCell.backgroundColor = Tools.shared.manageWindowTheme()
         return myCell
     }
     

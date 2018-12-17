@@ -18,15 +18,16 @@ class InfosController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var btnFacebook: UIImageView!
     
-    @IBOutlet weak var lblReference: UILabel!
+    @IBOutlet weak var lblAdresse: UILabel!
     
+    @IBOutlet weak var lblReference: UILabel!
     
     let regionRadius: CLLocationDistance = 1000
     
     // set initial location in Honolulu
     let initialLocation = CLLocation(latitude: 43.7700499, longitude: 1.2948405)
     
-    let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
+    let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,13 @@ class InfosController : UIViewController, MKMapViewDelegate {
         content.append(Tools.shared.attributedTextWithImage(imageName: Constants.artEssai))
         content.append(NSMutableAttributedString(string: "jeunePublic".localized(), attributes:infoFilm))
         lblReference.attributedText = content
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        self.lblAdresse.textColor = Tools.shared.manageTheme()
+        self.lblReference.textColor = Tools.shared.manageTheme()
     }
     
     @objc func onClicFacebook(sender:UITapGestureRecognizer) {

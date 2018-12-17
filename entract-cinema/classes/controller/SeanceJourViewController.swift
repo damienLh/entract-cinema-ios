@@ -50,9 +50,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         NotificationCenter.default.addObserver(self, selector: #selector(Tools.shared.offlineModeAlert(notification:)), name: .flagsChanged, object: self)
 
         self.seancesTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        self.seancesTableView.backgroundColor = Tools.shared.manageWindowTheme()
         loadFilms()
-        self.seancesTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +61,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         dateFormatter.dateFormat =  "yyyy-MM-dd"
         loadFilms()
         self.seancesTableView.reloadData()
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        self.seancesTableView.backgroundColor = Tools.shared.manageWindowTheme()
+        self.datePicker.reloadAllComponents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,8 +82,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerTitle[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: pickerTitle[row], attributes: [NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()])
+        return attributedString
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -138,6 +142,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if let listeFilms = mapFilms[self.jour] {
             let seanceCell = tableView.dequeueReusableCell(withIdentifier: "seanceCell", for: indexPath) as! SeanceTableViewCell
+            seanceCell.backgroundColor = Tools.shared.manageWindowTheme()
             let film = listeFilms[indexPath.row]
             
             if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
@@ -150,7 +155,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
             let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
+            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()]
             
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
@@ -202,6 +207,8 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             let noSeanceCell = tableView.dequeueReusableCell(withIdentifier: "noSeanceCell", for: indexPath) as! NoSeanceTableViewCell
             noSeanceCell.lblNoSeance.text = "pas_de_film".localized()
+            noSeanceCell.lblNoSeance.textColor = Tools.shared.manageTheme()
+            noSeanceCell.backgroundColor = Tools.shared.manageWindowTheme()
             cell = noSeanceCell
         }
 

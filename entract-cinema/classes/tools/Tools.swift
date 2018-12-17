@@ -119,4 +119,36 @@ class Tools {
         }
         return result
     }
+    
+    func manageWindowTheme() -> UIColor {
+        var windowColor:UIColor = .white
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            windowColor = windowGreyColor
+        }
+        return windowColor
+    }
+    
+    func manageGrayWindowTheme() -> UIColor {
+        var windowColor:UIColor = cellGreyColor
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            windowColor = windowGreyColor
+        }
+        return windowColor
+    }
+    
+    func manageTheme() -> UIColor {
+        var color:UIColor = .black
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            color = .white
+        }
+        return color
+    }
+    
+    func manageReadTheme() -> UIColor {
+        var color:UIColor = .gray
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            color = .white
+        }
+        return color
+    }
 }

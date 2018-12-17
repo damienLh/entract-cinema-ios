@@ -23,7 +23,7 @@ struct StoreReviewHelper {
             switch compteur {
             case 25, 50:
                 StoreReviewHelper().requestReview()
-            case _ where compteur%100 == 0 :
+            case _ where compteur%250 == 0 :
                 StoreReviewHelper().requestReview()
             default:
                 print("App run count is : \(compteur)")

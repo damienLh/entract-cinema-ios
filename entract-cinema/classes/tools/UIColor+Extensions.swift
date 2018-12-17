@@ -10,6 +10,8 @@ import UIKit
 
 //#B1000A
 var entractColor = UIColor(red: 177, green: 0, blue: 10)
+var windowGreyColor = UIColor(red: 81, green: 81, blue: 81)
+var cellGreyColor = UIColor(red: 239, green: 239, blue: 244)
 
 extension UIColor {
 

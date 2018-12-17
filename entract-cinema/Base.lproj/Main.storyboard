@@ -347,6 +347,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="IwJ-st-0X5" firstAttribute="top" secondItem="LGN-2H-2rK" secondAttribute="top" constant="5" id="0XY-b4-ago"/>
                                         <constraint firstAttribute="trailing" secondItem="IwJ-st-0X5" secondAttribute="trailing" constant="5" id="365-ff-oby"/>
@@ -477,7 +478,7 @@
                                 <rect key="frame" x="0.0" y="875.5" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dvn-bj-35P" id="D6y-Fn-RbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autres séances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-2C-QGY">
@@ -604,6 +605,7 @@
                         <outlet property="btnFacebook" destination="iBw-ZP-oLV" id="itx-xd-d4e"/>
                         <outlet property="btnPhone" destination="8hB-FI-Xj9" id="slc-h2-aUa"/>
                         <outlet property="btnWebsite" destination="VUm-te-utN" id="Xb9-Na-ZmJ"/>
+                        <outlet property="lblAdresse" destination="BIY-n3-eWs" id="13j-eD-B6i"/>
                         <outlet property="lblReference" destination="uak-Bh-4EK" id="l5O-SA-vqL"/>
                         <outlet property="mapView" destination="zJR-7r-JD0" id="W61-tr-Vqc"/>
                     </connections>
@@ -624,20 +626,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paramètres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Hs-iOV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Paramètres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Hs-iOV">
                                 <rect key="frame" x="113" y="30" width="94" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Afficher les événements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-PS-Jhj">
-                                <rect key="frame" x="10" y="85" width="237" height="20"/>
+                                <rect key="frame" x="10" y="135" width="237" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-ng-HDt">
-                                <rect key="frame" x="255" y="80" width="51" height="31"/>
+                                <rect key="frame" x="255" y="131" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="n5k-Da-qLt"/>
                                     <constraint firstAttribute="height" constant="31" id="vLy-RH-iqt"/>
@@ -647,13 +649,13 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Visualiser les bandes annonces et affiches uniquement en WIFI" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6T1-mC-4Qr">
-                                <rect key="frame" x="10" y="135" width="237" height="57.5"/>
+                                <rect key="frame" x="10" y="165" width="237" height="68"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J97-fr-8Dg">
-                                <rect key="frame" x="255" y="141" width="51" height="31"/>
+                                <rect key="frame" x="255" y="182" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Xm4-o7-r6U"/>
                                     <constraint firstAttribute="width" constant="49" id="hQF-ds-wVI"/>
@@ -663,20 +665,32 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recevoir une alerte avant le début du film" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="goN-5c-hiR" userLabel="labelAlerte">
-                                <rect key="frame" x="10" y="212.5" width="300" height="20"/>
+                                <rect key="frame" x="10" y="253" width="300" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-60-GGq" userLabel="tempsAlerte">
-                                <rect key="frame" x="10" y="232.5" width="300" height="80"/>
+                                <rect key="frame" x="10" y="273" width="300" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="TZV-bx-u5k"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les alertes seront reçues 2h avant le début de la séance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-k4-uVc">
-                                <rect key="frame" x="10" y="322.5" width="300" height="31.5"/>
+                                <rect key="frame" x="10" y="363" width="300" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azP-5q-ak5">
+                                <rect key="frame" x="255" y="80" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchThemeChanged:" destination="4uR-K6-2Bo" eventType="touchUpInside" id="E5p-2h-3Lu"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afficher thème sombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feK-Eh-Gci">
+                                <rect key="frame" x="10" y="85" width="237" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -684,40 +698,52 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6T1-mC-4Qr" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="2nv-x7-8SD"/>
+                            <constraint firstItem="feK-Eh-Gci" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="6de-2e-fnD"/>
                             <constraint firstItem="Xii-60-GGq" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="78l-Xp-Ewi"/>
+                            <constraint firstItem="azP-5q-ak5" firstAttribute="leading" secondItem="feK-Eh-Gci" secondAttribute="trailing" constant="8" id="8b8-6T-bDJ"/>
                             <constraint firstItem="jO6-k4-uVc" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="9Bj-f3-nnP"/>
+                            <constraint firstItem="feK-Eh-Gci" firstAttribute="top" secondItem="Fk3-Hs-iOV" secondAttribute="bottom" constant="35" id="9Wr-22-Ew1"/>
                             <constraint firstItem="Fgg-PS-Jhj" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="Afy-YV-XXl"/>
-                            <constraint firstItem="Fgg-PS-Jhj" firstAttribute="top" secondItem="Fk3-Hs-iOV" secondAttribute="bottom" constant="35" id="C8T-kR-IpU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="azP-5q-ak5" secondAttribute="trailing" id="CG2-Wg-rne"/>
+                            <constraint firstItem="goN-5c-hiR" firstAttribute="top" secondItem="J97-fr-8Dg" secondAttribute="bottom" constant="40" id="Cs0-cC-XqR"/>
                             <constraint firstItem="fCm-ng-HDt" firstAttribute="leading" secondItem="Fgg-PS-Jhj" secondAttribute="trailing" constant="8" id="Dcc-aj-ywR"/>
                             <constraint firstItem="Xii-60-GGq" firstAttribute="top" secondItem="goN-5c-hiR" secondAttribute="bottom" id="MPw-Ul-1c5"/>
+                            <constraint firstItem="fCm-ng-HDt" firstAttribute="top" secondItem="azP-5q-ak5" secondAttribute="bottom" constant="20" id="O6R-PC-Fsj"/>
                             <constraint firstItem="Fk3-Hs-iOV" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="10" id="OMO-EL-pZF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J97-fr-8Dg" secondAttribute="trailing" id="Oqy-Sz-cK7"/>
                             <constraint firstAttribute="trailing" secondItem="Xii-60-GGq" secondAttribute="trailing" constant="10" id="P4V-nf-bKM"/>
-                            <constraint firstItem="fCm-ng-HDt" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="60" id="SZt-dB-Utx"/>
+                            <constraint firstItem="azP-5q-ak5" firstAttribute="top" secondItem="Sli-dN-MKK" secondAttribute="bottom" constant="60" id="PjQ-WW-tKZ"/>
+                            <constraint firstItem="Fgg-PS-Jhj" firstAttribute="top" secondItem="feK-Eh-Gci" secondAttribute="bottom" constant="30" id="X32-F3-G0O"/>
                             <constraint firstItem="Fk3-Hs-iOV" firstAttribute="centerX" secondItem="6lI-4g-yUe" secondAttribute="centerX" id="ap6-ql-j2f"/>
                             <constraint firstItem="goN-5c-hiR" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="bcG-qt-wFf"/>
                             <constraint firstItem="goN-5c-hiR" firstAttribute="leading" secondItem="6lI-4g-yUe" secondAttribute="leading" constant="10" id="dbO-vh-V3n"/>
                             <constraint firstItem="fCm-ng-HDt" firstAttribute="trailing" secondItem="6lI-4g-yUe" secondAttribute="trailingMargin" id="dcp-3f-pcj"/>
+                            <constraint firstItem="azP-5q-ak5" firstAttribute="leading" secondItem="feK-Eh-Gci" secondAttribute="trailing" constant="8" id="dfc-Hm-2kw"/>
                             <constraint firstItem="jO6-k4-uVc" firstAttribute="top" secondItem="Xii-60-GGq" secondAttribute="bottom" constant="10" id="f8H-0T-jvf"/>
                             <constraint firstAttribute="trailing" secondItem="goN-5c-hiR" secondAttribute="trailing" constant="10" id="fG7-yG-r9F"/>
-                            <constraint firstItem="J97-fr-8Dg" firstAttribute="top" secondItem="fCm-ng-HDt" secondAttribute="bottom" constant="30" id="rxg-6z-AYp"/>
+                            <constraint firstItem="J97-fr-8Dg" firstAttribute="top" secondItem="fCm-ng-HDt" secondAttribute="bottom" constant="20" id="rxg-6z-AYp"/>
                             <constraint firstAttribute="trailing" secondItem="jO6-k4-uVc" secondAttribute="trailing" constant="10" id="s6H-ME-H5l"/>
                             <constraint firstItem="goN-5c-hiR" firstAttribute="top" secondItem="6T1-mC-4Qr" secondAttribute="bottom" constant="20" id="tWI-fc-wxV"/>
-                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="top" secondItem="Fgg-PS-Jhj" secondAttribute="bottom" constant="30" id="vu0-hM-yEb"/>
+                            <constraint firstItem="6T1-mC-4Qr" firstAttribute="top" secondItem="Fgg-PS-Jhj" secondAttribute="bottom" constant="10" id="vu0-hM-yEb"/>
                             <constraint firstItem="J97-fr-8Dg" firstAttribute="leading" secondItem="6T1-mC-4Qr" secondAttribute="trailing" constant="8" id="y8r-hC-Cqh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parametres" image="tools" selectedImage="tools" id="81i-RY-mby"/>
                     <connections>
+                        <outlet property="lblAlerte" destination="goN-5c-hiR" id="N8C-M6-Y3D"/>
+                        <outlet property="lblEvenement" destination="Fgg-PS-Jhj" id="JGz-XI-M9k"/>
                         <outlet property="lblInfosAlertes" destination="jO6-k4-uVc" id="SZH-pe-R8i"/>
+                        <outlet property="lblThemeSombre" destination="feK-Eh-Gci" id="XdG-Tx-nDz"/>
+                        <outlet property="lblWifi" destination="6T1-mC-4Qr" id="pq8-DL-DO4"/>
                         <outlet property="pickerAlerte" destination="Xii-60-GGq" id="iky-c7-oli"/>
                         <outlet property="switchBandeAnnonce" destination="J97-fr-8Dg" id="F2G-kH-pi4"/>
                         <outlet property="switchEvenement" destination="fCm-ng-HDt" id="e7u-0W-iqb"/>
+                        <outlet property="switchThemeSombre" destination="azP-5q-ak5" id="za4-eH-iXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIQ-88-C9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="1178.8605697151424"/>
+            <point key="canvasLocation" x="363.75" y="1177.8169014084508"/>
         </scene>
         <!--Affiche Evenement View Controller-->
         <scene sceneID="rdm-Y2-71w">

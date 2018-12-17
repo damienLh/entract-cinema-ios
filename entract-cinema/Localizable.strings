@@ -28,6 +28,7 @@
 "autresSeances" = "Autres séances";
 "messageAvertissement" = "Avertissement : des scènes, des propos ou des images peuvent heurter la sensibilité des spectateurs";
 "messageMoinsDouze" = "Interdit aux moins de 12 ans";
+"horaireSeance" = "Séance du %@";
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";

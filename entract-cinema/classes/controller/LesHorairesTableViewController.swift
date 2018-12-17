@@ -9,7 +9,6 @@
 import UIKit
 
 class LesHorairesTableViewController: UITableViewController {
-    @IBOutlet var menuButton:UIBarButtonItem!
     @IBOutlet var tableViewHoraires: UITableView!
     
     let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
@@ -30,6 +29,7 @@ class LesHorairesTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         items = JSONUnparser.getProgramme()
         self.tableViewHoraires.reloadData()
+        //self.view.backgroundColor = Tools.shared.manageWindowTheme()
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,6 +134,7 @@ class LesHorairesTableViewController: UITableViewController {
         let semaine = items[section]
         
         headerCell.semaine.text = "Du \(semaine.debutsemaine.convertDateToDayMonth()) au \(semaine.finsemaine.convertDateToDayMonth())"
+        headerCell.backgroundColor = .gray
         return headerCell
     }
     
@@ -174,17 +175,8 @@ class LesHorairesTableViewController: UITableViewController {
             }
         }
         cell.lesFilms.attributedText = content
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "yyyy-MM-dd"
-        let yesterday = Date().yesterday
-        let jourCell = dateFormatter.date(from: joursLu.jour)
-        if jourCell! <= yesterday {
-            cell.backgroundColor = UIColor.init(red: 179, green: 179, blue: 179)
-        } else {
-            cell.backgroundColor = UIColor.clear
-        }
-        
+        cell.lesFilms.textColor = Tools.shared.manageTheme()
+        cell.backgroundColor = Tools.shared.manageWindowTheme()
         return cell
     }
     

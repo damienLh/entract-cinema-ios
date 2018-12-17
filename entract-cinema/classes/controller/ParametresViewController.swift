@@ -10,6 +10,16 @@ import UIKit
 
 class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var lblThemeSombre: UILabel!
+    
+    @IBOutlet weak var lblEvenement: UILabel!
+    
+    @IBOutlet weak var lblWifi: UILabel!
+    
+    @IBOutlet weak var lblAlerte: UILabel!
+    
+    @IBOutlet weak var switchThemeSombre: UISwitch!
+    
     @IBOutlet weak var pickerAlerte: UIPickerView!
     
     @IBOutlet weak var switchEvenement: UISwitch!
@@ -17,7 +27,6 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var switchBandeAnnonce: UISwitch!
     
     @IBOutlet weak var lblInfosAlertes: UILabel!
-    
     
     var pickerData: [String] = [String]()
     var pickerTitle: [String] = [String]()    
@@ -55,7 +64,8 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.switchDemo.isOn = UserDefaults.standard.bool(forKey: Constants.visualiserTuto)
+        manageTheme()
+        self.switchThemeSombre.isOn = UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre)
         self.switchEvenement.isOn = UserDefaults.standard.bool(forKey: Constants.autoriserAnnonce)
         self.switchBandeAnnonce.isOn = UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI)
     }
@@ -68,8 +78,15 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerTitle[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        var color:UIColor = .black
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            color = .white
+        }
+        
+        let attributedString = NSAttributedString(string: pickerTitle[row], attributes: [NSAttributedString.Key.foregroundColor : color])
+        return attributedString
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -78,6 +95,22 @@ class ParametresViewController : UIViewController, UIPickerViewDelegate, UIPicke
         self.lblInfosAlertes.text = String(format: NSLocalizedString("infoAlerteFixed", comment: ""), value.localized())
         
         UserDefaults.standard.set(time, forKey: Constants.tempsAlerte)
+    }
+    
+    func manageTheme() {
+        self.lblThemeSombre.textColor = Tools.shared.manageTheme()
+        self.lblEvenement.textColor = Tools.shared.manageTheme()
+        self.lblWifi.textColor = Tools.shared.manageTheme()
+        self.lblAlerte.textColor = Tools.shared.manageTheme()
+        self.lblInfosAlertes.textColor = Tools.shared.manageTheme()
+        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        self.pickerAlerte.backgroundColor = Tools.shared.manageWindowTheme()
+        self.pickerAlerte.reloadAllComponents()
+    }
+    
+    @IBAction func switchThemeChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: Constants.afficherThemeSombre)
+        manageTheme()
     }
     
     @IBAction func switchAnnonceChanged(_ sender: UISwitch) {

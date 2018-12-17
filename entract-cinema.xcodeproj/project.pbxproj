@@ -315,19 +315,19 @@
 		9D42B0E320C8706C009BCA11 /* tools */ = {
 			isa = PBXGroup;
 			children = (
-				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
 				9DC519D320E4E3AF00E143C1 /* Cache.swift */,
 				9D42B0E420C8706C009BCA11 /* Constants.swift */,
 				9D42B0E520C8706C009BCA11 /* JSONUnparser.swift */,
 				9D4FD71B210E107500F98743 /* NetworkUtils.swift */,
+				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
 				9DC519D120E4D7EA00E143C1 /* Reachibility.swift */,
 				9DBE39B92145AA1C00254E65 /* Statistiques.swift */,
+				9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */,
 				C7145AF920E398A600A6FCE4 /* String+Extensions.swift */,
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
-				9D68AB5B21484F9B00DF3CE7 /* Notifications.swift */,
 				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
-				9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */,
+				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
