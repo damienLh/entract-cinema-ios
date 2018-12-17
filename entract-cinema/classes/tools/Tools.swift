@@ -144,6 +144,14 @@ class Tools {
         return color
     }
     
+    func manageBtnTheme() -> UIColor {
+        var color:UIColor = .clear
+        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
+            color = .white
+        }
+        return color
+    }
+    
     func manageReadTheme() -> UIColor {
         var color:UIColor = .gray
         if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {

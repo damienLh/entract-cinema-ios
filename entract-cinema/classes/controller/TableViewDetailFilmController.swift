@@ -112,10 +112,10 @@ class TableViewDetailFilmController : UITableViewController {
             posterCell.lblSynopsis.sizeToFit()
             posterCell.btnBandeAnnonce.isHidden = true
             
-            posterCell.btnBandeAnnonce.backgroundColor = .clear
             posterCell.btnBandeAnnonce.layer.cornerRadius = 5
             posterCell.btnBandeAnnonce.layer.borderWidth = 1
             posterCell.btnBandeAnnonce.layer.borderColor = UIColor.black.cgColor
+            posterCell.btnBandeAnnonce.backgroundColor = Tools.shared.manageBtnTheme()
             
             if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
                 if let url = URL(string: film.affiche) {
