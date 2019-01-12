@@ -46,6 +46,21 @@
 "urlSite" = "http://www.grenadecinema.fr";
 "tel" = "tel://+33561746234";
 
+
+"infos_tarifs" = "Tarifs";
+"infos_normal" = "Normal: ";
+"infos_reduit" = "Réduit (Etudiants, demandeurs d'emploi, moins de 18 ans): ";
+"infos_jeunes" = "Jeunes (moins de 14 ans): ";
+"infos_matin" = "Séance le matin: ";
+"infos_cartes" = "Carte 10 entrées (Intemporelle): ";
+"infos_3d" = "Séance 3D: ";
+"infos_majoration" = "Majoration de 1€";
+"infos_cheque" = "Chèque cinéma : ";
+"infos_cinecheque" = "Cinéchèque et Chèque Culture";
+"infos_paiement" = "Moyens de paiements : ";
+"infos_liquide" = "Liquide, chèque";
+"infos_cb" = "Les cartes bancaires ne sont pas acceptées";
+
 //paramètres
 "data_titre" = "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?";
 "data_content" = "Selon votre forfait mobile, des frais supplémentaires peuvent s'appliquer";

@@ -234,13 +234,13 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             }
     }
     
-    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date,sender: UIButton, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+    func addEventToCalendar(film: Film, description: String?, startDate: Date, endDate: Date,sender: UIButton, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore = EKEventStore()
         
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
                 let event = EKEvent(eventStore: eventStore)
-                event.title = title
+                event.title = film.titre
                 event.startDate = startDate
                 event.endDate = endDate
                 event.notes = description
@@ -262,7 +262,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 let existingEvents = eventStore.events(matching: predicate)
                 var alreadyExists = false
                 for singleEvent in existingEvents {
-                    if singleEvent.title == title {
+                    if singleEvent.title == film.titre {
                         alreadyExists = true
                         break
                     }
@@ -271,6 +271,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 if !alreadyExists {
                     do {
                         try eventStore.save(event, span: .thisEvent)
+                        Statistiques.statCalendrier(jour: self.jour,heure: film.horaire, idFilm: film.id_film)
                     } catch let e as NSError {
                         completion?(false, e)
                         return
@@ -315,7 +316,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let dayToday = calendar.component(.day, from: myDate)
         
         let heure = tapGestureRecognizer.detail.horaire
-        let film = tapGestureRecognizer.detail.titre
         let duree = tapGestureRecognizer.detail.duree
         
         var temps = duree.components(separatedBy: "h")
@@ -331,7 +331,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let debut = formatter.date(from: startFormat)
         let fin = debut?.addingTimeInterval(TimeInterval(totalTime))
         
-        addEventToCalendar(title: film, description: "cinema".localized(), startDate: debut!, endDate: fin!, sender: tapGestureRecognizer.sender)
+        addEventToCalendar(film: tapGestureRecognizer.detail, description: "cinema".localized(), startDate: debut!, endDate: fin!, sender: tapGestureRecognizer.sender)
     }
     
     func isAlertFilmInCalendar(detail: Film) -> Bool {
@@ -400,7 +400,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             if let navigation = segue.destination as? UINavigationController {
-                let detailFilmVC = navigation.topViewController as? TableViewDetailFilmController
+                let detailFilmVC = navigation.topViewController as? DetailFilmController
                 if let detailFilmVC = detailFilmVC {
                     detailFilmVC.film = self.detailSeance.detail
                     detailFilmVC.jour = self.jour

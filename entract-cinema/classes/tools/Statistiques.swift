@@ -10,11 +10,29 @@ import Foundation
 
 class Statistiques {
     
-    static func statDetailFilm(jour: String!, idFilm: String!) -> Void {
+    static func statDetailFilm(jour: String!, heure: String!, idFilm: String!) -> Void {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let server = Tools.shared.getTargetServer()
-            if let myJour = jour, let myFilm = idFilm {
-                let url = "\(server)/php/rest/updateStatistiques.php?page=page_detail&jour=\(myJour)&film=\(myFilm)"
+            if let myJour = jour, let myHeure = heure, let myFilm = idFilm {
+                let url = "\(server)/php/rest/updateStatistiques.php?page=page_detail&jour=\(myJour)&heure=\(myHeure)&film=\(myFilm)"
+                let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+                var request = URLRequest(url: myURL!)
+                request.httpMethod = "GET"
+                let session = URLSession.shared
+                let semaphore = DispatchSemaphore(value: 0)
+                let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+                    semaphore.signal()
+                })
+                task.resume()
+            }
+        }
+    }
+    
+    static func statCalendrier(jour: String!, heure: String!, idFilm : String!) -> Void {
+        if Tools.shared.isNetworkOrWifiAvailable() {
+            let server = Tools.shared.getTargetServer()
+            if let myJour = jour, let myHeure = heure, let myFilm = idFilm {
+                let url = "\(server)/php/rest/updateStatistiques.php?page=ajout_cal&jour=\(myJour)&heure=\(myHeure)&film=\(myFilm)"
                 let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 var request = URLRequest(url: myURL!)
                 request.httpMethod = "GET"

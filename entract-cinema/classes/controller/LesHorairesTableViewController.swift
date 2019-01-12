@@ -29,7 +29,6 @@ class LesHorairesTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         items = JSONUnparser.getProgramme()
         self.tableViewHoraires.reloadData()
-        //self.view.backgroundColor = Tools.shared.manageWindowTheme()
     }
     
     override func didReceiveMemoryWarning() {

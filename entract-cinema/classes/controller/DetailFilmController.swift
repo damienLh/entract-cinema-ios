@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewDetailFilmController : UITableViewController {
+class DetailFilmController : UITableViewController {
     
     @IBOutlet var tableViewDetail: UITableView!
     
@@ -26,14 +26,12 @@ class TableViewDetailFilmController : UITableViewController {
         super.viewDidLoad()
         self.tableViewDetail.dataSource = self
         self.tableViewDetail.delegate = self
-        Statistiques.statDetailFilm(jour: jour, idFilm: film.id_film)
+        Statistiques.statDetailFilm(jour: jour,heure: film.horaire, idFilm: film.id_film)
         
         if Tools.shared.SYSTEM_VERSION_LESS_THAN(version: "11.0") {
             self.tableViewDetail.contentOffset = CGPoint(x: 0.0, y: 65.0)
             self.tableViewDetail.contentInset = UIEdgeInsets(top: 65.0, left: 0.0, bottom: 0.0, right: 0.0)
         }
-        
-        /*self.navigationItem.title = String(format: NSLocalizedString("horaireSeance", comment: ""), "\(self.jour.convertDateToLocaleDate()) - \(self.film.horaire)")*/
     }
     
     override func viewWillAppear(_ animated: Bool) {

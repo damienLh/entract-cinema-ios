@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="oew-mU-B9j">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oew-mU-B9j">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -37,13 +37,13 @@
                     <connections>
                         <segue destination="Mmr-a1-zNk" kind="relationship" relationship="viewControllers" id="kmo-I1-Jtp"/>
                         <segue destination="D7w-9h-Owh" kind="relationship" relationship="viewControllers" id="Cjm-Ms-gIt"/>
-                        <segue destination="nGm-5x-62T" kind="relationship" relationship="viewControllers" id="pFe-mt-LSh"/>
+                        <segue destination="YPf-cg-OcH" kind="relationship" relationship="viewControllers" id="CB6-eP-9Wy"/>
                         <segue destination="4uR-K6-2Bo" kind="relationship" relationship="viewControllers" id="ZpL-XH-F3t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.5" y="0.0"/>
+            <point key="canvasLocation" x="1870.3125" y="0.0"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="bK7-UD-Evn">
@@ -54,14 +54,14 @@
                         <viewControllerLayoutGuide type="bottom" id="b7d-td-aNN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r0P-dH-js8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto1" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-A4-B2Y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-hS-WjU">
-                                <rect key="frame" x="116.5" y="526" width="87" height="34"/>
+                                <rect key="frame" x="144" y="736" width="87" height="34"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="18"/>
                                 <state key="normal" title="C'est parti">
                                     <color key="titleColor" red="0.02890600749" green="0.0" blue="0.9192116857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-dL-v3u">
-                                <rect key="frame" x="100.5" y="523" width="119" height="37"/>
+                                <rect key="frame" x="128" y="733" width="119" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUD-0P-12q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904.375" y="1179.9295774647887"/>
+            <point key="canvasLocation" x="5445.703125" y="1246.4044832374527"/>
         </scene>
         <!--Séances du Jour-->
         <scene sceneID="t5a-tg-dpo">
@@ -108,28 +108,28 @@
                         <viewControllerLayoutGuide type="bottom" id="Z63-0i-4xA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Wv-yD-e4R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVl-8m-weq" userLabel="datePicker">
-                                <rect key="frame" x="0.0" y="20" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gOq-Fk-fMl"/>
                                 </constraints>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZr-Gy-v0I">
-                                <rect key="frame" x="0.0" y="120" width="320" height="399"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noSeanceCell" rowHeight="50" id="1S9-kK-dTN" userLabel="noSeanceCell" customClass="NoSeanceTableViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1S9-kK-dTN" id="nLq-at-3WJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pas de film" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glm-9F-QBQ">
-                                                    <rect key="frame" x="117.5" y="0.0" width="85" height="49.5"/>
+                                                    <rect key="frame" x="164.66666666666666" y="0.0" width="85" height="49.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -147,36 +147,36 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seanceCell" rowHeight="320" id="aDD-gR-EKb" userLabel="seanceCell" customClass="SeanceTableViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="78" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="78" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDD-gR-EKb" id="al7-Ne-giJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="319.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jalouse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-xi-7Ra">
-                                                    <rect key="frame" x="15" y="11" width="290" height="19.5"/>
+                                                    <rect key="frame" x="15" y="10.999999999999998" width="384" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seance_non_dispo" translatesAutoresizingMaskIntoConstraints="NO" id="stl-fH-Y56">
-                                                    <rect key="frame" x="92" y="38.5" width="136" height="185"/>
+                                                    <rect key="frame" x="139" y="38.333333333333343" width="136" height="185"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="185" id="Eua-Yv-HNo"/>
                                                         <constraint firstAttribute="width" constant="136" id="Nuf-58-Jbz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hly-ab-gp3">
-                                                    <rect key="frame" x="150" y="120.5" width="20" height="20"/>
+                                                    <rect key="frame" x="150" y="120.33333333333331" width="114" height="20"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21h00 1h45 3D VO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-At-8sl">
-                                                    <rect key="frame" x="88" y="231.5" width="144" height="20"/>
+                                                    <rect key="frame" x="135" y="231.33333333333334" width="144" height="20"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1Y-mu-8gQ">
-                                                    <rect key="frame" x="62.5" y="265.5" width="195" height="32"/>
+                                                    <rect key="frame" x="115" y="265.33333333333331" width="184" height="21"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <state key="normal" title="Ajouter au calendrier" image="calendar">
                                                         <color key="titleColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -234,31 +234,31 @@
                     <connections>
                         <outlet property="datePicker" destination="lVl-8m-weq" id="Ikm-cA-Dxc"/>
                         <outlet property="seancesTableView" destination="EZr-Gy-v0I" id="I8N-cB-D2c"/>
-                        <segue destination="EVi-Uv-kfe" kind="modal" identifier="detailSegue" modalPresentationStyle="fullScreen" id="gYQ-sU-ZwR"/>
+                        <segue destination="EVi-Uv-kfe" kind="presentation" identifier="detailSegue" modalPresentationStyle="fullScreen" id="gYQ-sU-ZwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdE-bE-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="-622.18309859154931"/>
+            <point key="canvasLocation" x="5203.125" y="-657.23566752628449"/>
         </scene>
         <!--Les horaires-->
         <scene sceneID="bv2-3N-d42">
             <objects>
                 <tableViewController id="sxu-w6-dEI" customClass="LesHorairesTableViewController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="nio-vY-x2w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="horairesCell" rowHeight="40" id="WZa-4S-1qk" customClass="HorairesTableViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZa-4S-1qk" id="9lB-QA-NOg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semaine du 25/11 au 01/12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf0-sE-ZhB">
-                                            <rect key="frame" x="51.5" y="10" width="217" height="19.5"/>
+                                            <rect key="frame" x="79" y="10" width="217" height="20"/>
                                             <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -275,14 +275,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="horairesDateCell" rowHeight="174" id="u2l-2h-Nsr" customClass="HorairesDateViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="62" width="320" height="174"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u2l-2h-Nsr" id="aYU-RE-Q87">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="173.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="173.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendredi 01 décembre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-Ju-NXo">
-                                            <rect key="frame" x="58" y="0.0" width="204" height="23"/>
+                                            <rect key="frame" x="58" y="0.0" width="259" height="23"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="lv7-J4-kfX"/>
                                             </constraints>
@@ -291,7 +291,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="film du jour" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBe-G7-iFB">
-                                            <rect key="frame" x="10" y="28" width="300" height="135"/>
+                                            <rect key="frame" x="10" y="28" width="355" height="135"/>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -321,27 +321,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfO-Xk-d80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3976.875" y="209.1549295774648"/>
+            <point key="canvasLocation" x="7456.640625" y="220.93830589168815"/>
         </scene>
         <!--Détail de la séance-->
         <scene sceneID="4pO-8A-VOq">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Ogg-U8-O4N" customClass="TableViewDetailFilmController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Ogg-U8-O4N" customClass="DetailFilmController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="45" sectionFooterHeight="18" id="uQH-GX-Nna">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerTitreCell" rowHeight="30" id="mQc-X2-G6A" customClass="HeaderTitreCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mQc-X2-G6A" id="LGN-2H-2rK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre Du film" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-st-0X5">
-                                            <rect key="frame" x="5" y="5" width="310" height="19.5"/>
+                                            <rect key="frame" x="5" y="5" width="365" height="19.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -359,29 +359,29 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="posterCell" rowHeight="790" id="pAq-ic-Lu3" customClass="PosterCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="85.5" width="320" height="790"/>
+                                <rect key="frame" x="0.0" y="85.333333333333371" width="375" height="790"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pAq-ic-Lu3" id="hqf-5s-LEp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="790"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="790"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seance_non_dispo" translatesAutoresizingMaskIntoConstraints="NO" id="59y-CK-S9E" userLabel="affiche">
-                                            <rect key="frame" x="65" y="21" width="190" height="247"/>
+                                            <rect key="frame" x="65" y="21" width="245" height="247"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="247" id="SIK-QQ-PPz"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Année - Durée" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAG-vQ-SEJ" userLabel="annee - durée">
-                                            <rect key="frame" x="10" y="278" width="300" height="19.5"/>
+                                            <rect key="frame" x="10" y="278" width="355" height="19.333333333333314"/>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BVu-gN-xqG">
-                                            <rect key="frame" x="150" y="144" width="20" height="20"/>
+                                            <rect key="frame" x="177.66666666666666" y="144" width="20" height="20"/>
                                         </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pays" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o00-LO-77b" userLabel="pays">
-                                            <rect key="frame" x="10" y="307.5" width="300" height="18"/>
+                                            <rect key="frame" x="10" y="307.33333333333331" width="355" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wdm-Xo-Jqq"/>
                                             </constraints>
@@ -390,7 +390,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Genre Act" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM7-3r-tev" userLabel="genre">
-                                            <rect key="frame" x="10" y="335.5" width="300" height="18"/>
+                                            <rect key="frame" x="10" y="335.33333333333331" width="355" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="jsE-Os-ff4"/>
                                             </constraints>
@@ -399,7 +399,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De ssdsdsdsdssdsdsdsdssssddsDe ssdsdsdsdssdsdsdsdssssdds" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOD-u5-EQK">
-                                            <rect key="frame" x="10" y="363.5" width="300" height="36"/>
+                                            <rect key="frame" x="10" y="363.33333333333331" width="355" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="Rhf-gS-gpR"/>
                                             </constraints>
@@ -408,7 +408,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avec ssdsdsdsdssdsdsdsdssssddsAvec ssdsdsdsdssdsdsdsdssssdds" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G50-Jx-h2X" userLabel="avec">
-                                            <rect key="frame" x="10" y="409.5" width="300" height="36"/>
+                                            <rect key="frame" x="10" y="409.33333333333331" width="355" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="i8s-Lh-jJf"/>
                                             </constraints>
@@ -417,14 +417,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZj-qw-9Ie" userLabel="synopsis">
-                                            <rect key="frame" x="10" y="455.5" width="300" height="215.5"/>
+                                            <rect key="frame" x="10" y="455.33333333333331" width="355" height="179.66666666666669"/>
                                             <string key="text">plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte plein de texte </string>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-0r-E2k" userLabel="bandeAnnonce">
-                                            <rect key="frame" x="80" y="681" width="160" height="32"/>
+                                            <rect key="frame" x="107.66666666666669" y="645" width="160" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="3TG-lA-4hI"/>
                                             </constraints>
@@ -475,14 +475,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="autresDatesCell" rowHeight="50" id="Dvn-bj-35P" customClass="AutresDatesCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="875.5" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="875.33333333333337" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dvn-bj-35P" id="D6y-Fn-RbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autres séances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-2C-QGY">
-                                            <rect key="frame" x="8" y="8" width="304" height="33.5"/>
+                                            <rect key="frame" x="8" y="8" width="398" height="33.666666666666664"/>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -519,100 +519,163 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2w-VJ-T77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5306.25" y="-622.18309859154931"/>
+            <point key="canvasLocation" x="9949.21875" y="-657.23566752628449"/>
         </scene>
-        <!--Infos-->
-        <scene sceneID="FUX-mc-WO8">
+        <!--Infos Pratiques-->
+        <scene sceneID="gop-s9-Vre">
             <objects>
-                <viewController title="Infos" id="nGm-5x-62T" customClass="InfosController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YPf-cg-OcH" customClass="InfosController" customModule="entract_cinema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SIj-rm-3KB"/>
-                        <viewControllerLayoutGuide type="bottom" id="ihB-zh-dRS"/>
+                        <viewControllerLayoutGuide type="top" id="Wsa-fc-cSA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fvc-2R-s5d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hFV-Ix-y62">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <view key="view" contentMode="scaleToFill" id="bfo-9t-fbA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infos pratiques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-El-JHa">
-                                <rect key="frame" x="98.5" y="28" width="123" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infos pratiques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeQ-Hx-oc2">
+                                <rect key="frame" x="98.666666666666686" y="54" width="123" height="16"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zJR-7r-JD0">
-                                <rect key="frame" x="16" y="55.5" width="288" height="268"/>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-Ut-uDL">
+                                <rect key="frame" x="0.0" y="80" width="320" height="920"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncs-QB-ZU4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="929.66666666666663"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Rq-hB-KCl">
+                                                <rect key="frame" x="16" y="8" width="288" height="268"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="288" id="3Eh-pF-hmi"/>
+                                                    <constraint firstAttribute="height" constant="268" id="ju0-2d-WQU"/>
+                                                </constraints>
+                                            </mapView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Cinéma L'Entract' - Avenue Lazare Carnot - 31330 Grenade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ze-rn-Qr3">
+                                                <rect key="frame" x="16" y="284" width="288" height="38.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwK-Jz-LeZ">
+                                                <rect key="frame" x="16" y="327.33333333333331" width="288" height="299.99999999999994"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="KSn-t1-UYF"/>
+                                                </constraints>
+                                                <string key="text">Tarifs
+
+Normal: 5.5 €
+Réduit (Etudiants, demandeurs d'emploi, moins de 18 ans): 4.5€
+Jeunes (moins de 14 ans): 4€
+Séance le matin: 3€
+Carte 10 entrées (Intemporelle): 4€
+
+Séance 3D: Majoration de 1€
+
+Chèque cinéma : Cinéchèque et Chèque Culture
+
+Moyens de paiements : Liquide, chèque
+
+Les cartes bancaires ne sont pas acceptées.</string>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salle de cinéma classée Art &amp; Essai - Label Jeune Public" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntz-mK-8XX">
+                                                <rect key="frame" x="16" y="711.33333333333337" width="288" height="38.333333333333371"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-yd-Sab">
+                                                <rect key="frame" x="232" y="642.33333333333337" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="LBP-3i-lrd"/>
+                                                    <constraint firstAttribute="width" constant="45" id="Odn-z5-oKl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="web" translatesAutoresizingMaskIntoConstraints="NO" id="KTm-Kf-b2A">
+                                                <rect key="frame" x="137" y="642.33333333333337" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="O0j-YK-KDZ"/>
+                                                    <constraint firstAttribute="height" constant="45" id="mSk-wy-OXU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="o5T-z5-Unj">
+                                                <rect key="frame" x="42" y="642.33333333333337" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="QCX-Kl-MEb"/>
+                                                    <constraint firstAttribute="width" constant="45" id="dzw-eL-Fcm"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="9Rq-hB-KCl" firstAttribute="leading" secondItem="6Ze-rn-Qr3" secondAttribute="leading" id="0Wv-s5-jqg"/>
+                                            <constraint firstItem="9Rq-hB-KCl" firstAttribute="trailing" secondItem="6Ze-rn-Qr3" secondAttribute="trailing" id="0sE-EW-ixu"/>
+                                            <constraint firstItem="gHC-yd-Sab" firstAttribute="top" secondItem="UwK-Jz-LeZ" secondAttribute="bottom" constant="15" id="3pF-xe-CxA"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="top" secondItem="KTm-Kf-b2A" secondAttribute="bottom" constant="24" id="4f0-bm-eOg"/>
+                                            <constraint firstItem="UwK-Jz-LeZ" firstAttribute="leading" secondItem="Ncs-QB-ZU4" secondAttribute="leading" constant="16" id="7qH-D0-uTJ"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="centerX" secondItem="Ncs-QB-ZU4" secondAttribute="centerX" id="AOE-QK-kFX"/>
+                                            <constraint firstItem="6Ze-rn-Qr3" firstAttribute="top" secondItem="9Rq-hB-KCl" secondAttribute="bottom" constant="8" id="APa-sb-tTk"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="top" secondItem="o5T-z5-Unj" secondAttribute="bottom" constant="24" id="BN1-lL-34z"/>
+                                            <constraint firstItem="gHC-yd-Sab" firstAttribute="leading" secondItem="KTm-Kf-b2A" secondAttribute="trailing" constant="50" id="By0-ci-pwD"/>
+                                            <constraint firstAttribute="trailing" secondItem="UwK-Jz-LeZ" secondAttribute="trailing" constant="16" id="C9y-Pf-FQE"/>
+                                            <constraint firstItem="9Rq-hB-KCl" firstAttribute="top" secondItem="Ncs-QB-ZU4" secondAttribute="topMargin" id="CKl-qI-mnX"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="top" secondItem="gHC-yd-Sab" secondAttribute="bottom" constant="24" id="Ogw-Cg-LMu"/>
+                                            <constraint firstItem="gHC-yd-Sab" firstAttribute="top" secondItem="UwK-Jz-LeZ" secondAttribute="bottom" constant="15" id="Uhb-88-vkI"/>
+                                            <constraint firstAttribute="bottom" secondItem="ntz-mK-8XX" secondAttribute="bottom" constant="180" id="YSu-qO-guZ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UwK-Jz-LeZ" secondAttribute="trailing" constant="16" id="aZI-UD-vDd"/>
+                                            <constraint firstItem="KTm-Kf-b2A" firstAttribute="centerX" secondItem="Ncs-QB-ZU4" secondAttribute="centerX" constant="-0.5" id="exV-0H-10T"/>
+                                            <constraint firstItem="9Rq-hB-KCl" firstAttribute="centerX" secondItem="Ncs-QB-ZU4" secondAttribute="centerX" id="fyc-Tw-Xyt"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="leading" secondItem="Ncs-QB-ZU4" secondAttribute="leading" constant="16" id="leq-h9-hzL"/>
+                                            <constraint firstItem="9Rq-hB-KCl" firstAttribute="leading" secondItem="UwK-Jz-LeZ" secondAttribute="leading" id="loA-mi-VZU"/>
+                                            <constraint firstItem="ntz-mK-8XX" firstAttribute="centerX" secondItem="Ncs-QB-ZU4" secondAttribute="centerX" id="mUl-Et-9UG"/>
+                                            <constraint firstItem="KTm-Kf-b2A" firstAttribute="leading" secondItem="o5T-z5-Unj" secondAttribute="trailing" constant="50" id="o7Y-kD-fEF"/>
+                                            <constraint firstItem="UwK-Jz-LeZ" firstAttribute="top" secondItem="6Ze-rn-Qr3" secondAttribute="bottom" constant="5" id="u1h-tw-Exj"/>
+                                            <constraint firstItem="o5T-z5-Unj" firstAttribute="top" secondItem="UwK-Jz-LeZ" secondAttribute="bottom" constant="15" id="wPR-Hs-djf"/>
+                                            <constraint firstItem="KTm-Kf-b2A" firstAttribute="top" secondItem="UwK-Jz-LeZ" secondAttribute="bottom" constant="15" id="xEU-n8-dOX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="268" id="BGz-79-SXH"/>
-                                    <constraint firstAttribute="width" constant="288" id="g36-Ta-9l5"/>
+                                    <constraint firstItem="Ncs-QB-ZU4" firstAttribute="leading" secondItem="GgV-Ut-uDL" secondAttribute="leading" id="8Ub-5z-t7A"/>
+                                    <constraint firstItem="Ncs-QB-ZU4" firstAttribute="top" secondItem="GgV-Ut-uDL" secondAttribute="top" id="FCK-hp-zSI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ncs-QB-ZU4" secondAttribute="bottom" constant="-170" id="WqT-6i-JqM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ncs-QB-ZU4" secondAttribute="trailing" id="fUx-bI-c5Y"/>
                                 </constraints>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cinéma L'Entract' - Avenue Lazare Carnot - 31330 Grenade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-n3-eWs">
-                                <rect key="frame" x="16" y="331.5" width="288" height="38.5"/>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="web" translatesAutoresizingMaskIntoConstraints="NO" id="VUm-te-utN">
-                                <rect key="frame" x="137.5" y="395" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="0mf-qh-SpP"/>
-                                    <constraint firstAttribute="height" constant="45" id="FKi-d8-KmE"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="8hB-FI-Xj9">
-                                <rect key="frame" x="42.5" y="395" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="WPC-xF-3y3"/>
-                                    <constraint firstAttribute="width" constant="45" id="iYd-yR-qfB"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-ZP-oLV">
-                                <rect key="frame" x="232.5" y="395" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="frp-0b-FDp"/>
-                                    <constraint firstAttribute="height" constant="45" id="z0G-mg-aaf"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salle de cinéma classée Art &amp; Essai - Label Jeune Public" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uak-Bh-4EK">
-                                <rect key="frame" x="16" y="455" width="288" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BIY-n3-eWs" firstAttribute="top" secondItem="zJR-7r-JD0" secondAttribute="bottom" constant="8" id="27m-8G-q45"/>
-                            <constraint firstItem="iBw-ZP-oLV" firstAttribute="leading" secondItem="VUm-te-utN" secondAttribute="trailing" constant="50" id="2Ly-uh-3mA"/>
-                            <constraint firstItem="iTw-El-JHa" firstAttribute="top" secondItem="SIj-rm-3KB" secondAttribute="bottom" constant="8" id="6Ki-e9-Wvo"/>
-                            <constraint firstItem="zJR-7r-JD0" firstAttribute="centerX" secondItem="hFV-Ix-y62" secondAttribute="centerX" id="6c4-jn-nvc"/>
-                            <constraint firstItem="VUm-te-utN" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="7hr-ex-6Qo"/>
-                            <constraint firstItem="uak-Bh-4EK" firstAttribute="top" secondItem="VUm-te-utN" secondAttribute="bottom" constant="15" id="AhH-kf-JZi"/>
-                            <constraint firstItem="BIY-n3-eWs" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="BzC-ny-mF4"/>
-                            <constraint firstItem="BIY-n3-eWs" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="QMP-GW-2BZ"/>
-                            <constraint firstItem="uak-Bh-4EK" firstAttribute="leading" secondItem="hFV-Ix-y62" secondAttribute="leadingMargin" id="RR7-km-MmH"/>
-                            <constraint firstItem="uak-Bh-4EK" firstAttribute="trailing" secondItem="hFV-Ix-y62" secondAttribute="trailingMargin" id="blP-fN-auW"/>
-                            <constraint firstItem="iBw-ZP-oLV" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="cJY-rI-Adc"/>
-                            <constraint firstItem="iTw-El-JHa" firstAttribute="centerX" secondItem="hFV-Ix-y62" secondAttribute="centerX" id="glw-Pp-s3V"/>
-                            <constraint firstItem="8hB-FI-Xj9" firstAttribute="top" secondItem="BIY-n3-eWs" secondAttribute="bottom" constant="25" id="mlY-UY-zo0"/>
-                            <constraint firstItem="VUm-te-utN" firstAttribute="leading" secondItem="8hB-FI-Xj9" secondAttribute="trailing" constant="50" id="pWV-OJ-eB7"/>
-                            <constraint firstItem="zJR-7r-JD0" firstAttribute="top" secondItem="iTw-El-JHa" secondAttribute="bottom" constant="8" id="peP-XL-sj4"/>
-                            <constraint firstItem="VUm-te-utN" firstAttribute="centerX" secondItem="hFV-Ix-y62" secondAttribute="centerX" id="swt-G5-2Cr"/>
+                            <constraint firstAttribute="bottom" secondItem="GgV-Ut-uDL" secondAttribute="bottom" id="HqT-fz-Eii"/>
+                            <constraint firstItem="IeQ-Hx-oc2" firstAttribute="centerX" secondItem="bfo-9t-fbA" secondAttribute="centerX" id="KdP-dj-Kkw"/>
+                            <constraint firstItem="Ncs-QB-ZU4" firstAttribute="height" secondItem="bfo-9t-fbA" secondAttribute="height" priority="250" constant="113" id="NZh-3m-Wxc"/>
+                            <constraint firstItem="GgV-Ut-uDL" firstAttribute="leading" secondItem="bfo-9t-fbA" secondAttribute="leading" id="NlV-X4-Ely"/>
+                            <constraint firstItem="GgV-Ut-uDL" firstAttribute="centerX" secondItem="IeQ-Hx-oc2" secondAttribute="centerX" id="Q3s-RW-ATi"/>
+                            <constraint firstItem="GgV-Ut-uDL" firstAttribute="top" secondItem="IeQ-Hx-oc2" secondAttribute="bottom" constant="10" id="cOo-OE-5GS"/>
+                            <constraint firstItem="IeQ-Hx-oc2" firstAttribute="top" secondItem="Wsa-fc-cSA" secondAttribute="bottom" constant="10" id="mAY-cI-mZa"/>
+                            <constraint firstItem="GgV-Ut-uDL" firstAttribute="top" secondItem="bfo-9t-fbA" secondAttribute="top" constant="80" id="qWK-f2-c3J"/>
+                            <constraint firstItem="Ncs-QB-ZU4" firstAttribute="width" secondItem="bfo-9t-fbA" secondAttribute="width" id="sIM-Vp-bdY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Infos Pratiques" image="info" id="cFQ-Ca-xek"/>
+                    <tabBarItem key="tabBarItem" title="Infos Pratiques" image="info" id="6Sp-f3-ZOa"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
-                        <outlet property="btnFacebook" destination="iBw-ZP-oLV" id="itx-xd-d4e"/>
-                        <outlet property="btnPhone" destination="8hB-FI-Xj9" id="slc-h2-aUa"/>
-                        <outlet property="btnWebsite" destination="VUm-te-utN" id="Xb9-Na-ZmJ"/>
-                        <outlet property="lblAdresse" destination="BIY-n3-eWs" id="13j-eD-B6i"/>
-                        <outlet property="lblReference" destination="uak-Bh-4EK" id="l5O-SA-vqL"/>
-                        <outlet property="mapView" destination="zJR-7r-JD0" id="W61-tr-Vqc"/>
+                        <outlet property="btnFacebook" destination="gHC-yd-Sab" id="hsc-Id-faW"/>
+                        <outlet property="btnPhone" destination="o5T-z5-Unj" id="BtZ-cY-axo"/>
+                        <outlet property="btnWebsite" destination="KTm-Kf-b2A" id="usy-eJ-zUM"/>
+                        <outlet property="infosView" destination="Ncs-QB-ZU4" id="tYt-OI-N89"/>
+                        <outlet property="lblAdresse" destination="6Ze-rn-Qr3" id="nV4-Fe-JZd"/>
+                        <outlet property="lblReference" destination="ntz-mK-8XX" id="mmY-8f-2UT"/>
+                        <outlet property="lblTarifs" destination="UwK-Jz-LeZ" id="Jnv-vP-IXX"/>
+                        <outlet property="mapView" destination="9Rq-hB-KCl" id="new-Fi-a0c"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o5z-Dt-2Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UM1-iw-KIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="1179.3103448275863"/>
+            <point key="canvasLocation" x="-50" y="1315"/>
         </scene>
         <!--Parametres-->
         <scene sceneID="pba-bw-GOg">
@@ -623,23 +686,23 @@
                         <viewControllerLayoutGuide type="bottom" id="qQn-ah-snX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6lI-4g-yUe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Paramètres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Hs-iOV">
-                                <rect key="frame" x="113" y="30" width="94" height="20"/>
+                                <rect key="frame" x="140.66666666666666" y="54" width="94" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Afficher les événements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-PS-Jhj">
-                                <rect key="frame" x="10" y="135" width="237" height="20"/>
+                                <rect key="frame" x="10" y="159" width="292" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-ng-HDt">
-                                <rect key="frame" x="255" y="131" width="51" height="31"/>
+                                <rect key="frame" x="310" y="155" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="n5k-Da-qLt"/>
                                     <constraint firstAttribute="height" constant="31" id="vLy-RH-iqt"/>
@@ -649,13 +712,13 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Visualiser les bandes annonces et affiches uniquement en WIFI" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6T1-mC-4Qr">
-                                <rect key="frame" x="10" y="165" width="237" height="68"/>
+                                <rect key="frame" x="10" y="189" width="292" height="68"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J97-fr-8Dg">
-                                <rect key="frame" x="255" y="182" width="51" height="31"/>
+                                <rect key="frame" x="310" y="206" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Xm4-o7-r6U"/>
                                     <constraint firstAttribute="width" constant="49" id="hQF-ds-wVI"/>
@@ -665,31 +728,31 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recevoir une alerte avant le début du film" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="goN-5c-hiR" userLabel="labelAlerte">
-                                <rect key="frame" x="10" y="253" width="300" height="20"/>
+                                <rect key="frame" x="10" y="277" width="355" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-60-GGq" userLabel="tempsAlerte">
-                                <rect key="frame" x="10" y="273" width="300" height="80"/>
+                                <rect key="frame" x="10" y="297" width="355" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="TZV-bx-u5k"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les alertes seront reçues 2h avant le début de la séance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-k4-uVc">
-                                <rect key="frame" x="10" y="363" width="300" height="31.5"/>
+                                <rect key="frame" x="10" y="387" width="355" height="15.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azP-5q-ak5">
-                                <rect key="frame" x="255" y="80" width="51" height="31"/>
+                                <rect key="frame" x="310" y="104" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchThemeChanged:" destination="4uR-K6-2Bo" eventType="touchUpInside" id="E5p-2h-3Lu"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activer le thème sombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feK-Eh-Gci">
-                                <rect key="frame" x="10" y="85" width="237" height="20"/>
+                                <rect key="frame" x="10" y="109" width="292" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -743,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIQ-88-C9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363.75" y="1177.8169014084508"/>
+            <point key="canvasLocation" x="682.03125" y="1244.1727831779408"/>
         </scene>
         <!--Affiche Evenement View Controller-->
         <scene sceneID="rdm-Y2-71w">
@@ -754,11 +817,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Zp1-o5-abL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dQf-3Y-vke">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkV-aW-LBp">
-                                <rect key="frame" x="272" y="25" width="32" height="32"/>
+                                <rect key="frame" x="327" y="49" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ItR-Cg-Ale"/>
                                     <constraint firstAttribute="width" constant="32" id="s5G-A0-XVR"/>
@@ -771,13 +834,13 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QBT-HW-qKC">
-                                <rect key="frame" x="150" y="307" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="429" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-nl-goS">
-                                <rect key="frame" x="5" y="72" width="310" height="491"/>
+                                <rect key="frame" x="5" y="96" width="365" height="677"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A vos agendas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-bm-DP1">
-                                <rect key="frame" x="105" y="30" width="110" height="20"/>
+                                <rect key="frame" x="132.66666666666666" y="54" width="110" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.69411764710000001" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -807,7 +870,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wm-WK-hFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2077.5" y="1179.9295774647887"/>
+            <point key="canvasLocation" x="3895.3125" y="1246.4044832374527"/>
         </scene>
         <!--Programme-->
         <scene sceneID="WtF-o2-ayv">
@@ -816,7 +879,7 @@
                     <tabBarItem key="tabBarItem" title="Programme" image="movie" selectedImage="movie" id="VQk-B0-8V6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="73b-qS-ZGv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -826,7 +889,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6U-Ug-u7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="210.21126760563379"/>
+            <point key="canvasLocation" x="5203.125" y="222.05415592144413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3sY-zJ-K8b">
@@ -834,7 +897,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EVi-Uv-kfe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6X-6h-2mV">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -844,7 +907,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvS-KX-kAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3978.75" y="-622.18309859154931"/>
+            <point key="canvasLocation" x="7460.15625" y="-657.23566752628449"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="AyM-Ip-0M4">
@@ -853,12 +916,12 @@
                     <navigationItem key="navigationItem" id="aHx-lf-JqA"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="push" identifier="goToApp" id="EHF-Q7-Q6I"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="goToApp" id="EHF-Q7-Q6I"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ze-15-sIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106.875" y="0.0"/>
+            <point key="canvasLocation" x="200.390625" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jL3-Jm-g1E">
@@ -876,21 +939,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="At3-xH-rio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-890.625" y="0.0"/>
+            <point key="canvasLocation" x="-1669.921875" y="0.0"/>
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" width="32" height="32"/>
-        <image name="close" width="32" height="32"/>
-        <image name="facebook" width="32" height="32"/>
-        <image name="info" width="32" height="32"/>
-        <image name="movie" width="32" height="32"/>
-        <image name="phone" width="32" height="32"/>
-        <image name="play" width="32" height="32"/>
+        <image name="calendar" width="21" height="21"/>
+        <image name="close" width="21" height="21"/>
+        <image name="facebook" width="42" height="42"/>
+        <image name="info" width="21" height="21"/>
+        <image name="movie" width="21" height="21"/>
+        <image name="phone" width="42" height="42"/>
+        <image name="play" width="21" height="21"/>
         <image name="seance_non_dispo" width="326" height="434"/>
-        <image name="ticket" width="32" height="32"/>
-        <image name="tools" width="32" height="32"/>
-        <image name="tuto1" width="375" height="667"/>
-        <image name="web" width="32" height="32"/>
+        <image name="ticket" width="21" height="21"/>
+        <image name="tools" width="21" height="21"/>
+        <image name="tuto1" width="250" height="444"/>
+        <image name="web" width="42" height="42"/>
     </resources>
 </document>

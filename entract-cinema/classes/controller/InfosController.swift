@@ -10,6 +10,8 @@ import MapKit
 
 class InfosController : UIViewController, MKMapViewDelegate {
     
+    @IBOutlet weak var infosView: UIView!
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var btnPhone: UIImageView!
@@ -21,6 +23,8 @@ class InfosController : UIViewController, MKMapViewDelegate {
     @IBOutlet weak var lblAdresse: UILabel!
     
     @IBOutlet weak var lblReference: UILabel!
+    
+    @IBOutlet weak var lblTarifs: UILabel!
     
     let regionRadius: CLLocationDistance = 1000
     
@@ -59,6 +63,7 @@ class InfosController : UIViewController, MKMapViewDelegate {
         content.append(Tools.shared.attributedTextWithImage(imageName: Constants.artEssai))
         content.append(NSMutableAttributedString(string: "jeunePublic".localized(), attributes:infoFilm))
         lblReference.attributedText = content
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +71,38 @@ class InfosController : UIViewController, MKMapViewDelegate {
         self.view.backgroundColor = Tools.shared.manageWindowTheme()
         self.lblAdresse.textColor = Tools.shared.manageTheme()
         self.lblReference.textColor = Tools.shared.manageTheme()
+        lblTarifs.attributedText = getAttributedTextForTarifs()
+        self.infosView.backgroundColor = Tools.shared.manageWindowTheme()
+    }
+    
+    func getAttributedTextForTarifs() -> NSMutableAttributedString {
+        let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
+        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageReadTheme()]
+        let grasMessage = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
+        
+        let content = NSMutableAttributedString()
+        content.append(NSMutableAttributedString(string:"\("infos_tarifs".localized())\n\n", attributes:red))
+        content.append(NSMutableAttributedString(string:"\("infos_normal".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"5.5€\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_reduit".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"4.5€\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_jeunes".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"4.5€\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_matin".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"3€\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_cartes".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"40€\n\n", attributes:grasMessage))
+        
+        content.append(NSMutableAttributedString(string:"\("infos_3d".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"\("infos_majoration".localized())\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_cheque".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"\("infos_cinecheque".localized())\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"\("infos_paiement".localized())", attributes:normal))
+        content.append(NSMutableAttributedString(string:"\("infos_liquide".localized())\n\n", attributes:grasMessage))
+        
+        content.append(NSMutableAttributedString(string:"\("infos_cb".localized())", attributes:grasMessage))
+
+        return content
     }
     
     @objc func onClicFacebook(sender:UITapGestureRecognizer) {
