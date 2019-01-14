@@ -195,13 +195,15 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             if !isAlertFilmInCalendar(detail: film) {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
                 seanceCell.btnCalendrier.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
-                seanceCell.btnCalendrier.setTitleColor(UIColor.red, for: UIControl.State.normal)
+                seanceCell.btnCalendrier.setTitleColor(blueColor, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
+                seanceCell.btnCalendrier.setImage(UIImage(named: "calendar"), for: .normal)
             } else {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
                 seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
-                seanceCell.btnCalendrier.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControl.State.normal)
+                seanceCell.btnCalendrier.setTitleColor(entractColor, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
+                seanceCell.btnCalendrier.setImage(UIImage(named: "calendar_active"), for: .normal)
             }
             
             cell = seanceCell
@@ -274,7 +276,8 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                         UIAlertAction in
                         sender.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
-                        sender.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControl.State.normal)
+                        sender.setTitleColor(entractColor, for: UIControl.State.normal)
+                        sender.setImage(UIImage(named: "calendar_active"), for: .normal)
                     }
                     
                     alert.addAction(okAction)
@@ -295,7 +298,8 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                         }
                         completion?(true, nil)
                         sender.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
-                        sender.setTitleColor(UIColor.red, for: UIControl.State.normal)
+                        sender.setTitleColor(blueColor, for: UIControl.State.normal)
+                        sender.setImage(UIImage(named: "calendar"), for: .normal)
                     }
                     
                     let actionCancel = UIAlertAction(title: "annuler".localized(), style: .cancel) { (action:UIAlertAction) in

@@ -36,7 +36,7 @@
 
 //calendrier
 "alerte_film_ko" = "Ajouter au calendrier";
-"alerte_film_ok" = "Alerte active pour ce film";
+"alerte_film_ok" = "Retirer du calendrier";
 
 //infos
 "cinema" = "Cinéma L'Entract'";
