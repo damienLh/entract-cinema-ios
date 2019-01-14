@@ -31,25 +31,29 @@ class JSONUnparser {
                         
                         for dicoFilm in json {
                             let film: Film = Film()
-                            film.id_film = (dicoFilm as AnyObject).object(forKey: "id_film") as! String
-                            film.titre = (dicoFilm as AnyObject).object(forKey: "titre") as! String
+                            film.id_seance = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "id_seance");
+                            film.id_film = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "id_film");
+                            film.titre = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "titre");
+                            film.horaire = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "horaire");
+                            
+                            film.affiche = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "affiche");
+                            film.duree = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "duree");
+                            film.annee = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "annee");
+                            film.pays = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "pays");
+                            film.de = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "de");
+
+                            film.style = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "style");
+                            film.avec = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "avec");
+                            film.synopsis = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "synopsis");
+                            film.bandeAnnonce = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "bande_annonce");
+
                             let date = dateFormatter.date(from: dateJour)
                             film.date = date!
-                            film.horaire = (dicoFilm as AnyObject).object(forKey: "horaire") as! String
                             film.troisD = (dicoFilm as AnyObject).object(forKey: "3d") as! Bool
                             film.vo = (dicoFilm as AnyObject).object(forKey: "vo") as! Bool
                             film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
                             film.artEssai = (dicoFilm as AnyObject).object(forKey: "art_essai") as! Bool
                             film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
-                            film.affiche = (dicoFilm as AnyObject).object(forKey: "affiche") as! String
-                            film.duree = (dicoFilm as AnyObject).object(forKey: "duree") as! String
-                            film.annee = (dicoFilm as AnyObject).object(forKey: "annee") as! String
-                            film.pays = (dicoFilm as AnyObject).object(forKey: "pays") as! String
-                            film.style = (dicoFilm as AnyObject).object(forKey: "style") as! String
-                            film.de = (dicoFilm as AnyObject).object(forKey: "de") as! String
-                            film.avec = (dicoFilm as AnyObject).object(forKey: "avec") as! String
-                            film.synopsis = (dicoFilm as AnyObject).object(forKey: "synopsis") as! String
-                            film.bandeAnnonce = (dicoFilm as AnyObject).object(forKey: "bande_annonce") as! String
                             
                             let autres_dates = (dicoFilm as AnyObject).object(forKey: "autres_dates") as! NSArray
                             var autresJours: [AutresDates] = []
@@ -179,11 +183,12 @@ class JSONUnparser {
                             
                             for dicoFilm in films {
                                 let film: Film = Film()
+                                film.id_seance = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "id_seance");
+                                film.titre = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "titre");
                                 
-                                film.titre = (dicoFilm as AnyObject).object(forKey: "titre") as! String
-                                let dateJour = (dicoFilm as AnyObject).object(forKey: "date") as! String
+                                let dateJour = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "date");
                                 film.date = dateJour.convertFromDbData()
-                                film.horaire = (dicoFilm as AnyObject).object(forKey: "horaire") as! String
+                                film.horaire = self.checkNilStringValue(dicoFilm: dicoFilm as AnyObject, value: "horaire");
                                 film.moinsDouze = (dicoFilm as AnyObject).object(forKey: "moins_douze") as! Bool
                                 film.avertissement = (dicoFilm as AnyObject).object(forKey: "avertissement") as! Bool
                                 film.artEssai = (dicoFilm as AnyObject).object(forKey: "art_essai") as! Bool
@@ -213,4 +218,10 @@ class JSONUnparser {
         Cache.shared.saveSemaines(semaines: result)
         return result
     }
+    
+    static func checkNilStringValue(dicoFilm: AnyObject, value: String) -> String {
+        return (dicoFilm as AnyObject).object(forKey: value) != nil ? (dicoFilm as AnyObject).object(forKey: value) as! String : ""
+    }
 }
+
+

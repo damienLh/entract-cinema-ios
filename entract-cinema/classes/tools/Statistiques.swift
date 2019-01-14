@@ -10,11 +10,11 @@ import Foundation
 
 class Statistiques {
     
-    static func statDetailFilm(jour: String!, heure: String!, idFilm: String!) -> Void {
+    static func statDetailFilm(idSeance : String!) -> Void {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let server = Tools.shared.getTargetServer()
-            if let myJour = jour, let myHeure = heure, let myFilm = idFilm {
-                let url = "\(server)/php/rest/updateStatistiques.php?page=page_detail&jour=\(myJour)&heure=\(myHeure)&film=\(myFilm)"
+            if let mySeance = idSeance {
+                let url = "\(server)/php/rest/updateStatistiques.php?page=page_detail&seance=\(mySeance)"
                 let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 var request = URLRequest(url: myURL!)
                 request.httpMethod = "GET"
@@ -28,11 +28,11 @@ class Statistiques {
         }
     }
     
-    static func statCalendrier(jour: String!, heure: String!, idFilm : String!) -> Void {
+    static func statCalendrier(idSeance : String!) -> Void {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let server = Tools.shared.getTargetServer()
-            if let myJour = jour, let myHeure = heure, let myFilm = idFilm {
-                let url = "\(server)/php/rest/updateStatistiques.php?page=ajout_cal&jour=\(myJour)&heure=\(myHeure)&film=\(myFilm)"
+            if let mySeance = idSeance {
+                let url = "\(server)/php/rest/updateStatistiques.php?page=ajout_cal&seance=\(mySeance)"
                 let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 var request = URLRequest(url: myURL!)
                 request.httpMethod = "GET"

@@ -271,7 +271,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 if !alreadyExists {
                     do {
                         try eventStore.save(event, span: .thisEvent)
-                        Statistiques.statCalendrier(jour: self.jour,heure: film.horaire, idFilm: film.id_film)
+                        Statistiques.statCalendrier(idSeance: film.id_seance)
                     } catch let e as NSError {
                         completion?(false, e)
                         return

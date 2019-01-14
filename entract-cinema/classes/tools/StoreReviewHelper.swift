@@ -21,7 +21,7 @@ struct StoreReviewHelper {
             UserDefaults.standard.set(compteur, forKey: Constants.compteurOuverture)
             
             switch compteur {
-            case 25, 50:
+            case 50, 150:
                 StoreReviewHelper().requestReview()
             case _ where compteur%250 == 0 :
                 StoreReviewHelper().requestReview()

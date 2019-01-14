@@ -87,7 +87,7 @@ class InfosController : UIViewController, MKMapViewDelegate {
         content.append(NSMutableAttributedString(string:"\("infos_reduit".localized())", attributes:normal))
         content.append(NSMutableAttributedString(string:"4.5€\n", attributes:grasMessage))
         content.append(NSMutableAttributedString(string:"\("infos_jeunes".localized())", attributes:normal))
-        content.append(NSMutableAttributedString(string:"4.5€\n", attributes:grasMessage))
+        content.append(NSMutableAttributedString(string:"4€\n", attributes:grasMessage))
         content.append(NSMutableAttributedString(string:"\("infos_matin".localized())", attributes:normal))
         content.append(NSMutableAttributedString(string:"3€\n", attributes:grasMessage))
         content.append(NSMutableAttributedString(string:"\("infos_cartes".localized())", attributes:normal))
