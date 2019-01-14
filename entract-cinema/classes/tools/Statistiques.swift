@@ -28,11 +28,15 @@ class Statistiques {
         }
     }
     
-    static func statCalendrier(idSeance : String!) -> Void {
+    static func statCalendrier(idSeance : String!, isRemove: Bool) -> Void {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let server = Tools.shared.getTargetServer()
             if let mySeance = idSeance {
-                let url = "\(server)/php/rest/updateStatistiques.php?page=ajout_cal&seance=\(mySeance)"
+                var url = "\(server)/php/rest/updateStatistiques.php?page=ajout_cal&seance=\(mySeance)"
+                if isRemove {
+                    url = "\(server)/php/rest/updateStatistiques.php?page=remove_cal&seance=\(mySeance)"
+                }
+                
                 let myURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 var request = URLRequest(url: myURL!)
                 request.httpMethod = "GET"

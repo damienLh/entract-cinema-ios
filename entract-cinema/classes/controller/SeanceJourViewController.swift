@@ -198,9 +198,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 seanceCell.btnCalendrier.setTitleColor(UIColor.red, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
             } else {
-                seanceCell.btnCalendrier.isUserInteractionEnabled = false
+                seanceCell.btnCalendrier.isUserInteractionEnabled = true
                 seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
                 seanceCell.btnCalendrier.setTitleColor(UIColor(rgb: 0x2c8e40), for: UIControl.State.normal)
+                seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
             }
             
             cell = seanceCell
@@ -258,20 +259,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 let alarm:EKAlarm = EKAlarm(relativeOffset: TimeInterval(-60 * valeurRappel))
                 event.alarms = [alarm]
                 
-                let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
-                let existingEvents = eventStore.events(matching: predicate)
-                var alreadyExists = false
-                for singleEvent in existingEvents {
-                    if singleEvent.title == film.titre {
-                        alreadyExists = true
-                        break
-                    }
-                }
-
-                if !alreadyExists {
+                if !self.isAlertFilmInCalendar(detail: film) {
                     do {
                         try eventStore.save(event, span: .thisEvent)
-                        Statistiques.statCalendrier(idSeance: film.id_seance)
+                        Statistiques.statCalendrier(idSeance: film.id_seance, isRemove: false)
                     } catch let e as NSError {
                         completion?(false, e)
                         return
@@ -288,6 +279,34 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "suppressionAlerte".localized(), message: "suppressionAlerteMessage".localized(), preferredStyle: .alert)
+                    
+                    let actionOK = UIAlertAction(title: "continuer".localized(), style: .default) { (action:UIAlertAction) in
+                        
+                        do {
+                            let myEvent = self.getEventInCalendar(detail: film);
+                            let eventToRemove = eventStore.event(withIdentifier: myEvent.eventIdentifier);
+                            try eventStore.remove(eventToRemove!, span: .thisEvent, commit: true)
+                            Statistiques.statCalendrier(idSeance: film.id_seance, isRemove: true)
+                        } catch let e as NSError {
+                            completion?(false, e)
+                            return
+                        }
+                        completion?(true, nil)
+                        sender.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
+                        sender.setTitleColor(UIColor.red, for: UIControl.State.normal)
+                    }
+                    
+                    let actionCancel = UIAlertAction(title: "annuler".localized(), style: .cancel) { (action:UIAlertAction) in
+                    }
+                    
+                    alertController.addAction(actionCancel)
+                    alertController.addAction(actionOK)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    
+                    
                 }
             } else {
                 completion?(false, error as NSError?)
@@ -367,13 +386,52 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let existingEvents = eventStore.events(matching: predicate)
         var alreadyExists = false
         for singleEvent in existingEvents {
-            if singleEvent.title == film {
+            if singleEvent.title == film && singleEvent.startDate == debut && singleEvent.endDate == fin {
                 alreadyExists = true
                 break
             }
         }
         
         return alreadyExists
+    }
+    
+    func getEventInCalendar(detail: Film) -> EKEvent {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let myDate = dateFormatter.date(from: self.jour!)!
+        
+        let eventStore = EKEventStore()
+        let calendar = Calendar.current
+        let yearToday = calendar.component(.year, from: myDate)
+        let monthToday = calendar.component(.month, from: myDate)
+        let dayToday = calendar.component(.day, from: myDate)
+        
+        let heure = detail.horaire
+        let film = detail.titre
+        let duree = detail.duree
+        
+        var temps = duree.components(separatedBy: "h")
+        let hourFilm:Int = Int(temps[0])! * 60
+        let minFilm:Int = Int(temps[1])!
+        let totalTime = (hourFilm + minFilm) * 60
+        
+        var startFormat: String = String(format:"%d/%d/%d %@", yearToday, monthToday, dayToday, heure)
+        startFormat = startFormat.replacingOccurrences(of: "h", with: ":", options: .literal, range: nil)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let debut = formatter.date(from: startFormat)
+        let fin = debut?.addingTimeInterval(TimeInterval(totalTime))
+        
+        let predicate = eventStore.predicateForEvents(withStart: debut!, end: fin!, calendars: nil)
+        let existingEvents = eventStore.events(matching: predicate)
+        for singleEvent in existingEvents {
+            if singleEvent.title == film && singleEvent.startDate == debut && singleEvent.endDate == fin {
+                return singleEvent;
+            }
+        }
+        return EKEvent.init();
     }
     
     func reloadFromNotification(jour: String) {

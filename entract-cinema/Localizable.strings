@@ -12,6 +12,10 @@
 "pas_de_film" = "Pas de séance ce jour";
 
 "filmCalendrier" = "Film ajouté à votre calendrier";
+"suppressionAlerte" = "Supprimer l'alerte";
+"suppressionAlerteMessage" = "Confirmez-vous la suppression de l'alerte pour ce film ?";
+
+
 "calendarNotGranted" = "Vous devez autoriser l'application à accéder au calendrier";
 "offlineModeTitle" = "Pas de connexion internet ?";
 "offlineModeMessage" = "Vous-êtes actuellement en mode offline";
