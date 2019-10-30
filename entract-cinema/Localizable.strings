@@ -35,8 +35,8 @@
 "horaireSeance" = "Séance du %@";
 
 //calendrier
-"alerte_film_ko" = "Ajouter au calendrier";
-"alerte_film_ok" = "Retirer du calendrier";
+"alerte_film_ok" = "L'alerte a été ajoutée au calendrier ";
+"alerte_film_ko" = "L'alerte a été supprimée du calendrier ";
 
 //infos
 "cinema" = "Cinéma L'Entract'";
@@ -64,6 +64,7 @@
 "infos_paiement" = "Moyens de paiements : ";
 "infos_liquide" = "Liquide, chèque";
 "infos_cb" = "Les cartes bancaires ne sont pas acceptées";
+"shared" = "Informations copiées dans le presse papiers";
 
 //paramètres
 "data_titre" = "Utiliser la data de votre forfait mobile pour voir des bandes annonces ?";

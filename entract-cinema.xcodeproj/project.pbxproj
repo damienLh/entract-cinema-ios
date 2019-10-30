@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0F87A1232E7A68001E06D1 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F87A0232E7A68001E06D1 /* Toast.swift */; };
+		7E0F87A6232E967C001E06D1 /* ShareTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */; };
 		9D0070AF2189B53C00130119 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A62189B53B00130119 /* Ubuntu-R.ttf */; };
 		9D0070B02189B53C00130119 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A62189B53B00130119 /* Ubuntu-R.ttf */; };
 		9D0070B12189B53C00130119 /* Ubuntu-LI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A72189B53C00130119 /* Ubuntu-LI.ttf */; };
@@ -91,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0F87A0232E7A68001E06D1 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTapGesture.swift; sourceTree = "<group>"; };
 		9D0070A62189B53B00130119 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		9D0070A72189B53C00130119 /* Ubuntu-LI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LI.ttf"; sourceTree = "<group>"; };
 		9D0070A82189B53C00130119 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -182,6 +186,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0F879F232E7A3A001E06D1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
+				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
+				7E0F87A0232E7A68001E06D1 /* Toast.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		9D0070A52189B4E100130119 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +289,8 @@
 				9D44659A20CB282A00BD6445 /* model */,
 				9D42B0DD20C8706C009BCA11 /* cell */,
 				9D42B0EA20C8706C009BCA11 /* controller */,
+				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
+				7E0F879F232E7A3A001E06D1 /* extensions */,
 				9D42B0E320C8706C009BCA11 /* tools */,
 			);
 			path = classes;
@@ -293,9 +309,6 @@
 				9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */,
 				C7145AF920E398A600A6FCE4 /* String+Extensions.swift */,
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
-				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
-				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
-				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -319,14 +332,15 @@
 			isa = PBXGroup;
 			children = (
 				9D42B0E620C8706C009BCA11 /* Artwork.swift */,
+				9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */,
+				9D698AAF2160FF42007FF128 /* AutresDates.swift */,
 				C74BBEB121415A6D0064B471 /* cache */,
 				9D42B0E820C8706C009BCA11 /* Date+extensions.swift */,
 				9D44659B20CB285A00BD6445 /* Film.swift */,
 				9D21A1BD20CC74CC00FCD2DF /* Jours.swift */,
 				9D42B0E920C8706C009BCA11 /* SeanceTapGesture.swift */,
 				9D44659D20CB2B4100BD6445 /* Semaine.swift */,
-				9D698AAF2160FF42007FF128 /* AutresDates.swift */,
-				9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */,
+				7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -416,7 +430,7 @@
 				TargetAttributes = {
 					9D42B0A220C86FC5009BCA11 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -526,7 +540,9 @@
 				9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */,
 				9D42B0F720C8706C009BCA11 /* NoSeanceTableViewCell.swift in Sources */,
 				9D42B0FE20C8706C009BCA11 /* Date+extensions.swift in Sources */,
+				7E0F87A1232E7A68001E06D1 /* Toast.swift in Sources */,
 				9DB4FAEE2199B0A5009028AF /* StoreReviewHelper.swift in Sources */,
+				7E0F87A6232E967C001E06D1 /* ShareTapGesture.swift in Sources */,
 				9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */,
 				9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */,
 				9D42B0FF20C8706C009BCA11 /* SeanceTapGesture.swift in Sources */,
@@ -720,10 +736,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -732,8 +750,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
 				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -742,10 +761,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -754,8 +775,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
 				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

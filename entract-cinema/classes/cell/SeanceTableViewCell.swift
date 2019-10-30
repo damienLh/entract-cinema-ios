@@ -18,6 +18,8 @@ class SeanceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var btnCalendrier: UIButton!
     
+    @IBOutlet weak var btnShare: UIButton!
+    
     @IBOutlet weak var activityLoad: UIActivityIndicatorView!
     
     override func awakeFromNib() {

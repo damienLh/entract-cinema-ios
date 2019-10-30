@@ -21,8 +21,17 @@ class TutorialViewController : UIViewController {
         super.viewDidLoad()
         self.picture.image = UIImage(named: myPicture)
         self.pageControl.currentPage = currentPage
-        self.btnOK.isHidden = currentPage != 7
-        self.pageControl.isHidden = currentPage == 7
+        
+        let modelName = UIDevice.modelName
+        if (modelName.range(of: "iPad") != nil) {
+            self.btnOK.isHidden = currentPage != 7
+            self.pageControl.isHidden = currentPage == 7
+            self.pageControl.numberOfPages = 8
+        } else {
+            self.btnOK.isHidden = currentPage != 8
+            self.pageControl.isHidden = currentPage == 8
+            self.pageControl.numberOfPages = 9
+        }
     }
     
     @IBAction func fermer(_ sender: Any) {

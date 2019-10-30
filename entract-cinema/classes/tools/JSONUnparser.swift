@@ -24,7 +24,7 @@ class JSONUnparser {
             
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
-                    if let json = try? JSONSerialization.jsonObject(with: data!) as! NSArray {
+                    if let json = try? JSONSerialization.jsonObject(with: data!) as? NSArray {
                         var listeFilms: [Film] = []
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -101,7 +101,7 @@ class JSONUnparser {
         if Tools.shared.isNetworkOrWifiAvailable() {
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
-                    let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
+                    let json = try? JSONSerialization.jsonObject(with: data!) as? NSDictionary
                     if let lien = json?.object(forKey: "lien") as! String? {
                         result = lien
                     }
@@ -128,7 +128,7 @@ class JSONUnparser {
             if !server.contains("localhost") {
                 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                     do {
-                        let json = try? JSONSerialization.jsonObject(with: data!) as! NSDictionary
+                        let json = try? JSONSerialization.jsonObject(with: data!) as? NSDictionary
                         let periode = json?.object(forKey: "periode") as! NSDictionary?
                         let dateMin = (periode as AnyObject).object(forKey: "date_minimum") as! String
                         let dateMax = (periode as AnyObject).object(forKey: "date_maximum") as! String
@@ -166,7 +166,7 @@ class JSONUnparser {
             
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 do {
-                    let json = try? JSONSerialization.jsonObject(with: data!) as! NSArray
+                    let json = try? JSONSerialization.jsonObject(with: data!) as? NSArray
                     for dict in json! {
                         let semaine: Semaine = Semaine()
                         semaine.debutsemaine = (dict as AnyObject).object(forKey: "debutsemaine") as! String

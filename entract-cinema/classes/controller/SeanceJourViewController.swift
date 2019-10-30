@@ -11,12 +11,11 @@ import EventKit
 
 class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var datePicker: UIPickerView!
     var pickerData: [String] = [String]()
     var pickerTitle: [String] = [String]()
     
-    
     @IBOutlet weak var seancesTableView: UITableView!
+    @IBOutlet weak var datePicker: UIPickerView!
     
     var mapFilms: [String: [Film]]!
     var jour: String!
@@ -163,8 +162,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             seanceCell.titreLabel.attributedText = titreContent
             
             let content = NSMutableAttributedString()
-            content.append(NSMutableAttributedString(string:"\(film.horaire) - ", attributes:infoFilm))
-            content.append(NSMutableAttributedString(string:"\(film.duree) ", attributes:infoFilm))
+            content.append(NSMutableAttributedString(string:"Séance à \(film.horaire)", attributes:infoFilm))
 
             if film.troisD {
                 content.append(Tools.shared.attributedTextWithImage(imageName: Constants.threeD))
@@ -192,15 +190,22 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             calendarGesture.detail = film
             calendarGesture.sender = seanceCell.btnCalendrier
             
+            let completeDateFormatter = DateFormatter()
+            completeDateFormatter.dateFormat =  "EEEE dd LLLL"
+            completeDateFormatter.locale = Locale(identifier: "fr")
+            
+            let shareGesture = ShareTapGesture(target: self, action: #selector(btnSharingTapped(detail:)))
+            shareGesture.sender = seanceCell.btnShare
+            shareGesture.film = film
+            seanceCell.btnShare.addGestureRecognizer(shareGesture)
+            
             if !isAlertFilmInCalendar(detail: film) {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
-                seanceCell.btnCalendrier.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
                 seanceCell.btnCalendrier.setTitleColor(blueColor, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
                 seanceCell.btnCalendrier.setImage(UIImage(named: "calendar"), for: .normal)
             } else {
                 seanceCell.btnCalendrier.isUserInteractionEnabled = true
-                seanceCell.btnCalendrier.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
                 seanceCell.btnCalendrier.setTitleColor(entractColor, for: UIControl.State.normal)
                 seanceCell.btnCalendrier.addGestureRecognizer(calendarGesture)
                 seanceCell.btnCalendrier.setImage(UIImage(named: "calendar_active"), for: .normal)
@@ -216,6 +221,19 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         return cell
+    }
+    
+    @objc func btnSharingTapped(detail: ShareTapGesture) {
+        let pasteboard = UIPasteboard.general
+        let infosFilm: Film = detail.film
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "EEEE dd LLLL"
+        dateFormatter.locale = Locale(identifier: "fr")
+        
+        let dateJour = dateFormatter.string(from: infosFilm.date)
+        pasteboard.string = "Hello, ça te dirait de venir voir le film \"\(infosFilm.titre)\" le \(dateJour) à \(infosFilm.horaire) au cinéma de Grenade ?"
+        Toast.show(message: "shared".localized(), controller: self, duration: 2.0)
     }
     
     func loadFilms() {
@@ -239,6 +257,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func addEventToCalendar(film: Film, description: String?, startDate: Date, endDate: Date,sender: UIButton, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore = EKEventStore()
+        var status = 0
+        
+        let group = DispatchGroup()
+        group.enter()
         
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
@@ -256,8 +278,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 event.structuredLocation = structuredLocation
                 
                 let valeurRappel = UserDefaults.standard.integer(forKey: Constants.tempsAlerte)
-                print("valeur alarme \(valeurRappel)")
-                
                 let alarm:EKAlarm = EKAlarm(relativeOffset: TimeInterval(-60 * valeurRappel))
                 event.alarms = [alarm]
                 
@@ -271,60 +291,44 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                     }
                     completion?(true, nil)
                     
-                    let alert = UIAlertController(title: "cinema".localized(), message: "filmCalendrier".localized(), preferredStyle: UIAlertController.Style.alert)
-                    
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                        UIAlertAction in
-                        sender.setTitle("alerte_film_ok".localized(), for: UIControl.State.normal)
-                        sender.setTitleColor(entractColor, for: UIControl.State.normal)
-                        sender.setImage(UIImage(named: "calendar_active"), for: .normal)
+                    DispatchQueue.main.async {
+                        status = 1
+                        group.leave()
                     }
-                    
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
                 } else {
-                    let alertController = UIAlertController(title: "suppressionAlerte".localized(), message: "suppressionAlerteMessage".localized(), preferredStyle: .alert)
-                    
-                    let actionOK = UIAlertAction(title: "continuer".localized(), style: .default) { (action:UIAlertAction) in
-                        
-                        do {
-                            let myEvent = self.getEventInCalendar(detail: film);
-                            let eventToRemove = eventStore.event(withIdentifier: myEvent.eventIdentifier);
-                            try eventStore.remove(eventToRemove!, span: .thisEvent, commit: true)
-                            Statistiques.statCalendrier(idSeance: film.id_seance, isRemove: true)
-                        } catch let e as NSError {
-                            completion?(false, e)
-                            return
-                        }
-                        completion?(true, nil)
-                        sender.setTitle("alerte_film_ko".localized(), for: UIControl.State.normal)
-                        sender.setTitleColor(blueColor, for: UIControl.State.normal)
-                        sender.setImage(UIImage(named: "calendar"), for: .normal)
+                    do {
+                        let myEvent = self.getEventInCalendar(detail: film);
+                        let eventToRemove = eventStore.event(withIdentifier: myEvent.eventIdentifier);
+                        try eventStore.remove(eventToRemove!, span: .thisEvent, commit: true)
+                        Statistiques.statCalendrier(idSeance: film.id_seance, isRemove: true)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
                     }
+                    completion?(true, nil)
                     
-                    let actionCancel = UIAlertAction(title: "annuler".localized(), style: .cancel) { (action:UIAlertAction) in
-                    }
-                    
-                    alertController.addAction(actionCancel)
-                    alertController.addAction(actionOK)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                    
-                    
-                }
+                    DispatchQueue.main.async {
+                        status = 2
+                        group.leave()
+                    }                }
             } else {
-                completion?(false, error as NSError?)
-                
-                let alert = UIAlertController(title: "cinema".localized(), message: "calendarNotGranted".localized(), preferredStyle: UIAlertController.Style.alert)
-                
-                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                    UIAlertAction in
+                DispatchQueue.main.async {
+                    status = 0
+                    group.leave()
                 }
-                
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
             }
         })
+        
+        group.notify(queue: .main) {
+            if status == 1 {
+                sender.setImage(UIImage(named: "calendar_active"), for: .normal)
+                Toast.show(message: "\("alerte_film_ok".localized()) pour le film \(film.titre) séance de \(film.horaire)", controller: self, duration: 5.0)
+            } else if status ==  2 {
+                sender.setImage(UIImage(named: "calendar"), for: .normal)
+                Toast.show(message: "\("alerte_film_ko".localized()) pour le film \(film.titre) séance de \(film.horaire)".localized(), controller: self, duration: 5.0)
+            } else {
+                Toast.show(message: "calendarNotGranted".localized(), controller: self, duration: 5.0)
+            }        }
     }
 
     @objc func imageTapped(tapGestureRecognizer: SeanceTapGesture)

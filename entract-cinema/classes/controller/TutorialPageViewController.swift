@@ -27,14 +27,28 @@ class TutorialPageViewController : UIPageViewController {
     }
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [tutorialViewController(picture: "tuto1", page: 0),
-                tutorialViewController(picture: "tuto2", page: 1),
-                tutorialViewController(picture: "tuto3", page: 2),
-                tutorialViewController(picture: "tuto4", page: 3),
-                tutorialViewController(picture: "tuto5", page: 4),
-                tutorialViewController(picture: "tuto6", page: 5),
-                tutorialViewController(picture: "tuto7", page: 6),
-                tutorialViewController(picture: "tuto8", page: 7)]
+        
+        let modelName = UIDevice.modelName
+        if (modelName.range(of: "iPad") != nil) {
+            return [tutorialViewController(picture: "tuto0", page: 0),
+                    tutorialViewController(picture: "tuto1-ipad", page: 1),
+                    tutorialViewController(picture: "tuto2-ipad", page: 2),
+                    tutorialViewController(picture: "tuto3-ipad", page: 3),
+                    tutorialViewController(picture: "tuto4-ipad", page: 4),
+                    tutorialViewController(picture: "tuto5-ipad", page: 5),
+                    tutorialViewController(picture: "tuto6-ipad", page: 6),
+                    tutorialViewController(picture: "tuto8", page: 7)]
+        } else {
+            return [tutorialViewController(picture: "tuto0", page: 0),
+                    tutorialViewController(picture: "tuto1", page: 1),
+                    tutorialViewController(picture: "tuto2", page: 2),
+                    tutorialViewController(picture: "tuto3", page: 3),
+                    tutorialViewController(picture: "tuto4", page: 4),
+                    tutorialViewController(picture: "tuto5", page: 5),
+                    tutorialViewController(picture: "tuto6", page: 6),
+                    tutorialViewController(picture: "tuto7", page: 7),
+                    tutorialViewController(picture: "tuto8", page: 8)]
+        }
     }()
     
     private func tutorialViewController(picture: String, page: Int) -> UIViewController {

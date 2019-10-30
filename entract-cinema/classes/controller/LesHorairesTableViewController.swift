@@ -8,8 +8,10 @@
 
 import UIKit
 
-class LesHorairesTableViewController: UITableViewController {
+class LesHorairesTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet var tableViewHoraires: UITableView!
+    
+    @IBOutlet weak var searchBarHoraires: UISearchBar!
     
     let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
     let troisD = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.red]
@@ -17,27 +19,67 @@ class LesHorairesTableViewController: UITableViewController {
     
     var items: [Semaine] = []
     
+    var filteredData: [Semaine]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewHoraires.dataSource = self
         self.tableViewHoraires.delegate = self
+        self.searchBarHoraires.delegate = self
+        
         items = JSONUnparser.getProgramme()
         Statistiques.statProgramme()
+        filteredData = items
+        
+        self.searchBarHoraires.setValue("Annuler", forKey:"_cancelButtonText")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        items = JSONUnparser.getProgramme()
-        self.tableViewHoraires.reloadData()
+        self.searchBarHoraires.showsCancelButton=false
+        self.searchBarHoraires.text = ""
+        self.updateTableAccordingToSearchBar(searchText: "")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        self.searchBarHoraires.showsCancelButton=false
+        self.searchBarHoraires.text = ""
+        self.updateTableAccordingToSearchBar(searchText: "")
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchBarHoraires.showsCancelButton=true
+        self.updateTableAccordingToSearchBar(searchText: searchText)
+    }
+    
+    func updateTableAccordingToSearchBar(searchText: String) {
+        items = JSONUnparser.getProgramme()
+        filteredData = items
+        if !searchText.isEmpty {
+            for semaine: Semaine in filteredData {
+                for jour: Jours in semaine.jours {
+                    for film: Film in jour.films {
+                        if (!film.titre.lowercased().contains(searchText.lowercased())) {
+                            let index = jour.films.firstIndex(of: film)!
+                            jour.films.remove(at: index)
+                        }
+                    }
+                }
+            }
+        }
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count
+        return filteredData.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +88,7 @@ class LesHorairesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height = CGFloat(0)
-        let semaine = items[section]
+        let semaine = filteredData[section]
         
         for jour in semaine.jours {
             if jour.films.count != 0 {
@@ -60,7 +102,7 @@ class LesHorairesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        let semaine = items[indexPath.section]
+        let semaine = filteredData[indexPath.section]
         let joursLu = semaine.jours[indexPath.row]
         let content = NSMutableAttributedString()
         
@@ -130,7 +172,7 @@ class LesHorairesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> HorairesTableViewCell? {
         let  headerCell = tableView.dequeueReusableCell(withIdentifier: "horairesCell") as! HorairesTableViewCell
-        let semaine = items[section]
+        let semaine = filteredData[section]
         
         headerCell.semaine.text = "Du \(semaine.debutsemaine.convertDateToDayMonth()) au \(semaine.finsemaine.convertDateToDayMonth())"
         headerCell.backgroundColor = .gray
@@ -140,7 +182,7 @@ class LesHorairesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HorairesDateViewCell = tableView.dequeueReusableCell(withIdentifier: "horairesDateCell", for: indexPath) as! HorairesDateViewCell
     
-        let semaine = items[indexPath.section]
+        let semaine = filteredData[indexPath.section]
         let joursLu = semaine.jours[indexPath.row]
         cell.dateSeance.text = joursLu.jour.convertDateToLocaleDate()
         
@@ -180,7 +222,7 @@ class LesHorairesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let semaine = items[indexPath.section]
+        let semaine = filteredData[indexPath.section]
         let joursLu: Jours = semaine.jours[indexPath.row]
         
         let dateFormatter = DateFormatter()

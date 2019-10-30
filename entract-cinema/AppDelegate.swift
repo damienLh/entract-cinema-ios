@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //var storyboard: UIStoryboard
         //creation du dictionnaire cache
         Cache.shared.defineDictionnary()
         
@@ -75,6 +76,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         JSONUnparser.getParameters()
 
         registerForPushNotifications()
+        
+        //let modelName = UIDevice.modelName
+        /*if (modelName.range(of: "iPad") != nil) {
+            storyboard = UIStoryboard(name: "Main-ipad", bundle: nil)
+            self.window!.rootViewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        } else {*/
+           // storyboard = UIStoryboard(name: "Main", bundle: nil)
+           // self.window!.rootViewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        //}
         
         return true
     }

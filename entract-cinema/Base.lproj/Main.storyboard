@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oew-mU-B9j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oew-mU-B9j">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -70,8 +70,8 @@
                                     <action selector="fermer:" destination="xHW-Yf-csa" eventType="touchUpInside" id="G2E-5R-cv5"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-dL-v3u">
-                                <rect key="frame" x="100.5" y="523" width="119" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="9" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-dL-v3u">
+                                <rect key="frame" x="92.5" y="523" width="135" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -129,7 +129,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pas de film" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glm-9F-QBQ">
-                                                    <rect key="frame" x="145" y="0.0" width="85" height="49.5"/>
+                                                    <rect key="frame" x="117.5" y="0.0" width="85" height="49.5"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -154,42 +154,54 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jalouse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-xi-7Ra">
-                                                    <rect key="frame" x="15" y="11" width="345" height="19.5"/>
+                                                    <rect key="frame" x="15" y="11" width="290" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seance_non_dispo" translatesAutoresizingMaskIntoConstraints="NO" id="stl-fH-Y56">
-                                                    <rect key="frame" x="119.5" y="38.5" width="136" height="185"/>
+                                                    <rect key="frame" x="92" y="38.5" width="136" height="185"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="185" id="Eua-Yv-HNo"/>
                                                         <constraint firstAttribute="width" constant="136" id="Nuf-58-Jbz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hly-ab-gp3">
-                                                    <rect key="frame" x="150" y="120.5" width="75" height="20"/>
+                                                    <rect key="frame" x="150" y="120.5" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21h00 1h45 3D VO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-At-8sl">
-                                                    <rect key="frame" x="115.5" y="231.5" width="144" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="21h00 3D VO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-At-8sl">
+                                                    <rect key="frame" x="109" y="231.5" width="102" height="20"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngl-ev-QUA">
+                                                    <rect key="frame" x="164.5" y="261.5" width="111" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="58b-ff-kIy"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="exL-9y-hmd"/>
+                                                    </constraints>
+                                                    <state key="normal" title="btn Share" image="share"/>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1Y-mu-8gQ">
-                                                    <rect key="frame" x="90" y="265.5" width="195" height="32"/>
+                                                    <rect key="frame" x="114" y="261.5" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="CB4-Nc-w2l"/>
+                                                        <constraint firstAttribute="height" constant="32" id="mlF-yO-yK7"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                    <state key="normal" title="Ajouter au calendrier" image="calendar">
+                                                    <state key="normal" image="calendar">
                                                         <color key="titleColor" red="0.69574873100000001" green="0.0" blue="0.039036845569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cj7-xi-7Ra" firstAttribute="trailing" secondItem="al7-Ne-giJ" secondAttribute="trailingMargin" id="5Ir-uM-Zda"/>
-                                                <constraint firstItem="k1Y-mu-8gQ" firstAttribute="top" secondItem="SuN-At-8sl" secondAttribute="bottom" constant="14" id="6TB-r6-eWs"/>
-                                                <constraint firstItem="k1Y-mu-8gQ" firstAttribute="top" secondItem="SuN-At-8sl" secondAttribute="bottom" constant="14" id="7IR-Ue-EhC"/>
+                                                <constraint firstItem="ngl-ev-QUA" firstAttribute="top" secondItem="SuN-At-8sl" secondAttribute="bottom" constant="10" id="6S7-7d-ZnO"/>
                                                 <constraint firstItem="cj7-xi-7Ra" firstAttribute="leading" secondItem="al7-Ne-giJ" secondAttribute="leadingMargin" id="A59-fG-idh"/>
+                                                <constraint firstItem="k1Y-mu-8gQ" firstAttribute="top" secondItem="SuN-At-8sl" secondAttribute="bottom" constant="10" id="AsY-TN-B9U"/>
                                                 <constraint firstItem="hly-ab-gp3" firstAttribute="leading" secondItem="al7-Ne-giJ" secondAttribute="leadingMargin" constant="135" id="J62-Ze-ACv"/>
-                                                <constraint firstItem="k1Y-mu-8gQ" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" id="NqR-YO-xXv"/>
+                                                <constraint firstItem="k1Y-mu-8gQ" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" constant="-30" id="KHN-2b-6Zq"/>
                                                 <constraint firstItem="SuN-At-8sl" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" id="PIe-fL-42t"/>
                                                 <constraint firstItem="hly-ab-gp3" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" id="TGn-Ag-Wxk"/>
                                                 <constraint firstItem="stl-fH-Y56" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" id="bo2-ft-phY"/>
@@ -197,6 +209,7 @@
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="SuN-At-8sl" secondAttribute="trailing" id="eMu-yG-m9T"/>
                                                 <constraint firstItem="SuN-At-8sl" firstAttribute="top" secondItem="stl-fH-Y56" secondAttribute="bottom" constant="8" id="f84-zy-DYE"/>
                                                 <constraint firstItem="hly-ab-gp3" firstAttribute="top" secondItem="cj7-xi-7Ra" secondAttribute="bottom" constant="90" id="hI9-Q5-l3f"/>
+                                                <constraint firstItem="ngl-ev-QUA" firstAttribute="centerX" secondItem="al7-Ne-giJ" secondAttribute="centerX" constant="60" id="sml-X4-cCG"/>
                                                 <constraint firstItem="cj7-xi-7Ra" firstAttribute="top" secondItem="al7-Ne-giJ" secondAttribute="topMargin" id="sxj-G7-UIP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hly-ab-gp3" secondAttribute="trailing" constant="135" id="xg1-D3-Qij"/>
                                                 <constraint firstItem="SuN-At-8sl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="al7-Ne-giJ" secondAttribute="leadingMargin" id="yii-7k-hzD"/>
@@ -208,6 +221,7 @@
                                             <outlet property="activityLoad" destination="hly-ab-gp3" id="emq-lN-jA5"/>
                                             <outlet property="afficheImageView" destination="stl-fH-Y56" id="Ug7-wb-8bo"/>
                                             <outlet property="btnCalendrier" destination="k1Y-mu-8gQ" id="2hf-zr-A8v"/>
+                                            <outlet property="btnShare" destination="ngl-ev-QUA" id="xGJ-HF-ZyN"/>
                                             <outlet property="infosFilm" destination="SuN-At-8sl" id="thx-fk-FMu"/>
                                             <outlet property="titreLabel" destination="cj7-xi-7Ra" id="ftU-SG-fuV"/>
                                         </connections>
@@ -239,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdE-bE-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5203.125" y="-657.23566752628449"/>
+            <point key="canvasLocation" x="5203.125" y="-658.09859154929575"/>
         </scene>
         <!--Les horaires-->
         <scene sceneID="bv2-3N-d42">
@@ -249,9 +263,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="1QY-ro-0E4">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="sxu-w6-dEI" id="1R3-BE-NPP"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="horairesCell" rowHeight="40" id="WZa-4S-1qk" customClass="HorairesTableViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZa-4S-1qk" id="9lB-QA-NOg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
@@ -275,7 +297,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="horairesDateCell" rowHeight="174" id="u2l-2h-Nsr" customClass="HorairesDateViewCell" customModule="entract_cinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="62" width="320" height="174"/>
+                                <rect key="frame" x="0.0" y="106" width="320" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u2l-2h-Nsr" id="aYU-RE-Q87">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="173.5"/>
@@ -316,7 +338,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Les horaires" id="cHT-Lq-AfU"/>
                     <connections>
-                        <outlet property="tableViewHoraires" destination="nio-vY-x2w" id="HIM-9O-g6G"/>
+                        <outlet property="searchBarHoraires" destination="1QY-ro-0E4" id="KQI-70-crq"/>
+                        <outlet property="tableViewHoraires" destination="nio-vY-x2w" id="kBo-sa-zwZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfO-Xk-d80" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,11 +501,11 @@
                                 <rect key="frame" x="0.0" y="875.5" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dvn-bj-35P" id="D6y-Fn-RbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autres séances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-2C-QGY">
-                                            <rect key="frame" x="8" y="8" width="359" height="33.5"/>
+                                            <rect key="frame" x="8" y="8" width="304" height="33.5"/>
                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -951,9 +974,10 @@ Les cartes bancaires ne sont pas acceptées.</string>
         <image name="phone" width="32" height="32"/>
         <image name="play" width="32" height="32"/>
         <image name="seance_non_dispo" width="326" height="434"/>
+        <image name="share" width="32" height="32"/>
         <image name="ticket" width="32" height="32"/>
         <image name="tools" width="32" height="32"/>
-        <image name="tuto1" width="375" height="667"/>
+        <image name="tuto1" width="621" height="1104"/>
         <image name="web" width="32" height="32"/>
     </resources>
 </document>
