@@ -3,12 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7E0F87A1232E7A68001E06D1 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F87A0232E7A68001E06D1 /* Toast.swift */; };
 		7E0F87A6232E967C001E06D1 /* ShareTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */; };
+		7EC7E28525CC91E800D0198A /* MesAlertesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E28425CC91E800D0198A /* MesAlertesTableViewController.swift */; };
+		7EC7E28C25CC920D00D0198A /* NoAlerteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E28925CC920C00D0198A /* NoAlerteCell.swift */; };
+		7EC7E28D25CC920D00D0198A /* MesAlertesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E28A25CC920C00D0198A /* MesAlertesCell.swift */; };
+		7EC7E28E25CC920D00D0198A /* MesAlertesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E28B25CC920D00D0198A /* MesAlertesHeaderCell.swift */; };
+		7EC7E29325CC946A00D0198A /* Alertes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E29225CC946A00D0198A /* Alertes.swift */; };
+		7EC7E29825CC94A600D0198A /* CacheAlertes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E29725CC94A600D0198A /* CacheAlertes.swift */; };
+		7EC7E29E25CC975900D0198A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7EC7E29D25CC975900D0198A /* Alamofire */; };
+		7EC7E2A425CC979700D0198A /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EC7E2A325CC979700D0198A /* AlamofireImage */; };
+		7EC7E2B625CC9E9D00D0198A /* NoSortiesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E2B425CC9E9D00D0198A /* NoSortiesHeaderCell.swift */; };
+		7EC7E2B725CC9E9D00D0198A /* FooterTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7E2B525CC9E9D00D0198A /* FooterTableViewHeaderCell.swift */; };
+		7EF3F85925CB40FB007A6FA6 /* parametres.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF3F84B25CB40ED007A6FA6 /* parametres.plist */; };
+		7EF3F85F25CB48C8007A6FA6 /* ParametresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F85D25CB48C7007A6FA6 /* ParametresTableViewController.swift */; };
+		7EF3F86025CB48C8007A6FA6 /* ParametresTableViewCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F85E25CB48C8007A6FA6 /* ParametresTableViewCustomController.swift */; };
+		7EF3F86525CB490B007A6FA6 /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F86425CB490B007A6FA6 /* Parametre.swift */; };
+		7EF3F86F25CB4A25007A6FA6 /* ParametresCustemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F86C25CB4A25007A6FA6 /* ParametresCustemCell.swift */; };
+		7EF3F87025CB4A25007A6FA6 /* ParametresCustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F86D25CB4A25007A6FA6 /* ParametresCustomHeaderCell.swift */; };
+		7EF3F87125CB4A25007A6FA6 /* ParametresCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F86E25CB4A25007A6FA6 /* ParametresCellView.swift */; };
 		9D0070AF2189B53C00130119 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A62189B53B00130119 /* Ubuntu-R.ttf */; };
 		9D0070B02189B53C00130119 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A62189B53B00130119 /* Ubuntu-R.ttf */; };
 		9D0070B12189B53C00130119 /* Ubuntu-LI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D0070A72189B53C00130119 /* Ubuntu-LI.ttf */; };
@@ -57,7 +74,6 @@
 		9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */; };
 		9D698AB02160FF42007FF128 /* AutresDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D698AAF2160FF42007FF128 /* AutresDates.swift */; };
 		9D7B406D20EAA86100E75CAB /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */; };
-		9D7B406F20EABE4900E75CAB /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */; };
 		9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */; };
 		9DB4FAEE2199B0A5009028AF /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */; };
 		9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE39B92145AA1C00254E65 /* Statistiques.swift */; };
@@ -95,6 +111,21 @@
 /* Begin PBXFileReference section */
 		7E0F87A0232E7A68001E06D1 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTapGesture.swift; sourceTree = "<group>"; };
+		7EC7E28425CC91E800D0198A /* MesAlertesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesAlertesTableViewController.swift; sourceTree = "<group>"; };
+		7EC7E28925CC920C00D0198A /* NoAlerteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlerteCell.swift; sourceTree = "<group>"; };
+		7EC7E28A25CC920C00D0198A /* MesAlertesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesAlertesCell.swift; sourceTree = "<group>"; };
+		7EC7E28B25CC920D00D0198A /* MesAlertesHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesAlertesHeaderCell.swift; sourceTree = "<group>"; };
+		7EC7E29225CC946A00D0198A /* Alertes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertes.swift; sourceTree = "<group>"; };
+		7EC7E29725CC94A600D0198A /* CacheAlertes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAlertes.swift; sourceTree = "<group>"; };
+		7EC7E2B425CC9E9D00D0198A /* NoSortiesHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSortiesHeaderCell.swift; sourceTree = "<group>"; };
+		7EC7E2B525CC9E9D00D0198A /* FooterTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		7EF3F84B25CB40ED007A6FA6 /* parametres.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parametres.plist; sourceTree = "<group>"; };
+		7EF3F85D25CB48C7007A6FA6 /* ParametresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresTableViewController.swift; sourceTree = "<group>"; };
+		7EF3F85E25CB48C8007A6FA6 /* ParametresTableViewCustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresTableViewCustomController.swift; sourceTree = "<group>"; };
+		7EF3F86425CB490B007A6FA6 /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
+		7EF3F86C25CB4A25007A6FA6 /* ParametresCustemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresCustemCell.swift; sourceTree = "<group>"; };
+		7EF3F86D25CB4A25007A6FA6 /* ParametresCustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresCustomHeaderCell.swift; sourceTree = "<group>"; };
+		7EF3F86E25CB4A25007A6FA6 /* ParametresCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresCellView.swift; sourceTree = "<group>"; };
 		9D0070A62189B53B00130119 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		9D0070A72189B53C00130119 /* Ubuntu-LI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LI.ttf"; sourceTree = "<group>"; };
 		9D0070A82189B53C00130119 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -143,7 +174,6 @@
 		9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutresDatesCell.swift; sourceTree = "<group>"; };
 		9D698AAF2160FF42007FF128 /* AutresDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutresDates.swift; sourceTree = "<group>"; };
 		9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
-		9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutreDateTapGesture.swift; sourceTree = "<group>"; };
 		9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		9DBE39B92145AA1C00254E65 /* Statistiques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistiques.swift; sourceTree = "<group>"; };
@@ -166,6 +196,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC7E29E25CC975900D0198A /* Alamofire in Frameworks */,
+				7EC7E2A425CC979700D0198A /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +221,9 @@
 		7E0F879F232E7A3A001E06D1 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C7145AF920E398A600A6FCE4 /* String+Extensions.swift */,
+				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
+				9D42B0E820C8706C009BCA11 /* Date+extensions.swift */,
 				9D4FD71D210E1A1C00F98743 /* UIColor+Extensions.swift */,
 				9DFCA3CA21932D5900B05701 /* UIDevice+Extensions.swift */,
 				7E0F87A0232E7A68001E06D1 /* Toast.swift */,
@@ -245,6 +280,7 @@
 				9DFC958520C87B3300E30100 /* LaunchScreen.xib */,
 				9DFC958820C87B8F00E30100 /* icon.png */,
 				9D42B0B420C86FC6009BCA11 /* Info.plist */,
+				7EF3F84B25CB40ED007A6FA6 /* parametres.plist */,
 				C714FE8E214801A900FE1F81 /* Localizable.strings */,
 				9D0070A52189B4E100130119 /* fonts */,
 			);
@@ -272,13 +308,21 @@
 		9D42B0DD20C8706C009BCA11 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				9D42B0DE20C8706C009BCA11 /* HorairesTableViewCell.swift */,
-				9D42B0DF20C8706C009BCA11 /* NoSeanceTableViewCell.swift */,
-				9D42B0E020C8706C009BCA11 /* SeanceTableViewCell.swift */,
-				9D42B0E120C8706C009BCA11 /* HorairesDateViewCell.swift */,
-				9D16A56D21395E9500696EF1 /* HeaderTitreCell.swift */,
-				9D16A56F21395EAC00696EF1 /* PosterCell.swift */,
 				9D698AAD2160FC17007FF128 /* AutresDatesCell.swift */,
+				7EC7E2B525CC9E9D00D0198A /* FooterTableViewHeaderCell.swift */,
+				9D16A56D21395E9500696EF1 /* HeaderTitreCell.swift */,
+				9D42B0E120C8706C009BCA11 /* HorairesDateViewCell.swift */,
+				9D42B0DE20C8706C009BCA11 /* HorairesTableViewCell.swift */,
+				7EC7E28A25CC920C00D0198A /* MesAlertesCell.swift */,
+				7EC7E28B25CC920D00D0198A /* MesAlertesHeaderCell.swift */,
+				7EC7E28925CC920C00D0198A /* NoAlerteCell.swift */,
+				9D42B0DF20C8706C009BCA11 /* NoSeanceTableViewCell.swift */,
+				7EC7E2B425CC9E9D00D0198A /* NoSortiesHeaderCell.swift */,
+				7EF3F86E25CB4A25007A6FA6 /* ParametresCellView.swift */,
+				7EF3F86C25CB4A25007A6FA6 /* ParametresCustemCell.swift */,
+				7EF3F86D25CB4A25007A6FA6 /* ParametresCustomHeaderCell.swift */,
+				9D16A56F21395EAC00696EF1 /* PosterCell.swift */,
+				9D42B0E020C8706C009BCA11 /* SeanceTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -286,11 +330,10 @@
 		9D42B0E220C8706C009BCA11 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				9D44659A20CB282A00BD6445 /* model */,
 				9D42B0DD20C8706C009BCA11 /* cell */,
 				9D42B0EA20C8706C009BCA11 /* controller */,
-				9DFCA3CE2193336400B05701 /* UILabel+Extensions.swift */,
 				7E0F879F232E7A3A001E06D1 /* extensions */,
+				9D44659A20CB282A00BD6445 /* model */,
 				9D42B0E320C8706C009BCA11 /* tools */,
 			);
 			path = classes;
@@ -307,7 +350,6 @@
 				9DC519D120E4D7EA00E143C1 /* Reachibility.swift */,
 				9DBE39B92145AA1C00254E65 /* Statistiques.swift */,
 				9DB4FAED2199B0A5009028AF /* StoreReviewHelper.swift */,
-				C7145AF920E398A600A6FCE4 /* String+Extensions.swift */,
 				9D42B0E720C8706C009BCA11 /* Tools.swift */,
 			);
 			path = tools;
@@ -320,8 +362,10 @@
 				9D42B0EE20C8706C009BCA11 /* SeanceJourViewController.swift */,
 				9D16A5752139626200696EF1 /* DetailFilmController.swift */,
 				9D42B0EB20C8706C009BCA11 /* LesHorairesTableViewController.swift */,
+				7EC7E28425CC91E800D0198A /* MesAlertesTableViewController.swift */,
 				9D4FD716210DFA5A00F98743 /* InfosController.swift */,
-				9D7B406E20EABE4900E75CAB /* ParametresViewController.swift */,
+				7EF3F85D25CB48C7007A6FA6 /* ParametresTableViewController.swift */,
+				7EF3F85E25CB48C8007A6FA6 /* ParametresTableViewCustomController.swift */,
 				9D7B406C20EAA86100E75CAB /* TutorialViewController.swift */,
 				9D3E949921889D0E00ED08AA /* TutorialPageViewController.swift */,
 			);
@@ -331,13 +375,14 @@
 		9D44659A20CB282A00BD6445 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7E29225CC946A00D0198A /* Alertes.swift */,
 				9D42B0E620C8706C009BCA11 /* Artwork.swift */,
 				9DAD6F0321667B6E002AF541 /* AutreDateTapGesture.swift */,
 				9D698AAF2160FF42007FF128 /* AutresDates.swift */,
 				C74BBEB121415A6D0064B471 /* cache */,
-				9D42B0E820C8706C009BCA11 /* Date+extensions.swift */,
 				9D44659B20CB285A00BD6445 /* Film.swift */,
 				9D21A1BD20CC74CC00FCD2DF /* Jours.swift */,
+				7EF3F86425CB490B007A6FA6 /* Parametre.swift */,
 				9D42B0E920C8706C009BCA11 /* SeanceTapGesture.swift */,
 				9D44659D20CB2B4100BD6445 /* Semaine.swift */,
 				7E0F87A5232E967C001E06D1 /* ShareTapGesture.swift */,
@@ -355,6 +400,7 @@
 		C74BBEB121415A6D0064B471 /* cache */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7E29725CC94A600D0198A /* CacheAlertes.swift */,
 				9DC519D520E5139100E143C1 /* CacheFilm.swift */,
 				C74BBEB321415B360064B471 /* CacheParametres.swift */,
 				C74BBEB521415B420064B471 /* CacheSemaines.swift */,
@@ -378,6 +424,10 @@
 			dependencies = (
 			);
 			name = "entract-cinema";
+			packageProductDependencies = (
+				7EC7E29D25CC975900D0198A /* Alamofire */,
+				7EC7E2A325CC979700D0198A /* AlamofireImage */,
+			);
 			productName = "entract-cinema";
 			productReference = 9D42B0A320C86FC5009BCA11 /* entract-cinema.app */;
 			productType = "com.apple.product-type.application";
@@ -425,7 +475,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Damien Lheuillier";
 				TargetAttributes = {
 					9D42B0A220C86FC5009BCA11 = {
@@ -459,6 +509,10 @@
 				Base,
 			);
 			mainGroup = 9D42B09A20C86FC5009BCA11;
+			packageReferences = (
+				7EC7E29C25CC975900D0198A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7EC7E2A225CC979700D0198A /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 9D42B0A420C86FC5009BCA11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -489,6 +543,7 @@
 				9D0070B72189B53C00130119 /* Ubuntu-C.ttf in Resources */,
 				9D0070BD2189B53C00130119 /* Ubuntu-RI.ttf in Resources */,
 				9DFC958720C87B3300E30100 /* LaunchScreen.xib in Resources */,
+				7EF3F85925CB40FB007A6FA6 /* parametres.plist in Resources */,
 				9D42B0AE20C86FC5009BCA11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3E949A21889D0E00ED08AA /* TutorialPageViewController.swift in Sources */,
+				7EC7E2B725CC9E9D00D0198A /* FooterTableViewHeaderCell.swift in Sources */,
 				9DBE39BA2145AA1C00254E65 /* Statistiques.swift in Sources */,
 				9D16A5762139626200696EF1 /* DetailFilmController.swift in Sources */,
 				9DFCA3CF2193336400B05701 /* UILabel+Extensions.swift in Sources */,
@@ -533,8 +589,14 @@
 				9D16A57021395EAC00696EF1 /* PosterCell.swift in Sources */,
 				9D42B0FC20C8706C009BCA11 /* Artwork.swift in Sources */,
 				9D42B10020C8706C009BCA11 /* LesHorairesTableViewController.swift in Sources */,
+				7EC7E28E25CC920D00D0198A /* MesAlertesHeaderCell.swift in Sources */,
+				7EC7E28C25CC920D00D0198A /* NoAlerteCell.swift in Sources */,
+				7EC7E28525CC91E800D0198A /* MesAlertesTableViewController.swift in Sources */,
 				9D42B10320C8706C009BCA11 /* SeanceJourViewController.swift in Sources */,
 				9D698AAE2160FC17007FF128 /* AutresDatesCell.swift in Sources */,
+				7EC7E28D25CC920D00D0198A /* MesAlertesCell.swift in Sources */,
+				7EC7E29325CC946A00D0198A /* Alertes.swift in Sources */,
+				7EF3F86F25CB4A25007A6FA6 /* ParametresCustemCell.swift in Sources */,
 				C74BBEB421415B360064B471 /* CacheParametres.swift in Sources */,
 				9D42B0F920C8706C009BCA11 /* HorairesDateViewCell.swift in Sources */,
 				9DC519D420E4E3AF00E143C1 /* Cache.swift in Sources */,
@@ -545,18 +607,22 @@
 				7E0F87A6232E967C001E06D1 /* ShareTapGesture.swift in Sources */,
 				9DAD6F0421667B6E002AF541 /* AutreDateTapGesture.swift in Sources */,
 				9D4FD71C210E107500F98743 /* NetworkUtils.swift in Sources */,
+				7EF3F86025CB48C8007A6FA6 /* ParametresTableViewCustomController.swift in Sources */,
 				9D42B0FF20C8706C009BCA11 /* SeanceTapGesture.swift in Sources */,
+				7EF3F85F25CB48C8007A6FA6 /* ParametresTableViewController.swift in Sources */,
 				9D7B406D20EAA86100E75CAB /* TutorialViewController.swift in Sources */,
-				9D7B406F20EABE4900E75CAB /* ParametresViewController.swift in Sources */,
 				9D42B0F820C8706C009BCA11 /* SeanceTableViewCell.swift in Sources */,
 				9DC519D620E5139100E143C1 /* CacheFilm.swift in Sources */,
 				9D16A56E21395E9500696EF1 /* HeaderTitreCell.swift in Sources */,
+				7EC7E2B625CC9E9D00D0198A /* NoSortiesHeaderCell.swift in Sources */,
 				9D42B0FD20C8706C009BCA11 /* Tools.swift in Sources */,
 				9D4FD717210DFA5A00F98743 /* InfosController.swift in Sources */,
 				C74BBEB621415B420064B471 /* CacheSemaines.swift in Sources */,
+				7EF3F87125CB4A25007A6FA6 /* ParametresCellView.swift in Sources */,
 				9D68AB5C21484F9B00DF3CE7 /* Notifications.swift in Sources */,
 				C7145AFA20E398A600A6FCE4 /* String+Extensions.swift in Sources */,
 				9D44659E20CB2B4100BD6445 /* Semaine.swift in Sources */,
+				7EC7E29825CC94A600D0198A /* CacheAlertes.swift in Sources */,
 				9D44659C20CB285A00BD6445 /* Film.swift in Sources */,
 				9DFCA3CB21932D5900B05701 /* UIDevice+Extensions.swift in Sources */,
 				9D698AB02160FF42007FF128 /* AutresDates.swift in Sources */,
@@ -564,6 +630,8 @@
 				9D42B0FA20C8706C009BCA11 /* Constants.swift in Sources */,
 				9DC519D220E4D7EA00E143C1 /* Reachibility.swift in Sources */,
 				9D4FD71E210E1A1C00F98743 /* UIColor+Extensions.swift in Sources */,
+				7EF3F87025CB4A25007A6FA6 /* ParametresCustomHeaderCell.swift in Sources */,
+				7EF3F86525CB490B007A6FA6 /* Parametre.swift in Sources */,
 				9D21A1BE20CC74CC00FCD2DF /* Jours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +711,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -668,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -703,6 +772,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -722,7 +792,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -738,18 +808,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9JS2R3T7MX;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
-				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Grenade Cinema Dev 2022";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -763,18 +836,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "entract-cinema/entract-cinema.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9JS2R3T7MX;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9JS2R3T7MX;
 				INFOPLIST_FILE = "entract-cinema/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.asso.grenadecinema.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8146c20e-e807-466a-9382-ae9e40baca9b";
-				PROVISIONING_PROFILE_SPECIFIER = "Grenade Cinéma Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Grenade Cinema Dev 2022";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -902,6 +978,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7EC7E29C25CC975900D0198A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		7EC7E2A225CC979700D0198A /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EC7E29D25CC975900D0198A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EC7E29C25CC975900D0198A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7EC7E2A325CC979700D0198A /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EC7E2A225CC979700D0198A /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D42B09B20C86FC5009BCA11 /* Project object */;
 }

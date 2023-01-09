@@ -17,7 +17,7 @@ class AfficheEvenementViewController : UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     @IBAction func fermer(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: Constants.annonceAfficheeSession)
+        UserDefaults.standard.set(true, forKey: Constants.displayAffiche)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -32,6 +32,8 @@ class AfficheEvenementViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        if #available(iOS 13, *) {
+            self.view.overrideUserInterfaceStyle = Tools.shared.manageTheme()
+        }
     }
 }

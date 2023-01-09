@@ -44,13 +44,16 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
                 pickerTitle.append(completeDateFormatter.string(from: minDate))
                 minDate = Calendar.current.date(byAdding: .day, value: 1, to: minDate)!
             }
+        } else {
+            let today = Date()
+            self.jour = dateFormatter.string(from: today)
+            pickerData.append(self.jour)
+            pickerTitle.append(completeDateFormatter.string(from:today))
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(Tools.shared.offlineModeAlert(notification:)), name: .flagsChanged, object: self)
 
         self.seancesTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.view.backgroundColor = Tools.shared.manageWindowTheme()
-        self.seancesTableView.backgroundColor = Tools.shared.manageWindowTheme()
         loadFilms()
     }
     
@@ -60,8 +63,10 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         dateFormatter.dateFormat =  "yyyy-MM-dd"
         loadFilms()
         self.seancesTableView.reloadData()
-        self.view.backgroundColor = Tools.shared.manageWindowTheme()
-        self.seancesTableView.backgroundColor = Tools.shared.manageWindowTheme()
+        
+        if #available(iOS 13, *) {
+            self.view.overrideUserInterfaceStyle = Tools.shared.manageTheme()
+        }
         self.datePicker.reloadAllComponents()
     }
     
@@ -82,7 +87,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: pickerTitle[row], attributes: [NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()])
+        let attributedString = NSAttributedString(string: pickerTitle[row])
         return attributedString
     }
     
@@ -100,15 +105,19 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func managePopup() {
         if UserDefaults.standard.bool(forKey: Constants.visualiserTuto) {
-            if let presentedViewController = self.storyboard?.instantiateViewController(withIdentifier: "tutorialViewController") {
+            if let presentedViewController: TutorialPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "tutorialPageViewController") as? TutorialPageViewController {
                 presentedViewController.providesPresentationContextTransitionStyle = true
                 presentedViewController.definesPresentationContext = true
-                presentedViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext;
-                presentedViewController.view.backgroundColor = UIColor.init(white: 0.4, alpha: 0.8)
+                presentedViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
+                
+                presentedViewController.callback = { newValue in
+                    UserDefaults.standard.set(false, forKey: Constants.visualiserTuto)
+                    self.managePopup()
+                }
                 self.present(presentedViewController, animated: true, completion: nil)
             }
         } else {
-            if UserDefaults.standard.bool(forKey: Constants.autoriserAnnonce), !UserDefaults.standard.bool(forKey: Constants.annonceAfficheeSession) {
+            if UserDefaults.standard.bool(forKey: Constants.autoriserAnnonce), !UserDefaults.standard.bool(forKey: Constants.displayAffiche) {
                 let annonce = JSONUnparser.getAfficheEvenements()
                 if !annonce.isEmpty {
                     if let annonceVC:AfficheEvenementViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "afficheEvenementViewController") as? AfficheEvenementViewController {
@@ -141,10 +150,9 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if let listeFilms = mapFilms[self.jour] {
             let seanceCell = tableView.dequeueReusableCell(withIdentifier: "seanceCell", for: indexPath) as! SeanceTableViewCell
-            seanceCell.backgroundColor = Tools.shared.manageWindowTheme()
             let film = listeFilms[indexPath.row]
             
-            if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
+            if NetworkUtils.isUserConnectedToWifi() || UserDefaults.standard.bool(forKey: Constants.displayAffiche) {
                 if let url = URL(string: film.affiche) {
                     seanceCell.afficheImageView.contentMode = .scaleAspectFit
                     Tools.shared.downloadImage(url: url, imageView: seanceCell.afficheImageView, activity: seanceCell.activityLoad)
@@ -154,7 +162,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
             let titreFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()]
+            let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
             
             let titreContent = NSMutableAttributedString()
             titreContent.append(NSMutableAttributedString(string:"\(film.titre)", attributes:titreFilm))
@@ -181,7 +189,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
             
             seanceCell.infosFilm.attributedText = content
 
-            let seanceGesture = SeanceTapGesture(target: self, action: #selector(tappedMovie(tapGestureRecognizer:)))
+            let seanceGesture = SeanceTapGesture(target: self, action: #selector(seeDetails(tapGestureRecognizer:)))
             seanceGesture.detail = film
             seanceCell.afficheImageView.isUserInteractionEnabled = true
             seanceCell.afficheImageView.addGestureRecognizer(seanceGesture)
@@ -215,8 +223,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             let noSeanceCell = tableView.dequeueReusableCell(withIdentifier: "noSeanceCell", for: indexPath) as! NoSeanceTableViewCell
             noSeanceCell.lblNoSeance.text = "pas_de_film".localized()
-            noSeanceCell.lblNoSeance.textColor = Tools.shared.manageTheme()
-            noSeanceCell.backgroundColor = Tools.shared.manageWindowTheme()
             cell = noSeanceCell
         }
 
@@ -233,7 +239,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let dateJour = dateFormatter.string(from: infosFilm.date)
         pasteboard.string = "Hello, ça te dirait de venir voir le film \"\(infosFilm.titre)\" le \(dateJour) à \(infosFilm.horaire) au cinéma de Grenade ?"
-        Toast.show(message: "shared".localized(), controller: self, duration: 2.0)
+        Toast.show(message: "shared".localized(), controller: self, duration: 2.0, bottomPosition: -70.0)
     }
     
     func loadFilms() {
@@ -322,12 +328,12 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         group.notify(queue: .main) {
             if status == 1 {
                 sender.setImage(UIImage(named: "calendar_active"), for: .normal)
-                Toast.show(message: "\("alerte_film_ok".localized()) pour le film \(film.titre) séance de \(film.horaire)", controller: self, duration: 5.0)
+                Toast.show(message: "\("alerte_film_ok".localized()) pour le film \(film.titre) séance de \(film.horaire)", controller: self, duration: 5.0, bottomPosition: -70.0)
             } else if status ==  2 {
                 sender.setImage(UIImage(named: "calendar"), for: .normal)
-                Toast.show(message: "\("alerte_film_ko".localized()) pour le film \(film.titre) séance de \(film.horaire)".localized(), controller: self, duration: 5.0)
+                Toast.show(message: "\("alerte_film_ko".localized()) pour le film \(film.titre) séance de \(film.horaire)".localized(), controller: self, duration: 5.0, bottomPosition: -70.0)
             } else {
-                Toast.show(message: "calendarNotGranted".localized(), controller: self, duration: 5.0)
+                Toast.show(message: "calendarNotGranted".localized(), controller: self, duration: 5.0, bottomPosition: -70.0)
             }        }
     }
 
@@ -345,7 +351,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let heure = tapGestureRecognizer.detail.horaire
         let duree = tapGestureRecognizer.detail.duree
         
-        var temps = duree.components(separatedBy: "h")
+        let temps = duree.components(separatedBy: "h")
         let hourFilm:Int = Int(temps[0])! * 60
         let minFilm:Int = Int(temps[1])!
         let totalTime = (hourFilm + minFilm) * 60
@@ -377,7 +383,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let film = detail.titre
         let duree = detail.duree
         
-        var temps = duree.components(separatedBy: "h")
+        let temps = duree.components(separatedBy: "h")
         let hourFilm:Int = Int(temps[0])! * 60
         let minFilm:Int = Int(temps[1])!
         let totalTime = (hourFilm + minFilm) * 60
@@ -419,7 +425,7 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         let film = detail.titre
         let duree = detail.duree
         
-        var temps = duree.components(separatedBy: "h")
+        let temps = duree.components(separatedBy: "h")
         let hourFilm:Int = Int(temps[0])! * 60
         let minFilm:Int = Int(temps[1])!
         let totalTime = (hourFilm + minFilm) * 60
@@ -442,6 +448,17 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         return EKEvent.init();
     }
     
+    @objc func seeDetails(tapGestureRecognizer: SeanceTapGesture) {
+        if let presentedViewController = (self.storyboard?.instantiateViewController(withIdentifier: "detailViewController")) as? DetailFilmController {
+            presentedViewController.film = tapGestureRecognizer.detail
+            presentedViewController.jour = self.jour
+            presentedViewController.providesPresentationContextTransitionStyle = true
+            presentedViewController.definesPresentationContext = true
+            presentedViewController.modalPresentationStyle = UIModalPresentationStyle.popover;
+            self.present(presentedViewController, animated: true, completion: nil)
+        }
+    }
+    
     func reloadFromNotification(jour: String) {
         self.jour = jour
         
@@ -456,11 +473,6 @@ class SeanceJourViewController: UIViewController, UITableViewDelegate, UITableVi
         
         loadFilms()
         self.seancesTableView.reloadData()
-    }
-    
-    @objc func tappedMovie(tapGestureRecognizer: SeanceTapGesture) {
-        self.detailSeance = tapGestureRecognizer
-        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -27,30 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         UserDefaults.standard.set(build, forKey: "app_build")
         
+        if UserDefaults.standard.object(forKey: Constants.firstStart) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.firstStart)
+        }
+        
         if UserDefaults.standard.object(forKey: Constants.afficherThemeSombre) == nil {
-            UserDefaults.standard.set(false, forKey: Constants.afficherThemeSombre)
+            UserDefaults.standard.set("light", forKey: Constants.afficherThemeSombre)
         }
         
         if UserDefaults.standard.object(forKey: Constants.tempsAlerte) == nil {
-            UserDefaults.standard.set(120, forKey: Constants.tempsAlerte)
+            UserDefaults.standard.set("day", forKey: Constants.tempsAlerte)
         }
         
-        if UserDefaults.standard.object(forKey: Constants.visualiserTuto) == nil {
-            UserDefaults.standard.set(true, forKey: Constants.visualiserTuto)
-        }
-        
-        if UserDefaults.standard.object(forKey: Constants.bandeAnnonceUniquementWIFI) == nil {
-            UserDefaults.standard.set(false, forKey: Constants.bandeAnnonceUniquementWIFI)
+        if UserDefaults.standard.object(forKey: Constants.displayBandeAnnonce) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.displayBandeAnnonce)
         }
         
         if UserDefaults.standard.object(forKey: Constants.autoriserAnnonce) == nil {
             UserDefaults.standard.set(true, forKey: Constants.autoriserAnnonce)
         }
         
-        if UserDefaults.standard.object(forKey: Constants.annonceAfficheeSession) == nil {
-            UserDefaults.standard.set(false, forKey: Constants.annonceAfficheeSession)
-        } else {
-            UserDefaults.standard.set(false, forKey: Constants.annonceAfficheeSession)
+        if UserDefaults.standard.object(forKey: Constants.displayAffiche) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.displayAffiche)
+        }
+        
+        if UserDefaults.standard.object(forKey: Constants.visualiserTuto) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.visualiserTuto)
         }
         
         if UserDefaults.standard.object(forKey: Constants.compteurOuverture) == nil {
@@ -125,15 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerForPushNotifications() {
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-            // iOS 9 support
-        else if #available(iOS 9, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        UIApplication.shared.registerForRemoteNotifications()
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

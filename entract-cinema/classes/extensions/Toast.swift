@@ -9,7 +9,7 @@
 import UIKit
 
 class Toast{
-    static func show(message: String, controller: UIViewController, duration: TimeInterval) {
+    static func show(message: String, controller: UIViewController, duration: TimeInterval, bottomPosition: CGFloat) {
         let toastContainer = UIView(frame: CGRect())
         toastContainer.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastContainer.alpha = 0.0
@@ -38,7 +38,7 @@ class Toast{
         
         let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: controller.view, attribute: .leading, multiplier: 1, constant: 65)
         let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: controller.view, attribute: .trailing, multiplier: 1, constant: -65)
-        let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: -75)
+        let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: bottomPosition)
         controller.view.addConstraints([c1, c2, c3])
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {

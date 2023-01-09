@@ -12,18 +12,24 @@ struct Constants {
     //user
     static let dateMin = "dateMin"
     static let dateMax = "dateMax"
-    static let tempsAlerte = "tempsAlerte"
-    static let visualiserTuto = "visualiserTuto"
-    static let autoriserAnnonce = "autoriserAnnonce"
-    static let annonceAfficheeSession = "annonceAfficheeSession"
-    static let bandeAnnonceUniquementWIFI = "bandeAnnonceUniquementWIFI"
+    
+    static let firstStart = "firstStart"
     static let afficherThemeSombre = "afficherThemeSombre"
+
+    static let tempsAlerte = "tempsAlerte"
+    static let autoriserAnnonce = "autoriserAnnonce"
+    
+    static let displayAffiche = "displayAffiche"
+    static let displayBandeAnnonce = "displayBandeAnnonce"
+    
+    static let visualiserTuto = "visualiserTuto"
     static let compteurOuverture = "compteurOuverture"
     
     //Cache
     static let cacheFilms = "cacheFilms"
     static let cacheParams = "cacheParams"
     static let cacheSemaines = "cacheSemaines"
+    static let cacheAlertes = "cacheAlertes"
     
     //notification
     static let notification = "notification"

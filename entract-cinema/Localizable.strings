@@ -61,8 +61,8 @@
 "infos_majoration" = "Majoration de 1€";
 "infos_cheque" = "Chèque cinéma : ";
 "infos_cinecheque" = "Cinéchèque et Chèque Culture";
-"infos_paiement" = "Moyens de paiements : ";
-"infos_liquide" = "Liquide, chèque";
+"infos_paiement" = "Moyens de paiement : ";
+"infos_liquide" = "Liquide, Chèque, CB";
 "infos_cb" = "Les cartes bancaires ne sont pas acceptées";
 "shared" = "Informations copiées dans le presse papiers";
 

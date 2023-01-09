@@ -35,7 +35,6 @@ class TutorialViewController : UIViewController {
     }
     
     @IBAction func fermer(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: Constants.visualiserTuto)
-        self.parent?.performSegue(withIdentifier: "goToApp", sender: self)
+        self.parent?.dismiss(animated: true, completion: nil)
     }
 }

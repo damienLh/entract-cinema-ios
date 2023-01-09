@@ -9,21 +9,24 @@
 import UIKit
 
 class TutorialPageViewController : UIPageViewController {
+    
+    var callback : ((Bool)->())?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dataSource = self
         
-        if !UserDefaults.standard.bool(forKey: Constants.visualiserTuto) {
-           self.performSegue(withIdentifier: "goToApp", sender: self)
-        } else {
-            if let firstViewController = orderedViewControllers.first {
-                setViewControllers([firstViewController],
-                                   direction: .forward,
-                                   animated: true,
-                                   completion: nil)
-            }
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.callback!(true)
     }
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {

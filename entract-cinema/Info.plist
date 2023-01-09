@@ -44,7 +44,7 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
-			<key>http://mobile-grenadecinema.fr</key>
+			<key>https://mobile-grenadecinema.fr</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>

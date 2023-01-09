@@ -1,30 +1,28 @@
 //
-//  HorairesDateViewCell.swift
-//  SidebarMenu
+//  ParametresCustemCell.swift
+//  yesvod
 //
-//  Created by administrateur on 24/11/2017.
-//  Copyright © 2017 AppCoda. All rights reserved.
+//  Created by Damien Lheuillier on 20/10/2020.
+//  Copyright © 2020 Antonin Fankrache. All rights reserved.
 //
 
 import UIKit
 
-class HorairesDateViewCell: UITableViewCell {
-        
-    @IBOutlet weak var infoFilm: UILabel!
+class ParametresCustemCell: UITableViewCell {
     
-    @IBOutlet weak var imageSeance: UIImageView!
     
+    @IBOutlet weak var lblParametreOption: UILabel!
+    
+    @IBOutlet weak var tickImageView: UIImageView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
-    
 }

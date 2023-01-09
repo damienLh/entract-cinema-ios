@@ -31,7 +31,7 @@ class InfosController : UIViewController, MKMapViewDelegate {
     // set initial location in Honolulu
     let initialLocation = CLLocation(latitude: 43.7700499, longitude: 1.2948405)
     
-    let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageTheme()]
+    let infoFilm = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +68,15 @@ class InfosController : UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = Tools.shared.manageWindowTheme()
-        self.lblAdresse.textColor = Tools.shared.manageTheme()
-        self.lblReference.textColor = Tools.shared.manageTheme()
+        if #available(iOS 13, *) {
+            self.view.overrideUserInterfaceStyle = Tools.shared.manageTheme()
+        }
         lblTarifs.attributedText = getAttributedTextForTarifs()
-        self.infosView.backgroundColor = Tools.shared.manageWindowTheme()
     }
     
     func getAttributedTextForTarifs() -> NSMutableAttributedString {
         let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageReadTheme()]
+        let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)]
         let grasMessage = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
         
         let content = NSMutableAttributedString()
@@ -99,9 +98,6 @@ class InfosController : UIViewController, MKMapViewDelegate {
         content.append(NSMutableAttributedString(string:"\("infos_cinecheque".localized())\n", attributes:grasMessage))
         content.append(NSMutableAttributedString(string:"\("infos_paiement".localized())", attributes:normal))
         content.append(NSMutableAttributedString(string:"\("infos_liquide".localized())\n\n", attributes:grasMessage))
-        
-        content.append(NSMutableAttributedString(string:"\("infos_cb".localized())", attributes:grasMessage))
-
         return content
     }
     

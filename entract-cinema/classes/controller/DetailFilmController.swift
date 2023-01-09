@@ -16,9 +16,11 @@ class DetailFilmController : UITableViewController {
     var jour: String = ""
     var heure: String = ""
     var myCustomHeight = CGFloat(0.0)
+    var hideAlerte = false
+    var callback : ((Bool)->())?
     
     let red = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : entractColor]
-    let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : Tools.shared.manageReadTheme()]
+    let normal = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)]
     let gras = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]
     let grasMessage = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.black]
     
@@ -36,15 +38,18 @@ class DetailFilmController : UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = Tools.shared.manageWindowTheme()
+        if #available(iOS 13, *) {
+            self.view.overrideUserInterfaceStyle = Tools.shared.manageTheme()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        callback?(true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
@@ -83,7 +88,6 @@ class DetailFilmController : UITableViewController {
             titreContent.append(NSMutableAttributedString(string:"autresSeances".localized(), attributes:red))
             headerTitre.lblTitre.attributedText = titreContent
         }
-        headerTitre.backgroundColor = Tools.shared.manageGrayWindowTheme()
         return headerTitre
     }
     
@@ -113,9 +117,8 @@ class DetailFilmController : UITableViewController {
             posterCell.btnBandeAnnonce.layer.cornerRadius = 5
             posterCell.btnBandeAnnonce.layer.borderWidth = 1
             posterCell.btnBandeAnnonce.layer.borderColor = UIColor.black.cgColor
-            posterCell.btnBandeAnnonce.backgroundColor = Tools.shared.manageBtnTheme()
             
-            if NetworkUtils.isUserConnectedToWifi() || !UserDefaults.standard.bool(forKey: Constants.bandeAnnonceUniquementWIFI) {
+            if NetworkUtils.isUserConnectedToWifi() || UserDefaults.standard.bool(forKey: Constants.displayAffiche) {
                 if let url = URL(string: film.affiche) {
                     posterCell.affiche.contentMode = .scaleAspectFit
                     Tools.shared.downloadImage(url: url, imageView: posterCell.affiche, activity: posterCell.activity)
@@ -146,10 +149,11 @@ class DetailFilmController : UITableViewController {
                 footer.lblAutresSeances.isUserInteractionEnabled = true
                 footer.lblAutresSeances.addGestureRecognizer(tapAutreDate)
             }
-            footer.lblAutresSeances.textColor = Tools.shared.manageReadTheme()
+            if #available(iOS 13, *) {
+                footer.lblAutresSeances.textColor = Tools.shared.textColorAccordingTheme()
+            }
             myCell = footer
         }
-        myCell.backgroundColor = Tools.shared.manageWindowTheme()
         return myCell
     }
     
@@ -171,16 +175,25 @@ class DetailFilmController : UITableViewController {
     }
     
     @objc func launchBandeAnnonce(_ sender: UIButton) {
-        let youtubeId = film.bandeAnnonce
-        var url = URL(string:"youtube://\(youtubeId)")!
-        if !UIApplication.shared.canOpenURL(url)  {
-            url = URL(string:"http://www.youtube.com/watch?v=\(youtubeId)")!
-        }
-        
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        if NetworkUtils.isUserConnectedToWifi() || UserDefaults.standard.bool(forKey: Constants.displayBandeAnnonce) {
+            let youtubeId = film.bandeAnnonce
+
+            if !youtubeId.isEmpty {
+                var url = URL(string:"youtube://\(youtubeId)")!
+                if !UIApplication.shared.canOpenURL(url)  {
+                    url = URL(string:"http://www.youtube.com/watch?v=\(youtubeId)")!
+                }
+                
+                if Tools.shared.isNetworkOrWifiAvailable() {
+                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+                } else {
+                    Toast.show(message: "offlineModeMessage".localized(), controller: self, duration: 2.0, bottomPosition: -75.0)
+                }
+            } else {
+                Toast.show(message: "bande_annonce_off".localized(), controller: self, duration: 2.0, bottomPosition: -75.0)
+            }
         } else {
-            UIApplication.shared.openURL(url)
+            Toast.show(message: "usage_limite".localized(), controller: self, duration: 4.0, bottomPosition: -75.0)
         }
     }
     

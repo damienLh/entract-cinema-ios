@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class Tools {
     
     static let shared = Tools()
     
     private init() {
+    }
+    
+    func downloadAlamoFireImage(url: URL, imageView: UIImageView, activity: UIActivityIndicatorView) {
+        activity.startAnimating()
+        let placeholder = UIImage(named: "seance_non_dispo")
+        imageView.af.setImage(withURL: url, placeholderImage: placeholder)
+        imageView.contentMode = .scaleToFill
+        activity.stopAnimating()
+    }
+    
+    func downloadAlamoFireImageNoAnimation(url: URL, imageView: UIImageView) {
+        let placeholder = UIImage(named: "seance_non_dispo")
+        imageView.af.setImage(withURL: url, placeholderImage: placeholder)
+        imageView.contentMode = .scaleToFill
     }
 
     func downloadImage(url: URL, imageView: UIImageView, activity: UIActivityIndicatorView) {
@@ -120,43 +136,87 @@ class Tools {
         return result
     }
     
-    func manageWindowTheme() -> UIColor {
-        var windowColor:UIColor = .white
-        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
-            windowColor = windowGreyColor
-        }
-        return windowColor
+    func darkModeActivated() -> Bool {
+        let darkMode = UserDefaults.standard.string(forKey: "AppleInterfaceStyle")
+        return darkMode == "Dark"
     }
     
-    func manageGrayWindowTheme() -> UIColor {
-        var windowColor:UIColor = cellGreyColor
-        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
-            windowColor = windowGreyColor
+    func darkModeActivatedForLogo() -> Bool {
+        let theme = UserDefaults.standard.string(forKey: Constants.afficherThemeSombre)
+        switch theme {
+        case "dark":
+            return true
+        case "auto":
+            return (self.darkModeActivated()) ? true : false;
+        default:
+            return false
         }
-        return windowColor
     }
     
-    func manageTheme() -> UIColor {
-        var color:UIColor = .black
-        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
-            color = .white
+    @available(iOS 13, *)
+    func manageTheme() -> UIUserInterfaceStyle {
+        let theme = UserDefaults.standard.string(forKey: Constants.afficherThemeSombre)
+        switch theme {
+        case "dark":
+            return UIUserInterfaceStyle.dark
+        case "auto":
+            return (self.darkModeActivated()) ? UIUserInterfaceStyle.dark : UIUserInterfaceStyle.light;
+        default:
+            return UIUserInterfaceStyle.light
         }
-        return color
     }
     
-    func manageBtnTheme() -> UIColor {
-        var color:UIColor = .clear
-        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
-            color = .white
+    @available(iOS 13, *)
+    func borderStyleAccordingTheme() -> CGColor {
+        let theme = UserDefaults.standard.string(forKey: Constants.afficherThemeSombre)
+        switch theme {
+        case "dark":
+            return UIColor.white.cgColor
+        case "auto":
+            return (self.darkModeActivated()) ? UIColor.white.cgColor : UIColor.black.cgColor;
+        default:
+            return UIColor.black.cgColor
         }
-        return color
     }
     
-    func manageReadTheme() -> UIColor {
-        var color:UIColor = .gray
-        if UserDefaults.standard.bool(forKey: Constants.afficherThemeSombre) {
-            color = .white
+    @available(iOS 13, *)
+    func textColorAccordingTheme() -> UIColor {
+        let theme = UserDefaults.standard.string(forKey: Constants.afficherThemeSombre)
+        switch theme {
+        case "dark":
+            return .white
+        case "auto":
+            return (self.darkModeActivated()) ? .white : .black;
+        default:
+            return .black
         }
-        return color
+    }
+    
+    @available(iOS 13, *)
+    func manageTabBarTheme() -> UIColor {
+        let theme = UserDefaults.standard.string(forKey: Constants.afficherThemeSombre)
+        switch theme {
+        case "dark":
+            return .black
+        case "auto":
+            if self.darkModeActivated() {
+                return .black;
+            } else {
+                return .white;
+            }
+        default:
+            return .white
+        }
+    }
+    
+    func updateTabBar() {
+     //maj du background de la tabbar
+      if #available(iOS 13, *) {
+          guard let currentView = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController?.view,
+              let superview = currentView.superview else { return }
+          UITabBar.appearance().barTintColor = Tools.shared.manageTabBarTheme()
+          currentView.removeFromSuperview()
+          superview.addSubview(currentView)
+      }
     }
 }

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01.theme</key>
+	<dict>
+		<key>label</key>
+		<string>Thème</string>
+		<key>storage</key>
+		<string>afficherThemeSombre</string>
+		<key>storageType</key>
+		<string>string</string>
+		<key>values</key>
+		<array>
+			<string>Thème clair</string>
+			<string>Thème sombre</string>
+			<string>Géré par le système</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>light</string>
+			<string>dark</string>
+			<string>auto</string>
+		</array>
+	</dict>
+	<key>02.alerteFilm</key>
+	<dict>
+		<key>label</key>
+		<string>Recevoir une alerte pour un film</string>
+		<key>storage</key>
+		<string>tempsAlerte</string>
+		<key>storageType</key>
+		<string>string</string>
+		<key>values</key>
+		<array>
+			<string>Le jour de la sortie</string>
+			<string>1 jour avant</string>
+			<string>2 jours avant</string>
+			<string>1 semaine avant</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>day</string>
+			<string>1day</string>
+			<string>2day</string>
+			<string>1week</string>
+		</array>
+	</dict>
+	<key>03.evenement</key>
+	<dict>
+		<key>label</key>
+		<string>Afficher les événements</string>
+		<key>storage</key>
+		<string>autoriserAnnonce</string>
+		<key>storageType</key>
+		<string>bool</string>
+		<key>values</key>
+		<array>
+			<string>OUI</string>
+			<string>NON</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>YES</string>
+			<string>NO</string>
+		</array>
+	</dict>
+	<key>04.displayBandeAnnonce</key>
+	<dict>
+		<key>label</key>
+		<string>Visualiser les bandes annonces</string>
+		<key>storage</key>
+		<string>displayBandeAnnonce</string>
+		<key>storageType</key>
+		<string>bool</string>
+		<key>values</key>
+		<array>
+			<string>WIFI et Cellulaire</string>
+			<string>Uniquement en WIFI</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>YES</string>
+			<string>NO</string>
+		</array>
+	</dict>
+	<key>05.displayAffiche</key>
+	<dict>
+		<key>label</key>
+		<string>Visualiser les affiches</string>
+		<key>storage</key>
+		<string>displayAffiche</string>
+		<key>storageType</key>
+		<string>bool</string>
+		<key>values</key>
+		<array>
+			<string>WIFI et Cellulaire</string>
+			<string>Uniquement en WIFI</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>YES</string>
+			<string>NO</string>
+		</array>
+	</dict>
+	<key>06.visualiserTuto</key>
+	<dict>
+		<key>label</key>
+		<string>Revoir le tutoriel</string>
+		<key>storage</key>
+		<string>visualiserTuto</string>
+		<key>storageType</key>
+		<string>bool</string>
+		<key>values</key>
+		<array>
+			<string>OUI</string>
+			<string>NON</string>
+		</array>
+		<key>valuesType</key>
+		<array>
+			<string>YES</string>
+			<string>NO</string>
+		</array>
+	</dict>
+</dict>
+</plist>
